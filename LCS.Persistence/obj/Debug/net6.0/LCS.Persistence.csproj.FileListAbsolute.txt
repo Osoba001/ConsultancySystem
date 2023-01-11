@@ -1,0 +1,17 @@
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\bin\Debug\net6.0\LCS.Persistence.deps.json
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\bin\Debug\net6.0\LCS.Persistence.runtimeconfig.json
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\bin\Debug\net6.0\LCS.Persistence.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\bin\Debug\net6.0\ref\LCS.Persistence.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\bin\Debug\net6.0\LCS.Persistence.pdb
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\bin\Debug\net6.0\LCS.Domain.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\bin\Debug\net6.0\LCS.Domain.pdb
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\LCS.Persistence.csproj.AssemblyReference.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\LCS.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\LCS.Persistence.AssemblyInfoInputs.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\LCS.Persistence.AssemblyInfo.cs
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\LCS.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\LCS.Persistence.csproj.CopyComplete
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\LCS.Persistence.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\ref\LCS.Persistence.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\LCS.Persistence.pdb
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Persistence\obj\Debug\net6.0\LCS.Persistence.genruntimeconfig.cache

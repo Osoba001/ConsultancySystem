@@ -1,0 +1,5 @@
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Auth\obj\Debug\net6.0\LCS.Auth.csproj.AssemblyReference.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Auth\obj\Debug\net6.0\LCS.Auth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Auth\obj\Debug\net6.0\LCS.Auth.AssemblyInfoInputs.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Auth\obj\Debug\net6.0\LCS.Auth.AssemblyInfo.cs
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Auth\obj\Debug\net6.0\LCS.Auth.csproj.CoreCompileInputs.cache

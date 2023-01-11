@@ -1,0 +1,12 @@
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\bin\Debug\net6.0\LCS.Domain.deps.json
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\bin\Debug\net6.0\LCS.Domain.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\bin\Debug\net6.0\ref\LCS.Domain.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\bin\Debug\net6.0\LCS.Domain.pdb
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.csproj.AssemblyReference.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.AssemblyInfoInputs.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.AssemblyInfo.cs
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\ref\LCS.Domain.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.pdb

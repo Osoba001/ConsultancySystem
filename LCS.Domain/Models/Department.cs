@@ -11,8 +11,10 @@ namespace LCS.Domain.Models
         public Department(string name)
         {
             Name = name;
+            Lawyers = new List<Lawyer>();
         }
         public string? Description { get; set; }
         public string Name { get; set; }
+        public List<Lawyer> Lawyers { get; set; }
     }
 }

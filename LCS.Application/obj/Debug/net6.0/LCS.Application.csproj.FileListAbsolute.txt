@@ -1,0 +1,12 @@
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\bin\Debug\net6.0\LCS.Application.deps.json
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\bin\Debug\net6.0\LCS.Application.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\bin\Debug\net6.0\ref\LCS.Application.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\bin\Debug\net6.0\LCS.Application.pdb
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\obj\Debug\net6.0\LCS.Application.csproj.AssemblyReference.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\obj\Debug\net6.0\LCS.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\obj\Debug\net6.0\LCS.Application.AssemblyInfoInputs.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\obj\Debug\net6.0\LCS.Application.AssemblyInfo.cs
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\obj\Debug\net6.0\LCS.Application.csproj.CoreCompileInputs.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\obj\Debug\net6.0\LCS.Application.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\obj\Debug\net6.0\ref\LCS.Application.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Application\obj\Debug\net6.0\LCS.Application.pdb

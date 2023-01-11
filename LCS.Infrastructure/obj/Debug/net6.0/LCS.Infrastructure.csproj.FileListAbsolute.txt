@@ -1,0 +1,12 @@
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\bin\Debug\net6.0\LCS.Infrastructure.deps.json
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\bin\Debug\net6.0\LCS.Infrastructure.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\bin\Debug\net6.0\ref\LCS.Infrastructure.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\bin\Debug\net6.0\LCS.Infrastructure.pdb
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\obj\Debug\net6.0\LCS.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\obj\Debug\net6.0\LCS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\obj\Debug\net6.0\LCS.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\obj\Debug\net6.0\LCS.Infrastructure.AssemblyInfo.cs
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\obj\Debug\net6.0\LCS.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\obj\Debug\net6.0\LCS.Infrastructure.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\obj\Debug\net6.0\ref\LCS.Infrastructure.dll
+C:\Users\kelly.osoba\source\repos\LCS\LCS.Infrastructure\obj\Debug\net6.0\LCS.Infrastructure.pdb

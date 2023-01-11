@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCS.Domain", "LCS.Domain\LCS.Domain.csproj", "{541B0D93-7377-46A9-9C5E-94D99445B41E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LCS.Domain", "LCS.Domain\LCS.Domain.csproj", "{541B0D93-7377-46A9-9C5E-94D99445B41E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCS.Application", "LCS.Application\LCS.Application.csproj", "{2DCCB435-22FC-4C1B-8A6D-48CA19E20691}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LCS.Application", "LCS.Application\LCS.Application.csproj", "{2DCCB435-22FC-4C1B-8A6D-48CA19E20691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCS.Infrastructure", "LCS.Infrastructure\LCS.Infrastructure.csproj", "{13405C29-BDDD-495E-A869-65A700D7F9AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LCS.Infrastructure", "LCS.Infrastructure\LCS.Infrastructure.csproj", "{13405C29-BDDD-495E-A869-65A700D7F9AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCS.Persistence", "LCS.Persistence\LCS.Persistence.csproj", "{1B74145C-66F4-4839-8AED-D545FA80536F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LCS.Persistence", "LCS.Persistence\LCS.Persistence.csproj", "{1B74145C-66F4-4839-8AED-D545FA80536F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCS.Presentation", "LCS.Presentation\LCS.Presentation.csproj", "{0F3E8EDF-4698-48EF-989A-FD88C46BA28E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LCS.Presentation", "LCS.Presentation\LCS.Presentation.csproj", "{0F3E8EDF-4698-48EF-989A-FD88C46BA28E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCS.Test", "LCS.Test\LCS.Test.csproj", "{CF35BE59-759E-4FCB-AD00-FB0FCC51114B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LCS.Test", "LCS.Test\LCS.Test.csproj", "{CF35BE59-759E-4FCB-AD00-FB0FCC51114B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCS.Auth", "LCS.Auth\LCS.Auth.csproj", "{86529A67-F8EC-44FF-ABAB-83E7E90BF38E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{CF35BE59-759E-4FCB-AD00-FB0FCC51114B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF35BE59-759E-4FCB-AD00-FB0FCC51114B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF35BE59-759E-4FCB-AD00-FB0FCC51114B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86529A67-F8EC-44FF-ABAB-83E7E90BF38E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86529A67-F8EC-44FF-ABAB-83E7E90BF38E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86529A67-F8EC-44FF-ABAB-83E7E90BF38E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86529A67-F8EC-44FF-ABAB-83E7E90BF38E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,8 +11,10 @@ namespace LCS.Domain.Entities
         public DepartmentTB(string name)
         {
             Name = name;
+            Lawyers = new List<LawyerTB>();
         }
         public string? Description { get; set; }
         public string Name { get; set; }
+        public List<LawyerTB> Lawyers { get; set; }
     }
 }
