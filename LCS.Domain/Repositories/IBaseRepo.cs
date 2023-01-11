@@ -12,9 +12,12 @@ namespace LCS.Domain.Repositories
 {
     public interface IBaseRepo<T> where T : EntityBase
     {
+        Task<ActionResult<T>> AddAndReturn(T entity);
+        Task<ActionResult<T>> UpdateAndReturn(T entity);
+        Task<ActionResult<T>> DeleteAndReturn(Guid id);
         Task<ActionResult> Add(T entity);
         Task<ActionResult> Update(T entity);
-        Task Delete(Guid id);
+        Task<ActionResult> Delete(Guid id);
         Task<T?> GetById(Guid id);
         Task<List<T>> FindByPredicate(Expression<Func<T, bool>> predicate);
         Task<List<T>> GetAll();

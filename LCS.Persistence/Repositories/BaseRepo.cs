@@ -1,6 +1,8 @@
 ﻿using LCS.Domain.Entities;
 using LCS.Domain.Repositories;
 using LCS.Domain.Response;
+using LCS.Persistence.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,38 +14,84 @@ namespace LCS.Persistence.Repositories
 {
     public class BaseRepo<T> : IBaseRepo<T> where T : EntityBase
     {
-        public BaseRepo()
-        {
+        private readonly LCSDbContext _context;
 
-        }
-        public Task<ActionResult> Add(T entity)
+        public BaseRepo(LCSDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task Delete(Guid id)
+        public async Task<ActionResult> Add(T entity)
         {
-            throw new NotImplementedException();
+            _context.Add(entity);
+            return await _context.SaveActionAsync();
         }
 
-        public Task<List<T>> FindByPredicate(Expression<Func<T, bool>> predicate)
+        public async Task<ActionResult<T>> AddAndReturn(T entity)
         {
-            throw new NotImplementedException();
+            _context.Add(entity);
+            return await _context.SaveActionAsync(entity);
         }
 
-        public Task<List<T>> GetAll()
+        public async Task<ActionResult> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var entity= GetById(id);
+            if (entity != null)
+            {
+                _context.Remove(entity);
+                return await _context.SaveActionAsync();
+            }
+            else
+            {
+                var res = new ActionResult();
+                res.AddError("Record not found.");
+                return res;
+            }
+            
         }
 
-        public Task<T?> GetById(Guid id)
+        public async Task<ActionResult<T>> DeleteAndReturn(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = await GetById(id);
+            if (entity != null)
+            {
+                _context.Remove(entity);
+                return await _context.SaveActionAsync(entity);
+            }
+            else
+            {
+                var res = new ActionResult<T>();
+                res.AddError("Record not found.");
+                return res;
+            }
         }
 
-        public Task<ActionResult> Update(T entity)
+        public async Task<List<T>> FindByPredicate(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().Where(predicate).ToListAsync();
         }
+
+        public async Task<List<T>> GetAll()
+        {
+            return await _context.Set<T>().ToListAsync();
+        }
+
+        public async Task<T?> GetById(Guid id)
+        {
+            return await _context.Set<T>().Where(x=>x.Id==id).FirstOrDefaultAsync();
+        }
+
+        public async Task<ActionResult> Update(T entity)
+        {
+            _context.Update(entity);
+            return await _context.SaveActionAsync();
+        }
+
+        public async Task<ActionResult<T>> UpdateAndReturn(T entity)
+        {
+            _context.Update(entity);
+            return await _context.SaveActionAsync(entity);
+        }
+
     }
 }
