@@ -11,17 +11,19 @@ namespace LCS.Persistence.Data
 {
     public class LCSDbContext:DbContext
     {
-        private readonly DbContextOptions<LCSDbContext> options;
 
         public LCSDbContext(DbContextOptions<LCSDbContext> options):base(options)
         {
-            this.options = options;
         }
         public DbSet<LawyerTB> LawyerTB { get; set; }
         public DbSet<ClientTB> ClientTB { get; set; }
         public DbSet<AppointmentTB> AppointmentTB { get; set; }
         public DbSet<DepartmentTB> DepartmentTB { get; set; }
-        public DbSet<UserTB> UserTB { get; set; }
+        public DbSet<LawyerDepartmentTB> LawyerDepartmentTB { get; set; }
+        public DbSet<LanguageTB> LanguageTB { get; set; }
+        public DbSet<LawyerLanguageTB> LawyerLanguageTB { get; set; }
+        public DbSet<TimeSlotTB> TimeSlotTB { get; set; }
+        public DbSet<WorkingSlotTB> WorkingSlot { get; set; }
 
         public async Task<ActionResult> SaveActionAsync()
         {
@@ -36,13 +38,13 @@ namespace LCS.Persistence.Data
             }
             return res;
         }
-        public async Task<ActionResult<T>> SaveActionAsync<T>(T entity)
+        public async Task<ActionResult<T>> SaveActionAsync<T>(T entity) where T : class 
         {
             var res=new ActionResult<T>();
             try
             {
                 await SaveChangesAsync();
-                res.Entity = entity;
+                res.Item = entity;
             }
             catch (Exception ex)
             {

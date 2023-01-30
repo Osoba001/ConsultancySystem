@@ -8,7 +8,7 @@ namespace LCS.Domain.Models
 {
     public class Client:Person
     {
-        public Client(User user) : base(user)
+        public Client()
         {
             Appointments = new List<Appointment>();
         }

@@ -22,22 +22,16 @@ namespace LCS.Domain.Response
 
         public bool IsSuccess { get; set; }
         public List<string> ErrorMessages { get; set; }
+
     }
-    public class ActionResult<T>
+    public class ActionResult<T>: ActionResult where T : class
     {
         public ActionResult()
         {
-            ErrorMessages = new List<string>();
-            IsSuccess = true;
+            Items= new List<T>();
         }
-        public void AddError(string error)
-        {
-            ErrorMessages.Add(error);
-            IsSuccess = false;
-        }
-        public bool IsSuccess { get; set; }
-        public List<string> ErrorMessages { get; set; }
-        public T? Entity { get; set; }
-        public string FistError => ErrorMessages.FirstOrDefault() ?? "No error message.";
+        public T? Item { get; set; }
+        public List<T> Items { get; set; }
+        
     }
 }

@@ -8,13 +8,19 @@ namespace LCS.Domain.Models
 {
     public class Department: ModelBase
     {
-        public Department(string name)
+        public Department()
+        {
+            Lawyers = new();
+        }
+        public Department(string name, string description)
         {
             Name = name;
-            Lawyers = new List<Lawyer>();
+            Description = description;
+            Lawyers=new();
         }
         public string? Description { get; set; }
         public string Name { get; set; }
         public List<Lawyer> Lawyers { get; set; }
+
     }
 }

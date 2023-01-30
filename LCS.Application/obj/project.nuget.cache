@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "scgZP5yNzLSjXaCtaVJtiMz/rOzNugNcAkRvKmvDoHC0VzpEki37PEoTiYuJQoLtAHmcjyvcpslEIDXqbED9gw==",
+  "dgSpecHash": "xxSkqLE6y5BWkheaJ6Zgn2NrLpaBuqAuk2zTZwGHUdPTEhYRjgEgwIeIWiu5zkzGIcP2TauNOcYWLLvwXib7EQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kelly.osoba\\source\\repos\\LCS\\LCS.Application\\LCS.Application.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Application\\LCS.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

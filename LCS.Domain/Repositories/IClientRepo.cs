@@ -1,4 +1,5 @@
 ﻿using LCS.Domain.Entities;
+using LCS.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace LCS.Domain.Repositories
 {
     public interface IClientRepo: IBaseRepo<ClientTB>
     {
+        List<Client> Convertlist(List<ClientTB> listTB);
     }
 }

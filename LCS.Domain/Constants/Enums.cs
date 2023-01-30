@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LCS.Domain.Constants
 {
-    public enum Role
+    public enum Star
     {
-        Client, Lawyer, Admin
+        Zero,One, Two, Three,Four,Five
     }
 
     public enum Gender

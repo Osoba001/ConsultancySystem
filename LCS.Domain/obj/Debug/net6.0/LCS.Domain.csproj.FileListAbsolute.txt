@@ -10,3 +10,15 @@ C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.csp
 C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.dll
 C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\ref\LCS.Domain.dll
 C:\Users\kelly.osoba\source\repos\LCS\LCS.Domain\obj\Debug\net6.0\LCS.Domain.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\bin\Debug\net6.0\LCS.Domain.deps.json
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\bin\Debug\net6.0\LCS.Domain.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\bin\Debug\net6.0\LCS.Domain.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\obj\Debug\net6.0\LCS.Domain.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\obj\Debug\net6.0\LCS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\obj\Debug\net6.0\LCS.Domain.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\obj\Debug\net6.0\LCS.Domain.AssemblyInfo.cs
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\obj\Debug\net6.0\LCS.Domain.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\obj\Debug\net6.0\LCS.Domain.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\obj\Debug\net6.0\refint\LCS.Domain.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\obj\Debug\net6.0\LCS.Domain.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Domain\obj\Debug\net6.0\ref\LCS.Domain.dll

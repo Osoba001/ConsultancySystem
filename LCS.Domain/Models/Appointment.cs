@@ -9,21 +9,34 @@ namespace LCS.Domain.Models
 {
     public class Appointment: ModelBase
     {
-        public Appointment(Lawyer lawyer, Client client, DateTime reviewDate, double charge, AppointmentType appointmentType)
+        public Appointment()
+        {
+
+        }
+        public Appointment(Lawyer lawyer, Client client, DateTime reviewDate, TimeSlot timeSlot, double charge, 
+            AppointmentType appointmentType, string description)
         {
             Lawyer = lawyer;
             Client = client;
             AppointmentType = appointmentType;
             ReviewDate = reviewDate;
             Charge = charge;
+            TimeSlot= timeSlot;
+            CaseDescription = description;
         }
+       
         public Lawyer Lawyer { get; set; }
         public Client Client { get; set; }
-        public DateTime AppointmentDate { get; set; }
+        public TimeSlot TimeSlot { get; set; }
+        public Language language { get; set; }
+        public string CaseDescription { get; set; }
         public DateTime ReviewDate { get; set; }
         public bool HasReviewed { get; set; }
         public bool IsCancel { get; set; }
         public double Charge { get; set; }
         public AppointmentType AppointmentType { get; set; }
+        public string? LawyerReport { get; set; }
+        public string? ClientFeedBack { get; set; }
+        public Star? Stars { get; set; }
     }
 }

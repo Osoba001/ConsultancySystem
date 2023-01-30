@@ -9,28 +9,29 @@ namespace LCS.Domain.Models
 {
     public class Person: ModelBase
     {
-        public Person(User user)
-        {
-            User = user;
-        }
-        public User User { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public string FullName =>$"{FirstName} {LastName}";
+        public string? MiddleName { get; set; }
+        public string FullName =>$"{FirstName} {MiddleName} {LastName}";
         public Gender? Gender { get; set; }
         public string? PhoneNo { get; set; }
-        public DateTime DOB { get; set; }
+        public DateTime? DOB { get; set; }
+        public string Email { get; set; }
 
         public int Age => ComputeAge();
 
         private int ComputeAge()
         {
-            int age = DateTime.Now.Year - DOB.Year;
-            if (DateTime.Now.DayOfYear < DOB.DayOfYear)
+            if (DOB!=null)
             {
-                age--;
+                int age = DateTime.Now.Year - DOB.Value.Year;
+                if (DateTime.Now.DayOfYear < DOB.Value.DayOfYear)
+                {
+                    age--;
+                }
+                return age;
             }
-            return age;
+            return 0;
         }
 
     }

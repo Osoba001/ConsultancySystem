@@ -8,6 +8,11 @@ namespace LCS.Domain.Entities
 {
     public class EntityBase
     {
+        public EntityBase()
+        {
+            CreatedDate= DateTime.Now;
+        }
         public Guid Id { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }
