@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMediatR", "SimpleMedi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastrure", "Infrastrure", "{D133E534-B847-489E-A989-D8F05C3083D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCS.WebApi", "LCS.WebApi\LCS.WebApi.csproj", "{9D03A2A4-362B-4720-ABA6-201EBDFF3EF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LCS.WebApi", "LCS.WebApi\LCS.WebApi.csproj", "{9D03A2A4-362B-4720-ABA6-201EBDFF3EF2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth", "Auth\Auth.csproj", "{38E65B19-B521-4FF4-8C01-A5FF2BD1D2D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{9D03A2A4-362B-4720-ABA6-201EBDFF3EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D03A2A4-362B-4720-ABA6-201EBDFF3EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D03A2A4-362B-4720-ABA6-201EBDFF3EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38E65B19-B521-4FF4-8C01-A5FF2BD1D2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E65B19-B521-4FF4-8C01-A5FF2BD1D2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E65B19-B521-4FF4-8C01-A5FF2BD1D2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E65B19-B521-4FF4-8C01-A5FF2BD1D2D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

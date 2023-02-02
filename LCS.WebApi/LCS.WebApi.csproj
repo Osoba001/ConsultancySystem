@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Auth\Auth.csproj" />
     <ProjectReference Include="..\LCS.Application\LCS.Application.csproj" />
+    <ProjectReference Include="..\LCS.Persistence\LCS.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
