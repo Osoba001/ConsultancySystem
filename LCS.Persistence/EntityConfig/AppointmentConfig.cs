@@ -15,7 +15,8 @@ namespace LCS.Persistence.EntityConfig
         {
             builder.HasOne(x => x.Lawyer).WithMany(x => x.Appointments).OnDelete(DeleteBehavior.SetNull);
             builder.HasOne(x => x.Client).WithMany(x => x.Appointments).OnDelete(DeleteBehavior.Cascade);
-            //builder.HasOne(x => x.TimeSlot).WithMany(x => x.Appointments).OnDelete(DeleteBehavior.SetNull);
+            builder.HasOne(x => x.Language);
+            builder.HasOne(x => x.TimeSlot);
             builder.HasOne(x => x.TimeSlot);
             builder.Property(x => x.AppointmentType).IsRequired();
             builder.Property(x => x.ReviewDate).IsRequired();

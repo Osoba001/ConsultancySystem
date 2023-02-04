@@ -13,7 +13,7 @@ namespace LCS.Persistence.EntityConfig
     {
         public void Configure(EntityTypeBuilder<LawyerDepartmentTB> builder)
         {
-            builder.HasOne(x=>x.Department).WithMany(x=>x.JoinedDepartments).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(x=>x.Department);
             builder.HasOne(x => x.Lawyer).WithMany(x => x.JoinedDepartments).OnDelete(DeleteBehavior.Cascade);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using LCS.Domain.Entities;
 using LCS.Domain.Response;
+using LCS.Persistence.EntityConfig;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,19 @@ namespace LCS.Persistence.Data
         public DbSet<TimeSlotTB> TimeSlotTB { get; set; }
         public DbSet<WorkingSlotTB> WorkingSlot { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            new AppointmentConfig().Configure(modelBuilder.Entity<AppointmentTB>());
+            new ClientConfig().Configure(modelBuilder.Entity<ClientTB>());
+            new DepartmentConfig().Configure(modelBuilder.Entity<DepartmentTB>());
+            new LanguageConfig().Configure(modelBuilder.Entity<LanguageTB>());
+            new LawyerConfig().Configure(modelBuilder.Entity<LawyerTB>());
+            new LawyerDepartmentConfig().Configure(modelBuilder.Entity<LawyerDepartmentTB>());
+            new LawyerLanguageConfig().Configure(modelBuilder.Entity<LawyerLanguageTB>());
+            new WorkSlotConfig().Configure(modelBuilder.Entity<WorkingSlotTB>());
+            new TimeSlotConfig().Configure(modelBuilder.Entity<TimeSlotTB>());
+            
+        }
         public async Task<ActionResult> SaveActionAsync()
         {
             var res = new ActionResult();

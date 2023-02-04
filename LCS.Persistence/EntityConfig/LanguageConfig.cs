@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace LCS.Persistence.EntityConfig
 {
-    internal class DepartmentConfig: IEntityTypeConfiguration<DepartmentTB>
+    public class LanguageConfig : IEntityTypeConfiguration<LanguageTB>
     {
-        public void Configure(EntityTypeBuilder<DepartmentTB> builder)
+        public void Configure(EntityTypeBuilder<LanguageTB> builder)
         {
-            builder.HasMany(x=>x.JoinedDepartments).WithOne(x=>x.Department).OnDelete(DeleteBehavior.Cascade);
-            builder.Property(x => x.Name).IsRequired().HasMaxLength(250);
             builder.HasIndex(x => x.Name).IsUnique();
+            builder.Property(x=>x.Name).IsRequired().HasMaxLength(100);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace LCS.WebApi.Controllers
         }
         private async Task<List<TimeSlotResponse>> LoadFromDb()
         {
-            List<TimeSlotResponse>? slots = new List<TimeSlotResponse>();
+            List<TimeSlotResponse>? slots = new();
             var slotdb = await _mediator.SendQueryAsync<TimeSlotQueryHandler, TimeSlotQuery, List<TimeSlot>>(new TimeSlotQuery());
 
             foreach (var item in slotdb)

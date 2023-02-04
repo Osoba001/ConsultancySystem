@@ -912,7 +912,7 @@
       },
       "LCS.Message/1.0.0": {
         "dependencies": {
-          "LCS.Domain": "1.0.0",
+          "LCS.Application": "1.0.0",
           "Microsoft.Extensions.Caching.StackExchangeRedis": "7.0.2",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
           "Newtonsoft.Json": "13.0.2",

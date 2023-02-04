@@ -18,7 +18,7 @@ namespace LCS.Domain.Entities
         public string? Description { get; set; }
         public string Name { get; set; }
 
-        //public List<LawyerDepartmentTB> JoinedDepartments { get; set; }
+        public List<LawyerDepartmentTB> JoinedDepartments { get; set; }
         public static implicit operator Department(DepartmentTB tb)
         {
             return new Department() { Id = tb.Id, Name = tb.Name, Description = tb.Description, CreatedDate = tb.CreatedDate };

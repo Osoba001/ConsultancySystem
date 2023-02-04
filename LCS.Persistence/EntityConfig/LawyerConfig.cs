@@ -14,6 +14,9 @@ namespace LCS.Persistence.EntityConfig
         public void Configure(EntityTypeBuilder<LawyerTB> builder)
         {
             builder.HasMany(x => x.Appointments).WithOne(x => x.Lawyer);
+            builder.HasMany(x => x.WorkingSlot);
+            builder.HasMany(x => x.Languages);
+            builder.HasMany(x => x.JoinedDepartments);
             builder.Property(x=>x.FirstName).HasMaxLength(100);
             builder.Property(x=>x.LastName).HasMaxLength(100);
             builder.Property(x=>x.PhoneNo).HasMaxLength(25);
