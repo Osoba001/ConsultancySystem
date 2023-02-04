@@ -13,8 +13,8 @@ namespace LCS.Domain.Models
         {
 
         }
-        public Appointment(Lawyer lawyer, Client client, DateTime reviewDate, TimeSlot timeSlot, double charge, 
-            AppointmentType appointmentType, string description)
+        public Appointment(Lawyer lawyer, Client client, DateTime reviewDate, string timeSlot, double charge, 
+            string appointmentType, string description,string language, Star star)
         {
             Lawyer = lawyer;
             Client = client;
@@ -23,18 +23,20 @@ namespace LCS.Domain.Models
             Charge = charge;
             TimeSlot= timeSlot;
             CaseDescription = description;
+            Language = language;
+            Stars = star;
         }
        
         public Lawyer Lawyer { get; set; }
         public Client Client { get; set; }
-        public TimeSlot TimeSlot { get; set; }
-        public Language language { get; set; }
+        public string TimeSlot { get; set; }
+        public string Language { get; set; }
         public string CaseDescription { get; set; }
         public DateTime ReviewDate { get; set; }
         public bool HasReviewed { get; set; }
         public bool IsCancel { get; set; }
         public double Charge { get; set; }
-        public AppointmentType AppointmentType { get; set; }
+        public string AppointmentType { get; set; }
         public string? LawyerReport { get; set; }
         public string? ClientFeedBack { get; set; }
         public Star? Stars { get; set; }

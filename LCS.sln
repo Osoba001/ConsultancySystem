@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LCS.WebApi", "LCS.WebApi\LC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth", "Auth\Auth.csproj", "{38E65B19-B521-4FF4-8C01-A5FF2BD1D2D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCS.Message", "LCS.Message\LCS.Message.csproj", "{3E7D7EE9-5840-4D40-8FC0-8CA0BDBC9F0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{38E65B19-B521-4FF4-8C01-A5FF2BD1D2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38E65B19-B521-4FF4-8C01-A5FF2BD1D2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38E65B19-B521-4FF4-8C01-A5FF2BD1D2D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E7D7EE9-5840-4D40-8FC0-8CA0BDBC9F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7D7EE9-5840-4D40-8FC0-8CA0BDBC9F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7D7EE9-5840-4D40-8FC0-8CA0BDBC9F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7D7EE9-5840-4D40-8FC0-8CA0BDBC9F0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1B74145C-66F4-4839-8AED-D545FA80536F} = {D133E534-B847-489E-A989-D8F05C3083D9}
 		{EBF81C91-64E2-4351-91F1-4DC7390F7929} = {23141164-88FB-4B18-B8FB-37CA7A9B1F9A}
+		{3E7D7EE9-5840-4D40-8FC0-8CA0BDBC9F0B} = {D133E534-B847-489E-A989-D8F05C3083D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5342453-8962-4747-BCA4-AC26A5C3C5DA}

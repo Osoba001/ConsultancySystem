@@ -24,7 +24,7 @@ namespace LCS.Domain.Entities
                 MiddleName = tb.MiddleName,
                 Email = tb.Email,
                 PhoneNo = tb.PhoneNo,
-                Gender = tb.Gender,
+                Gender = tb.Gender.ToString(),
                 DOB = tb.DOB,
                 CreatedDate = tb.CreatedDate,
                 Appointments = ConvertAptmt(tb.Appointments)

@@ -29,8 +29,8 @@ builder.Services.AddSqlServer<AuthDbContext>(config.GetConnectionString("AuthCon
     op.EnableRetryOnFailure(2);
 });
 builder.Services.Configure<AuthConfigModel>(config.GetSection(nameof(AuthConfigModel)));
-//builder.Services.AddScoped<IMiddleware, ExceptionHandlerMiddleware>();
-//builder.Services.AddAuthorization();
+builder.Services.AddScoped<IMiddleware, ExceptionHandlerMiddleware>();
+builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -60,6 +60,11 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+builder.Services.AddStackExchangeRedisCache(opt =>
+{
+    opt.Configuration = config.GetConnectionString("Redis");
+    opt.InstanceName = "LCSWebApi_";
+});
 
 var logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
@@ -84,6 +89,7 @@ app.UseCors();
 //app.UseAuthentication();
 
 app.UseAuthorization();
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 app.MapControllers();
 

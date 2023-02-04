@@ -13,7 +13,7 @@ namespace LCS.Domain.Entities
         public LawyerTB Lawyer { get; set; }
         public ClientTB Client { get; set; }
         public TimeSlotTB TimeSlot { get; set; }
-        public LanguageTB language { get; set; }
+        public LanguageTB Language { get; set; }
         public string CaseDescription { get; set; }
         public DateTime ReviewDate { get; set; }
         public AppointmentType AppointmentType { get; set; }
@@ -35,15 +35,15 @@ namespace LCS.Domain.Entities
                 Client = tB.Client,
                 ClientFeedBack = tB.ClientFeedBack,
                 CreatedDate = tB.CreatedDate,
-                TimeSlot = tB.TimeSlot,
+                TimeSlot = tB.TimeSlot.ToString()!,
                 ReviewDate = tB.ReviewDate,
-                AppointmentType = tB.AppointmentType,
+                AppointmentType = tB.AppointmentType.ToString(),
                 HasReviewed = tB.HasReviewed,
                 IsCancel = tB.IsCancel,
                 LawyerReport = tB.LawyerReport,
                 Stars = tB.Stars,
                 Lawyer = tB.Lawyer,
-                language=tB.language
+                Language=tB.Language.Name
             };
         }
 

@@ -10,17 +10,15 @@ namespace LCS.Domain.Models
     {
         public Department()
         {
-            Lawyers = new();
         }
         public Department(string name, string description)
         {
             Name = name;
             Description = description;
-            Lawyers=new();
         }
         public string? Description { get; set; }
         public string Name { get; set; }
-        public List<Lawyer> Lawyers { get; set; }
+        //public List<Lawyer> Lawyers { get; set; }
 
     }
 }

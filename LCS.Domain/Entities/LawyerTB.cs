@@ -67,7 +67,7 @@ namespace LCS.Domain.Entities
                 LastName = lawyerTB.LastName,
                 DOB = lawyerTB.DOB,
                 PhoneNo = lawyerTB.PhoneNo,
-                Gender = lawyerTB.Gender,
+                Gender = lawyerTB.Gender.ToString(),
                 AcceptOfflineAppointment = lawyerTB.AcceptOfflineAppointment,
                 AcceptOnlineAppointment = lawyerTB.AcceptOnlineAppointment,
                 OnlineCharge = lawyerTB.OnlineCharge,

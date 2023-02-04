@@ -13,7 +13,7 @@ namespace LCS.Domain.Models
         public string? LastName { get; set; }
         public string? MiddleName { get; set; }
         public string FullName =>$"{FirstName} {MiddleName} {LastName}";
-        public Gender? Gender { get; set; }
+        public string? Gender { get; set; }
         public string? PhoneNo { get; set; }
         public DateTime? DOB { get; set; }
         public string Email { get; set; }

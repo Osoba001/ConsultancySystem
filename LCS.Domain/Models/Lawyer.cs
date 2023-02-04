@@ -10,9 +10,9 @@ namespace LCS.Domain.Models
     {
         public Lawyer() 
         {
-            Departments = new List<Department>();
-            Appointments = new List<Appointment>();
-            Languages= new List<Language>();
+            Departments = new ();
+            Appointments = new();
+            Languages= new();
             WorkingSlots = new();
         }
 

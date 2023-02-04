@@ -24,7 +24,7 @@ namespace LCS.Persistence.Repositories
                     .Include(x=>x.Lawyer)
                     .Include(x=>x.Client)
                     .Include(x=>x.TimeSlot)
-                    .Include(x=>x.language)
+                    .Include(x=>x.Language)
                     .ToListAsync();
 
             return await base.FindByPredicate(predicate, IsEagerLoad);
@@ -37,7 +37,7 @@ namespace LCS.Persistence.Repositories
                     .Include(x => x.Lawyer)
                     .Include(x => x.Client)
                     .Include(x => x.TimeSlot)
-                    .Include(x => x.language)
+                    .Include(x => x.Language)
                     .FirstOrDefaultAsync();
             return await base.FindOneByPredicate(predicate, IsEagerLoad);
         }
@@ -48,7 +48,7 @@ namespace LCS.Persistence.Repositories
                     .Include(x => x.Lawyer)
                     .Include(x => x.Client)
                     .Include(x => x.TimeSlot)
-                    .Include(x => x.language)
+                    .Include(x => x.Language)
                     .FirstAsync();
             return await base.GetById(id, IsEagerLoad);
         }

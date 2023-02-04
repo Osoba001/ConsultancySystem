@@ -31,8 +31,6 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\obj\Debug\
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\obj\Debug\net6.0\LCS.WebApi.genruntimeconfig.cache
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\obj\Debug\net6.0\ref\LCS.WebApi.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\AutoMapper.dll
-C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\MediatR.dll
-C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\MediatR.Contracts.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\LCS.Application.dll
@@ -101,3 +99,9 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\LCS.Persistence.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\Auth.pdb
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\LCS.Persistence.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\StackExchange.Redis.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\LCS.Message.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\LCS.Message.pdb
