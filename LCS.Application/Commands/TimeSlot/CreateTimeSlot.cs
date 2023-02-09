@@ -5,7 +5,13 @@ using SimpleMediatR.MediatRContract;
 
 namespace LCS.Application.Commands.TimeSlot
 {
-    public record CreateTimeSlot() : ICommand;
+    public record CreateTimeSlot() : ICommand
+    {
+        public ActionResult Validate()
+        {
+            return new ActionResult();
+        }
+    }
 
     public class CreateTimeSlotHandler : ICommandHandler<CreateTimeSlot>
     {
@@ -21,19 +27,23 @@ namespace LCS.Application.Commands.TimeSlot
             List<TimeSlotTB> slots = new();
             for (int i = 0; i < 24; i++)
             {
-                TimeSlotTB slot = new();
-                slot.StartHour = i;
-                slot.StartMinute = 0;
-                slot.EndHour = i;
-                slot.EndMinute = 30;
-                slot.Index = i * 2 + 1;
+                TimeSlotTB slot = new()
+                {
+                    StartHour = i,
+                    StartMinute = 0,
+                    EndHour = i,
+                    EndMinute = 30,
+                    Index = i * 2 + 1
+                };
                 slots.Add(slot);
-                TimeSlotTB slot2 = new();
-                slot2.StartHour = i;
-                slot2.StartMinute = 30;
-                slot2.EndHour = i + 1;
-                slot2.EndMinute = 0;
-                slot2.Index = i * 2 + 2;
+                TimeSlotTB slot2 = new()
+                {
+                    StartHour = i,
+                    StartMinute = 30,
+                    EndHour = i + 1,
+                    EndMinute = 0,
+                    Index = i * 2 + 2
+                };
                 slots.Add(slot2);
             }
             return slots;

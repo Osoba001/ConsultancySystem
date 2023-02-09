@@ -1,4 +1,5 @@
 ﻿using LCS.Domain.Models;
+using LCS.Domain.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace SimpleMediatR.MediatRContract
 {
     public interface ICommand
     {
+        ActionResult Validate();
     }
 
 }   

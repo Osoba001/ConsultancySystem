@@ -4,7 +4,13 @@ using SimpleMediatR.MediatRContract;
 
 namespace LCS.Application.Commands.Lawyer
 {
-    public record RemoveLawyerFrmDepartment(Guid LawyerDeptId) : ICommand;
+    public record RemoveLawyerFrmDepartment(Guid LawyerDeptId) : ICommand
+    {
+        public ActionResult Validate()
+        {
+            return new ActionResult();
+        }
+    }
 
     public record RemoveLawyerFrmDepartmentHandler : ICommandHandler<RemoveLawyerFrmDepartment>
     {

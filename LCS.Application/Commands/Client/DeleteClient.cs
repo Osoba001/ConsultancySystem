@@ -4,7 +4,13 @@ using SimpleMediatR.MediatRContract;
 
 namespace LCS.Application.Commands.Client
 {
-    public record DeleteClient(Guid Id) : ICommand;
+    public record DeleteClient(Guid Id) : ICommand
+    {
+        public ActionResult Validate()
+        {
+            return new ActionResult();
+        }
+    }
 
     public class DeleteClientHandler : ICommandHandler<DeleteClient>
     {

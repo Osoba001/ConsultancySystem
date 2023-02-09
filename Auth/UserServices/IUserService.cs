@@ -21,6 +21,8 @@ namespace Auth.UserServices
         Task<ActionResult> RemoveRoleFromUser(Guid id, string role);
         Task<ActionResult> UndoFalseDelete(Guid id);
         Task<ActionResult> HardDeleteRange(List<Guid> ids);
-
+        Task<ActionResult> AddRole(string name);
+        Task<ActionResult> RemoveRole(string name);
+        Task<List<string>> GetAllRoles();
     }
 }

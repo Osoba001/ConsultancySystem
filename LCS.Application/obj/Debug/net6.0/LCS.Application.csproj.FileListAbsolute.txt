@@ -27,3 +27,5 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Application\bin\D
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Application\obj\Debug\net6.0\LCS.Application.csproj.CopyComplete
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Application\bin\Debug\net6.0\SimpleMediatR.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Application\bin\Debug\net6.0\SimpleMediatR.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Application\bin\Debug\net6.0\ActionResponse.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Application\bin\Debug\net6.0\ActionResponse.pdb

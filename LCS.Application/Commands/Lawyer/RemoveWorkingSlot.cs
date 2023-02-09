@@ -9,7 +9,13 @@ using System.Threading.Tasks;
 
 namespace LCS.Application.Commands.Lawyer
 {
-    public record RemoveWorkingSlot(List<Guid> Ids):ICommand;
+    public record RemoveWorkingSlot(List<Guid> Ids) : ICommand
+    {
+        public ActionResult Validate()
+        {
+            return new ActionResult();
+        }
+    }
 
     public class RemoveWorkingSlotHandler : ICommandHandler<RemoveWorkingSlot>
     {

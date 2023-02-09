@@ -1,10 +1,22 @@
-﻿using LCS.Domain.Repositories;
+﻿using LCS.Application.Validations;
+using LCS.Domain.Repositories;
 using LCS.Domain.Response;
 using SimpleMediatR.MediatRContract;
 
 namespace LCS.Application.Handlers.Appointment
 {
-    public record ReviewAppointment(Guid AppointmentId, string Report) : ICommand;
+    public record ReviewAppointment(Guid AppointmentId, string Report) : ICommand
+    {
+        public ActionResult Validate()
+        {
+            ActionResult res = new ActionResult();
+            if (!Report.StringMaxLength(500))
+            {
+                res.AddError("Feedback message is to long.");
+            }
+            return res;
+        }
+    }
 
     public class ReviewAppointmentHandler : ICommandHandler<ReviewAppointment>
     {

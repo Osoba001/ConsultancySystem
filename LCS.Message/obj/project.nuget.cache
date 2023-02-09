@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "sPJqCmU0hP7Urswhrtd5vW+JMuc5DgsWZn+4+m8vi+gHbh1eZ/x//4iJsUxmoEFVuV3gYsBTKb4/2czvdqmIIg==",
+  "dgSpecHash": "5wdKtc+ig1u+VDiH2xMbqOc9VgB5M1McakptKmM4BqXMpsVr478HZbHLnI+G2lzURQUzWjf4qZ+VJ8G8unPomA==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Message\\LCS.Message.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\DELL\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\7.0.2\\microsoft.extensions.caching.stackexchangeredis.7.0.2.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

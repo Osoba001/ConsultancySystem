@@ -1,5 +1,7 @@
-﻿using LCS.Domain.Constants;
+﻿using LCS.Application.Validations;
+using LCS.Domain.Constants;
 using LCS.Domain.Entities;
+using LCS.Domain.Models;
 using LCS.Domain.Repositories;
 using LCS.Domain.Response;
 using SimpleMediatR.MediatRContract;
@@ -7,7 +9,22 @@ using SimpleMediatR.MediatRContract;
 namespace LCS.Application.Handlers.Appointment
 {
     public record BookAppointment(Guid ClientId, Guid LawyerId, AppointmentType AppointmentType, DateTime reviewDate,
-        Guid TimeSlotId, string CaseDescription, Guid LanguageId) : ICommand;
+        Guid TimeSlotId, string CaseDescription, Guid LanguageId) : ICommand
+    {
+        public ActionResult Validate()
+        {
+            ActionResult res = new();
+            if (!reviewDate.FutureDate())
+            {
+                res.AddError("Appointment date must be a future date.");
+            }
+            else if (!reviewDate.FutureDate(DateTime.Now.AddMonths(1)))
+            {
+                res.AddError("Appointment date is tool high. It should not be more than 30 days.");
+            }
+            return res;
+        }
+    }
 
     public class BookAppointmentHandler : ICommandHandler<BookAppointment>
     {

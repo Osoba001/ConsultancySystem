@@ -10,28 +10,30 @@ namespace LCS.Domain.Response
     {
         public ActionResult()
         {
-            ErrorMessages=new List<string>();
+            ErrorMessagesList=new List<string>();
             IsSuccess=true;
         }
         public void AddError(string error)
         {
-            ErrorMessages.Add(error);
+            ErrorMessagesList.Add(error);
             IsSuccess=false;
         }
-        public string FistError=> ErrorMessages.FirstOrDefault() ?? "No error message.";
-
         public bool IsSuccess { get; set; }
-        public List<string> ErrorMessages { get; set; }
+        public List<string> ErrorMessagesList { get; set; }
 
+        public string Error()
+        {
+            StringBuilder er= new();
+            foreach (var error in ErrorMessagesList)
+            {
+                er.AppendLine(error);
+            }
+            return er.ToString();
+        }
     }
     public class ActionResult<T>: ActionResult where T : class
     {
-        public ActionResult()
-        {
-            Items= new List<T>();
-        }
         public T? Item { get; set; }
-        public List<T> Items { get; set; }
         
     }
 }

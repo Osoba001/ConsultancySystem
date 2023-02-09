@@ -11,6 +11,8 @@ namespace LCS.Domain.Repositories
 {
     public interface ILawyerRepo: IBaseRepo<LawyerTB>
     {
+        public Task FalseDelete(Guid id);
+        public Task UndoFalseDelete(Guid id);
         Task<ActionResult> JoinDepartment(Guid lawyerId, Guid departmentId);
         Task<ActionResult> LeaveDepartment(Guid joinDeptId);
         Task<ActionResult> AddLanguage(Guid lawyerId, Guid LanguageId);

@@ -1,4 +1,5 @@
-﻿using LCS.Domain.Constants;
+﻿using LCS.Application.Validations;
+using LCS.Domain.Constants;
 using LCS.Domain.Entities;
 using LCS.Domain.Repositories;
 using LCS.Domain.Response;
@@ -6,10 +7,32 @@ using SimpleMediatR.MediatRContract;
 
 namespace LCS.Application.Commands.Lawyer
 {
-    public record UpdateLawyer(Guid Id, string FistName, string MiddleName, string LastName, string? OfficeEmail,
+    public record UpdateLawyer(Guid Id, string FirstName, string MiddleName, string LastName, string? OfficeEmail,
         string PhoneNo, DateTime DOB, Gender Gender, string? OfficeAddress, bool AcceptOnlineAppointment,
-        bool AcceptOfflineAppointment, double OnlineCharge, double OfflineCharge, string Title) : ICommand;
-
+        bool AcceptOfflineAppointment, double OnlineCharge, double OfflineCharge, string Title) : ICommand
+    {
+        public ActionResult Validate()
+        {
+            var res = new ActionResult();
+            if (!FirstName.StringMaxLength(50))
+            {
+                res.AddError("First Name is to long.");
+            }
+            if (!LastName.StringMaxLength(50))
+            {
+                res.AddError("Last Name is to long.");
+            }
+            if (!PhoneNo.PhoneNoValid())
+            {
+                res.AddError($"Phone number is not valid.");
+            }
+            if (!DOB.PastDate(DateTime.Now.AddYears(-150)))
+            {
+                res.AddError("Invalid date of birth.");
+            }
+            return res;
+        }
+    }
 
     public class UpdateLawyerHandler : ICommandHandler<UpdateLawyer>
     {
@@ -26,7 +49,7 @@ namespace LCS.Application.Commands.Lawyer
         }
         private static void SetLawyerData(UpdateLawyer cmd, LawyerTB tB)
         {
-            tB.FirstName = cmd.FistName;
+            tB.FirstName = cmd.FirstName;
             tB.LastName = cmd.LastName;
             tB.PhoneNo = cmd.PhoneNo;
             tB.DOB = cmd.DOB;

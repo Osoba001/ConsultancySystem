@@ -30,7 +30,6 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\obj\Debug\
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\obj\Debug\net6.0\LCS.WebApi.pdb
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\obj\Debug\net6.0\LCS.WebApi.genruntimeconfig.cache
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\obj\Debug\net6.0\ref\LCS.WebApi.dll
-C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\LCS.Application.dll
@@ -105,3 +104,5 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\StackExchange.Redis.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\LCS.Message.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\LCS.Message.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\ActionResponse.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.WebApi\bin\Debug\net6.0\ActionResponse.pdb

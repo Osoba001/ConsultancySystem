@@ -11,7 +11,6 @@ namespace LCS.Domain.Entities
         public string? PhoneNo { get; set; }
         public DateTime? DOB { get; set; }
         public string Email { get; set; }
-
-  
+        public bool IsDelete { get; set; }
     }
 }

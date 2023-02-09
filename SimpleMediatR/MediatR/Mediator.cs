@@ -23,7 +23,7 @@ namespace SimpleMediatR.MediatR
             where TCommandHandler : ICommandHandler<TCommand>
             where TCommand : ICommand
         {
-            var handler=(TCommandHandler)Activator.CreateInstance(typeof(TCommandHandler))!;
+            var handler=(TCommandHandler)Activator.CreateInstance(typeof(TCommandHandler));
             return handler.HandleAsync(command, RepoWrapper);
         }
 

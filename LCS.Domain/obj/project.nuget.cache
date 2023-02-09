@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+KI7tUeX6Ko8FWpRMz2keIvSjedprUjoQRRjJPyt1AibSO5jvv855TBIub2wRA+yn9xVE1qEUFalZsdCkW4oZg==",
+  "dgSpecHash": "kZeV2VoZ8+/w7mHCeCHo/QUgqhJCUiv29ktUvAKfUYf+h9VIKeMhUFJdpQLLUmzv2oyvh+S2hg/WibQ7Z6v8pg==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\LCS.Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\DELL\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

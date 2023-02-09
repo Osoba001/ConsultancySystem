@@ -20,6 +20,7 @@ namespace LCS.Persistence.EntityConfig
             builder.Property(x=>x.FirstName).HasMaxLength(100);
             builder.Property(x=>x.LastName).HasMaxLength(100);
             builder.Property(x=>x.PhoneNo).HasMaxLength(25);
+            builder.HasQueryFilter(x => x.IsDelete == false);
         }
     }
 }

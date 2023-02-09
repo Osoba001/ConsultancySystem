@@ -1,11 +1,27 @@
-﻿using LCS.Domain.Entities;
+﻿using LCS.Application.Validations;
+using LCS.Domain.Entities;
 using LCS.Domain.Repositories;
 using LCS.Domain.Response;
 using SimpleMediatR.MediatRContract;
 
 namespace LCS.Application.Commands.Department
 {
-    public record CreateDepartment(string Name, string Description) : ICommand;
+    public record CreateDepartment(string Name, string Description) : ICommand
+    {
+        public ActionResult Validate()
+        {
+            var res=new ActionResult();
+            if (!Name.StringMaxLength(100))
+            {
+                res.AddError("Department name is to long.");
+            }
+            if (!Description.StringMaxLength(200))
+            {
+                res.AddError("Department description is to long.");
+            }
+            return res;
+        }
+    }
 
     public class CreateDepartmentHandler : ICommandHandler<CreateDepartment>
     {

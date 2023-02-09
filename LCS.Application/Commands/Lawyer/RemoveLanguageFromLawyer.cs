@@ -4,7 +4,13 @@ using SimpleMediatR.MediatRContract;
 
 namespace LCS.Application.Commands.Lawyer
 {
-    public record RemoveLanguageFromLawyer(Guid JoinedLangId) : ICommand;
+    public record RemoveLanguageFromLawyer(Guid JoinedLangId) : ICommand
+    {
+        public ActionResult Validate()
+        {
+            return new ActionResult();
+        }
+    }
 
     public record RemoveLanguageFromLawyerHandler : ICommandHandler<RemoveLanguageFromLawyer>
     {

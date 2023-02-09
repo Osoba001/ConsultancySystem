@@ -152,6 +152,27 @@ namespace LCS.Persistence.Repositories
             return res;
         }
 
+        public async Task FalseDelete(Guid id)
+        {
+            var user = await _context.LawyerTB.FindAsync(id);
+            if (user != null)
+            {
+                user.IsDelete = true;
+                _context.LawyerTB.Update(user);
+                await _context.SaveActionAsync();
+            }
+        }
+        public async Task UndoFalseDelete(Guid id)
+        {
+            var user = await _context.LawyerTB.FindAsync(id);
+            if (user != null)
+            {
+                user.IsDelete = false;
+                _context.LawyerTB.Update(user);
+                await _context.SaveActionAsync();
+            }
+        }
+
         public override async Task<List<LawyerTB>> FindByPredicate(Expression<Func<LawyerTB, bool>> predicate, bool IsEagerLoad = false)
         {
             if (IsEagerLoad)

@@ -17,3 +17,5 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\bin\Debug
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\bin\Debug\net6.0\SimpleMediatR.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\bin\Debug\net6.0\LCS.Application.pdb
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\bin\Debug\net6.0\SimpleMediatR.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\bin\Debug\net6.0\ActionResponse.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\bin\Debug\net6.0\ActionResponse.pdb

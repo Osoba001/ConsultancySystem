@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ActionResponse\ActionResponse.csproj" />
     <ProjectReference Include="..\LCS.Domain\LCS.Domain.csproj" />
   </ItemGroup>
 

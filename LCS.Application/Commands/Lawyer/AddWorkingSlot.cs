@@ -4,7 +4,13 @@ using SimpleMediatR.MediatRContract;
 
 namespace LCS.Application.Commands.Lawyer
 {
-    public record AddWorkingSlot(Guid LawyerId, List<Guid> TimeSlotIds):ICommand;
+    public record AddWorkingSlot(Guid LawyerId, List<Guid> TimeSlotIds) : ICommand
+    {
+        public ActionResult Validate()
+        {
+            return new ActionResult();
+        }
+    }
 
     public class AddWorkinSltHandler : ICommandHandler<AddWorkingSlot>
     {

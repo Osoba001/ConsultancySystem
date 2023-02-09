@@ -4,7 +4,13 @@ using SimpleMediatR.MediatRContract;
 
 namespace LCS.Application.Commands.Language
 {
-    public record RemoveLanguage(Guid LanguageId) : ICommand;
+    public record RemoveLanguage(Guid LanguageId) : ICommand
+    {
+        public ActionResult Validate()
+        {
+           return new ActionResult();
+        }
+    }
 
     public class RemoveLanguageHandler : ICommandHandler<RemoveLanguage>
     {

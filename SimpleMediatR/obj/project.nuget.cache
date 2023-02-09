@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "cS8Q5WQbSAxip+TY1cPWEGUW0C9eL+BxZDTXQrq5kJAlTUgul2gAtpWlDjgHKiNHlniEWAo5o2xEAu9IsfeLAw==",
+  "dgSpecHash": "KgZQKNT/gKfGFP8y4+6WaE1gHEaMetcW7CgS/JeqG/TXEBdeqPRpFrOvOGwqfTB7XVISUwAZisTYYlfHF9enlA==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\SimpleMediatR\\SimpleMediatR.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\DELL\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
   ],

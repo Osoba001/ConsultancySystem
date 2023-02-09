@@ -1,5 +1,8 @@
-﻿using Auth.AuthServices;
+﻿//using Auth.AuthServices;
+using Auth.AuthServices;
 using Auth.Entities;
+using Auth.Messages;
+using Auth.Messages.DTOs;
 using Auth.Models;
 using Auth.Repository;
 using Auth.Response;
@@ -18,13 +21,43 @@ namespace Auth.UserServices
         private readonly IUserRoleRepo _roleRepo;
         private readonly IAssignedUserRoleRepo _assignedUserRoleRepo;
         private readonly IAuthService _authService;
+        private readonly IRedisMessage _redis;
 
-        public UserService(IUserRepo userRepo, IUserRoleRepo roleRepo, IAssignedUserRoleRepo assignedUserRoleRepo, IAuthService authService)
+        public UserService(IUserRepo userRepo, IUserRoleRepo roleRepo, IAssignedUserRoleRepo assignedUserRoleRepo, IAuthService authService, IRedisMessage redis)
         {
             _userRepo = userRepo;
             _roleRepo = roleRepo;
             _assignedUserRoleRepo = assignedUserRoleRepo;
             _authService = authService;
+            _redis = redis;
+        }
+        public async Task<ActionResult> AddRole(string name)
+        {
+            name = name.Trim();
+            var item = await _roleRepo.FindOneByPredicate(x => x.Name.ToLower() == name.ToLower());
+            if (item == null)
+                return await _roleRepo.Add(new UserRoleTb(name));
+            var res = new ActionResult();
+            res.AddError("This role already exist.");
+            return res;
+        }
+
+        public async Task<List<string>> GetAllRoles()
+        {
+            var res = await _roleRepo.GetAll();
+            var rols = from r in res select r.Name;
+            return rols.ToList();
+        }
+
+        public async Task<ActionResult> RemoveRole(string name)
+        {
+            name = name.Trim();
+            var item = await _roleRepo.FindOneByPredicate(x => x.Name.ToLower() == name.ToLower());
+            if (item != null)
+                return await _roleRepo.Delete(item);
+            var res = new ActionResult();
+            res.AddError("This role does not exist.");
+            return res;
         }
         public async Task<ActionResult> AddRoleToUser(Guid id, string role)
         {
@@ -66,12 +99,14 @@ namespace Auth.UserServices
         }
         public async Task<ActionResult> FalseDeleteUser(Guid id)
         {
-            var user = await _userRepo.FindById(id);
+            var user = await _userRepo.FindOneByPredicate(x=>x.Id==id);
             if (user != null)
             {
                 user.IsDeleted = true;
                 user.DeletedDate = DateTime.UtcNow;
-                return await _userRepo.Update(user);
+                var res= await _userRepo.Update(user);
+                await _redis.PublishAsync(new DeleteDTO(user.Id),$"falseDelete{user.AssignedUserRoles.FirstOrDefault()?.Role.ToString()}");
+                return res;
             }
             return FailActionResult("User not found.");
         }
@@ -83,7 +118,9 @@ namespace Auth.UserServices
                 if (!user.IsDeleted)
                     return new ActionResult();
                 user.IsDeleted = false;
-                return await _userRepo.Update(user);
+                var res= await _userRepo.Update(user);
+                await _redis.PublishAsync(new DeleteDTO(user.Id), $"undoFalseDelete{user.AssignedUserRoles.FirstOrDefault()?.Role.ToString()}");
+                return res;
             }
             return FailActionResult("User not found.");
         }
@@ -91,7 +128,11 @@ namespace Auth.UserServices
         {
             var user = await _userRepo.FindById(id);
             if (user != null)
-                return await _userRepo.Delete(user);
+            {
+                var res= await _userRepo.Delete(user);
+                await _redis.PublishAsync(new DeleteDTO(user.Id), $"delete{user.AssignedUserRoles.FirstOrDefault()?.Role.ToString()}");
+                return res;
+            }
            return FailActionResult("User not found.");
         }
 

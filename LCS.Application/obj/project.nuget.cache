@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "/ZWUvdZSea4nQLmYDLL+lvl2JAC+ra+ahEkv40o5poW6ksboNLQIjB4VPHVsebaKb/uKplSovkgQ9KUhzpcO2Q==",
+  "dgSpecHash": "20oSUWJ3tT5ivWYcZIAVzziUVVSsmrfZbt7gIOXLjxx/zmoZZHkwQ1nmq023JOdUVxxfUxuAvFhSA8SFCUrlcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Application\\LCS.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\DELL\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
   ],
