@@ -1,16 +1,12 @@
-﻿using LCS.Domain.Entities;
-using LCS.Domain.Repositories;
-using LCS.Domain.Response;
+﻿using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
+using Utilities.ActionResponse;
 
-namespace LCS.Application.Commands.TimeSlot
+namespace Law.Application.Commands.TimeSlot
 {
     public record CreateTimeSlot() : ICommand
     {
-        public ActionResult Validate()
-        {
-            return new ActionResult();
-        }
+        public ActionResult Validate() => new();
     }
 
     public class CreateTimeSlotHandler : ICommandHandler<CreateTimeSlot>
@@ -22,12 +18,12 @@ namespace LCS.Application.Commands.TimeSlot
                 return repo.TimeSlotRepo.FailedAction("Slot already exist.");
             return await repo.TimeSlotRepo.AddRange(GenerateTimeSlot());
         }
-        private static List<TimeSlotTB> GenerateTimeSlot()
+        private static List<Domain.Models.TimeSlot> GenerateTimeSlot()
         {
-            List<TimeSlotTB> slots = new();
+            List<Domain.Models.TimeSlot> slots = new();
             for (int i = 0; i < 24; i++)
             {
-                TimeSlotTB slot = new()
+                Domain.Models.TimeSlot slot = new()
                 {
                     StartHour = i,
                     StartMinute = 0,
@@ -36,7 +32,7 @@ namespace LCS.Application.Commands.TimeSlot
                     Index = i * 2 + 1
                 };
                 slots.Add(slot);
-                TimeSlotTB slot2 = new()
+                Domain.Models.TimeSlot slot2 = new()
                 {
                     StartHour = i,
                     StartMinute = 30,
@@ -49,6 +45,6 @@ namespace LCS.Application.Commands.TimeSlot
             return slots;
         }
 
-        
+
     }
 }

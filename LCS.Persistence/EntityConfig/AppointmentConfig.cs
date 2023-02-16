@@ -1,22 +1,18 @@
-﻿using LCS.Domain.Entities;
+﻿using Law.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace LCS.Persistence.EntityConfig
+namespace Law.Persistence.EntityConfig
 {
-    internal class AppointmentConfig: IEntityTypeConfiguration<AppointmentTB>
+    internal class AppointmentConfig : IEntityTypeConfiguration<Appointment>
     {
-        public void Configure(EntityTypeBuilder<AppointmentTB> builder)
+        public void Configure(EntityTypeBuilder<Appointment> builder)
         {
-            builder.HasOne(x => x.Lawyer).WithMany(x => x.Appointments).OnDelete(DeleteBehavior.SetNull);
-            builder.HasOne(x => x.Client).WithMany(x => x.Appointments).OnDelete(DeleteBehavior.Cascade);
-            builder.HasOne(x => x.Language);
-            builder.HasOne(x => x.TimeSlot);
+            builder.HasOne(x => x.Lawyer).WithMany(x => x.Appointments).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(x => x.Client).WithMany(x => x.Appointments).OnDelete(DeleteBehavior.NoAction);
+            builder.HasIndex(x => new { x.Lawyer, x.ReviewDate }).IsUnique();
+            builder.HasIndex(x => new { x.Client, x.ReviewDate }).IsUnique();
+            builder.Property(x => x.Language);
             builder.HasOne(x => x.TimeSlot);
             builder.Property(x => x.AppointmentType).IsRequired();
             builder.Property(x => x.ReviewDate).IsRequired();

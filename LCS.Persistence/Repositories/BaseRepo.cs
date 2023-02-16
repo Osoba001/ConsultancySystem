@@ -1,18 +1,13 @@
-﻿using LCS.Domain.Entities;
-using LCS.Domain.Repositories;
-using LCS.Domain.Response;
-using LCS.Persistence.Data;
+﻿using Law.Domain.Models;
+using Law.Domain.Repositories;
+using Law.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using Utilities.ActionResponse;
 
-namespace LCS.Persistence.Repositories
+namespace Law.Persistence.Repositories
 {
-    public class BaseRepo<T> : IBaseRepo<T> where T : EntityBase
+    public class BaseRepo<T> : IBaseRepo<T> where T : ModelBase
     {
         private readonly LCSDbContext _context;
 
@@ -37,9 +32,9 @@ namespace LCS.Persistence.Repositories
             return await _context.SaveActionAsync(entity);
         }
 
-        public async Task<ActionResult> Delete(Guid id)
+        public virtual async Task<ActionResult> Delete(Guid id)
         {
-            var entity= GetById(id);
+            var entity = GetById(id);
             if (entity != null)
             {
                 _context.Remove(entity);
@@ -105,6 +100,6 @@ namespace LCS.Persistence.Repositories
             return res;
         }
 
-       
+
     }
 }

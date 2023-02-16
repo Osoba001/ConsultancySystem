@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LCS.Domain.Models
+namespace Law.Domain.Models
 {
-    public class Department: ModelBase
+    public class Department : ModelBase
     {
         public Department()
         {
@@ -18,7 +18,7 @@ namespace LCS.Domain.Models
         }
         public string? Description { get; set; }
         public string Name { get; set; }
-        //public List<Lawyer> Lawyers { get; set; }
+        public List<Lawyer> Lawyers { get; set; }
 
     }
 }

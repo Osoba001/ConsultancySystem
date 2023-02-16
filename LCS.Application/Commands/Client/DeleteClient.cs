@@ -1,22 +1,52 @@
-﻿using LCS.Domain.Repositories;
-using LCS.Domain.Response;
-using SimpleMediatR.MediatRContract;
+﻿using Law.Domain.Repositories;
+using ShareServices.Events;
 
-namespace LCS.Application.Commands.Client
+namespace Law.Application.Commands.ClientC
 {
-    public record DeleteClient(Guid Id) : ICommand
+    public class DeleteClient
     {
-        public ActionResult Validate()
-        {
-            return new ActionResult();
-        }
-    }
+        private readonly IClientEventService _clientEvent;
+        private readonly IRepoWrapper _repo;
 
-    public class DeleteClientHandler : ICommandHandler<DeleteClient>
-    {
-        public async Task<ActionResult> HandleAsync(DeleteClient command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public DeleteClient(IClientEventService clientEvent, IRepoWrapper repo)
         {
-            return await repo.ClientRepo.Delete(command.Id);
+            _clientEvent = clientEvent;
+            _repo = repo;
+            _clientEvent.HardDeletedClient += DeleteClientHandler;
         }
+
+        private async void DeleteClientHandler(object? sender, UserIdArgs e)
+        {
+            var res = await _repo.ClientRepo.Delete(e.Id);
+            _clientEvent.HardDeletedClient -= DeleteClientHandler;
+            if (!res.IsSuccess)
+                throw new Exception(res.Errors());
+        }
+        //private readonly IRepoWrapper _repo;
+        //private readonly string conString;
+        //private const string Chinnel = "hardDeleteClient";
+        //public DeleteClient(IRepoWrapper repo, IOptionsSnapshot<RedisConfigModel> redisConfModelOpt)
+        //{
+        //    _repo = repo;
+        //    conString = redisConfModelOpt.Value.ConString;
+        //}
+        //private async void HardDeleteClientHandle(Guid id)
+        //{
+        //  var res= await _repo.ClientRepo.Delete(id);
+        //    if (!res.IsSuccess)
+        //        throw new Exception(res.ToString());
+        //}
+        //private void SubscribeToHardDeleteClient()
+        //{
+        //    var connection = ConnectionMultiplexer.Connect(conString);
+        //     connection.GetSubscriber().Subscribe(Chinnel, async (channel, message) =>
+        //    {
+        //        if (message.IsNull)
+        //            throw new Exception($"The Redis message subscribed to is null when trying to hard delete client.");
+        //        var id = JsonSerializer.Deserialize<Guid>(message!);
+        //        HardDeleteClientHandle(id);
+        //    });
+        //}
+
     }
 }

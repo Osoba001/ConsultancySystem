@@ -1,17 +1,10 @@
-﻿using LCS.Domain.Entities;
-using LCS.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Law.Domain.Models;
+using Utilities.ActionResponse;
 
-namespace LCS.Domain.Repositories
+namespace Law.Domain.Repositories
 {
-    public interface IClientRepo: IBaseRepo<ClientTB>
+    public interface IClientRepo : IBaseRepo<Client>
     {
-        List<Client> Convertlist(List<ClientTB> listTB);
-        public Task FalseDelete(Guid id);
-        public Task UndoFalseDelete(Guid id);
+
     }
 }

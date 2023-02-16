@@ -1,93 +1,36 @@
-﻿//using Auth.AuthServices;
-using Auth.AuthServices;
-using Auth.Entities;
-using Auth.Messages;
-using Auth.Messages.DTOs;
-using Auth.Models;
-using Auth.Repository;
-using Auth.Response;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Auth.UserServices;
+using User.Application.AuthServices;
+using User.Application.Constants;
+using User.Application.DTO;
+using User.Application.Entities;
+using User.Application.Repository;
+using Utilities.ActionResponse;
 
-namespace Auth.UserServices
+namespace User.Application.UserServices
 {
-    public class UserService : IUserService
+    public partial class UserService : IUserService
     {
-        private readonly IUserRepo _userRepo;
-        private readonly IUserRoleRepo _roleRepo;
-        private readonly IAssignedUserRoleRepo _assignedUserRoleRepo;
-        private readonly IAuthService _authService;
-        private readonly IRedisMessage _redis;
 
-        public UserService(IUserRepo userRepo, IUserRoleRepo roleRepo, IAssignedUserRoleRepo assignedUserRoleRepo, IAuthService authService, IRedisMessage redis)
+        private readonly IUserRepo _userRepo;
+        private readonly IAuthService _authService;
+
+
+
+        public UserService(IUserRepo userRepo, IAuthService authService)
         {
             _userRepo = userRepo;
-            _roleRepo = roleRepo;
-            _assignedUserRoleRepo = assignedUserRoleRepo;
             _authService = authService;
-            _redis = redis;
-        }
-        public async Task<ActionResult> AddRole(string name)
-        {
-            name = name.Trim();
-            var item = await _roleRepo.FindOneByPredicate(x => x.Name.ToLower() == name.ToLower());
-            if (item == null)
-                return await _roleRepo.Add(new UserRoleTb(name));
-            var res = new ActionResult();
-            res.AddError("This role already exist.");
-            return res;
         }
 
-        public async Task<List<string>> GetAllRoles()
-        {
-            var res = await _roleRepo.GetAll();
-            var rols = from r in res select r.Name;
-            return rols.ToList();
-        }
-
-        public async Task<ActionResult> RemoveRole(string name)
-        {
-            name = name.Trim();
-            var item = await _roleRepo.FindOneByPredicate(x => x.Name.ToLower() == name.ToLower());
-            if (item != null)
-                return await _roleRepo.Delete(item);
-            var res = new ActionResult();
-            res.AddError("This role does not exist.");
-            return res;
-        }
-        public async Task<ActionResult> AddRoleToUser(Guid id, string role)
-        {
-            role = role.Trim().ToLower();
-            var res = new ActionResult();
-            var user = await _userRepo.FindById(id);
-            if (user!=null)
-            {
-                var userRole = await _roleRepo.FindOneByPredicate(x => x.Name.ToLower() == role);
-                {
-                    if (userRole != null)
-                        return await _assignedUserRoleRepo.Add(new AssignedUserRoleTb(user, userRole));
-                    else
-                        res.AddError($"Role ({role})  does not exist.");
-                }
-            }
-            else
-                res.AddError($"User  does not exist.");
-            return res;
-        }
-
-        public async Task<ActionResult> ChangePassword(Guid id, string oldPassword, string newPassword)
+        public async Task<ActionResult> ChangePassword(ChangePasswordDTO changePassword)
         {
             var res = new ActionResult();
-            var user = await _userRepo.FindById(id);
+            var user = await _userRepo.FindById(changePassword.UserId);
             if (user != null)
             {
-                if (_authService.VerifyPassword(oldPassword, user))
+                if (_authService.VerifyPassword(changePassword.OldPassword, user))
                 {
-                    _authService.PasswordManager(newPassword, user);
+                    _authService.PasswordManager(changePassword.NewPassword, user);
                     return await _userRepo.Update(user);
                 }
                 else
@@ -99,13 +42,20 @@ namespace Auth.UserServices
         }
         public async Task<ActionResult> FalseDeleteUser(Guid id)
         {
-            var user = await _userRepo.FindOneByPredicate(x=>x.Id==id);
+            var user = await _userRepo.FindOneByPredicate(x => x.Id == id);
             if (user != null)
             {
                 user.IsDeleted = true;
                 user.DeletedDate = DateTime.UtcNow;
-                var res= await _userRepo.Update(user);
-                await _redis.PublishAsync(new DeleteDTO(user.Id),$"falseDelete{user.AssignedUserRoles.FirstOrDefault()?.Role.ToString()}");
+                var res = await _userRepo.Update(user);
+                if (res.IsSuccess)
+                {
+                    if (user.Role == Role.Client)
+                        // _redisMsg.PublishAsync(user.Id, "falseDeleteClient");
+                        OnFalseDeletedClient(id);
+                    else
+                        OnFalseDeletedLawyer(user.Id);
+                }
                 return res;
             }
             return FailActionResult("User not found.");
@@ -118,8 +68,15 @@ namespace Auth.UserServices
                 if (!user.IsDeleted)
                     return new ActionResult();
                 user.IsDeleted = false;
-                var res= await _userRepo.Update(user);
-                await _redis.PublishAsync(new DeleteDTO(user.Id), $"undoFalseDelete{user.AssignedUserRoles.FirstOrDefault()?.Role.ToString()}");
+                var res = await _userRepo.Update(user);
+                if (res.IsSuccess)
+                {
+                    if (user.Role == Role.Client)
+                        // await _redisMsg.PublishAsync(user.Id, "undoFalseDeleteClient");
+                        OnUndoFalseDeletedClient(user.Id);
+                    else
+                        OnUndoFalseDeletedLawyer(user.Id);
+                }
                 return res;
             }
             return FailActionResult("User not found.");
@@ -129,11 +86,18 @@ namespace Auth.UserServices
             var user = await _userRepo.FindById(id);
             if (user != null)
             {
-                var res= await _userRepo.Delete(user);
-                await _redis.PublishAsync(new DeleteDTO(user.Id), $"delete{user.AssignedUserRoles.FirstOrDefault()?.Role.ToString()}");
+                var res = await _userRepo.Delete(user);
+                if (res.IsSuccess)
+                {
+                    if (user.Role == Role.Client)
+                        // await _redisMsg.PublishAsync(user.Id, "hardDeleteClient");
+                        OnHardDeletedClient(user.Id);
+                    else
+                        OnHardDeletedLawyer(user.Id);
+                }
                 return res;
             }
-           return FailActionResult("User not found.");
+            return FailActionResult("User not found.");
         }
 
         public async Task<int> ForgottenPassword(string email)
@@ -150,76 +114,69 @@ namespace Auth.UserServices
                 return -1;
         }
 
-        public async Task<List<User>> AllUsers()
+        public async Task<List<UserTb>> AllUsers()
         {
-             return ConvertUser(await _userRepo.GetAll());
+            return ConvertUser(await _userRepo.GetAll());
         }
-        public async Task<List<User>> GetFalseDeletedUsers(int days = 0)
+        public async Task<List<UserTb>> GetFalseDeletedUsers(int days = 0)
         {
             return ConvertUser(await _userRepo
-                .IgnorQueryFilter(x=>x.IsDeleted && x.DeletedDate !=null && DateTime.UtcNow.Day- x.DeletedDate.Value.Day>=days));
+                .IgnorQueryFilter(x => x.IsDeleted && x.DeletedDate != null && DateTime.UtcNow.Day - x.DeletedDate.Value.Day >= days));
         }
 
-        public async Task<List<User>> UsersByRoles(string role)
+        public async Task<ActionResult<TokenModel>> Login(LoginDTO login)
         {
-            role = role.Trim().ToLower();
-            var assigned=await _assignedUserRoleRepo.FindByPredicate(x=>x.Role.Name.ToLower()==role);
-            var users = from assig in assigned select assig.User;
-            return ConvertUser(users.ToList());
-        }
-
-        public async Task<ActionResult<TokenModel>> Login(string email, string password)
-        {
-            email = email.Trim().ToLower();
             var res = new ActionResult<TokenModel>();
-            var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == email);
+            var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == login.Email.Trim().ToLower());
             if (user != null)
             {
-                if (_authService.VerifyPassword(password,user))
+                if (_authService.VerifyPassword(login.Password, user))
                 {
-                    res.Entity = await _authService.TokenManager(user);
-                }else
+                    res.Item = await _authService.TokenManager(user);
+                }
+                else
                     res.AddError("Email or password is not correct.");
-            }else
+            }
+            else
                 res.AddError("Email or password is not correct.");
             return res;
         }
 
-        public async Task<ActionResult> NewPassword(string newPassword, string email, int recoveryPin)
+        public async Task<ActionResult> NewPassword(NewPasswordDTO newPassword)
         {
-            email = email.Trim().ToLower();
             var res = new ActionResult();
-            var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == email && x.RecoveryPin==recoveryPin);
+            var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == newPassword.Email.ToLower().Trim() && x.RecoveryPin == newPassword.RecoveryPin);
             if (user != null)
             {
                 if (user.RecoveryPinExpireTime != null && DateTime.UtcNow.Minute - user.RecoveryPinExpireTime.Value.Minute < 30)
                 {
                     user.RecoveryPinExpireTime = null;
-                    _authService.PasswordManager(newPassword, user);
+                    _authService.PasswordManager(newPassword.Password, user);
                     return await _userRepo.Update(user);
                 }
                 else
                     res.AddError("Your time has expired. Go back to 'Forgotten password'");
-            }else
+            }
+            else
                 res.AddError("User not found.");
             return res;
         }
 
-        public async Task<ActionResult> RecoverPassword(string email, int recoverPin)
+        public async Task<ActionResult> RecoverPassword(ConfirmPinDTO confirmPin)
         {
-            email = email.Trim().ToLower();
             var res = new ActionResult();
-            var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == email);
+            var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == confirmPin.Email.ToLower().Trim());
             if (user != null)
             {
-                if (user.RecoveryPin == recoverPin)
+                if (user.RecoveryPin == confirmPin.RecoveryPin)
                 {
                     user.RecoveryPinExpireTime = DateTime.UtcNow;
                 }
                 else
                     user.RecoveryPinExpireTime = null;
-               await _userRepo.Update(user);
-            }else
+                await _userRepo.Update(user);
+            }
+            else
                 res.AddError("User not found.");
 
             return res;
@@ -228,13 +185,14 @@ namespace Auth.UserServices
         public async Task<ActionResult<TokenModel>> RefreshToken(string token)
         {
             var res = new ActionResult<TokenModel>();
-            var user= await _userRepo.FindOneByPredicate(x=>x.RefreshToken==token);
+            var user = await _userRepo.FindOneByPredicate(x => x.RefreshToken == token);
             if (user != null)
             {
-                if (user.RefreshTokenExpireTime!.Value>DateTime.UtcNow)
+                if (user.RefreshTokenExpireTime!.Value > DateTime.UtcNow)
                 {
-                    res.Entity = await _authService.TokenManager(user);
-                }else
+                    res.Item = await _authService.TokenManager(user);
+                }
+                else
                     res.AddError("Session expired.");
             }
             else
@@ -242,30 +200,62 @@ namespace Auth.UserServices
             return res;
         }
 
-        public async Task<ActionResult<TokenModel>> Register(string email, string name, string password)
+        public async Task<ActionResult<TokenModel>> RegisterClient(CreateUserDTO dto)
         {
-            var res = new ActionResult<TokenModel>();
-            email = email.Trim().ToLower();
-            var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == email);
-            if (user == null)
+            var res = dto.ValidateModel();
+            if (!res.IsSuccess)
+                return res;
+            var result = await Register(dto, Role.Client);
+            if (result.IsSuccess)
             {
-                user = new UserTb(name, email);
-                _authService.PasswordManager(password, user);
-                await _userRepo.Add(user);
-                res.Entity = await _authService.TokenManager(user);
+                OnCreateClient(result.Item!);
+                return await GenerateToken(result.Item!);
             }
-            else
-                res.AddError("Email is already in used.");
+            res.AddError(result.Errors());
+            return res;
+        }
+        public async Task<ActionResult<TokenModel>> RegisterLawyer(CreateUserDTO dto)
+        {
+            var res = dto.ValidateModel();
+            if (!res.IsSuccess)
+                return res;
+            var result = await Register(dto, Role.Lawyer);
+            if (result.IsSuccess)
+            {
+                OnCreatedLawyer(result.Item!);
+                return await GenerateToken(result.Item!);
+            }
+            res.AddError(result.Errors());
             return res;
         }
 
-        public async Task<ActionResult> RemoveRoleFromUser(Guid id, string role)
+        private async Task<ActionResult<TokenModel>> GenerateToken(UserTb user)
         {
-            role = role.Trim().ToLower();
-            var assignRole=await _assignedUserRoleRepo.FindOneByPredicate(x=>x.User.Id == id && x.Role.Name==role);
-            if (assignRole != null)
-                return await _assignedUserRoleRepo.Delete(assignRole);
-            return FailActionResult($"This user does not have role ({role})");
+            var res = new ActionResult<TokenModel>();
+            res.Item = await _authService.TokenManager(user);
+            return res;
+        }
+
+        private async Task<ActionResult<UserTb>> Register(CreateUserDTO dto, Role role)
+        {
+
+
+            var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == dto.Email.ToLower().Trim());
+            if (user == null)
+            {
+                user = new UserTb()
+                {
+                    Role = role,
+                    Email = dto.Email,
+                    FirstName = dto.FirstName,
+                    Gender = dto.Gender,
+                    DOB = dto.DOB
+                };
+                _authService.PasswordManager(dto.Password, user);
+                return await _userRepo.AddAndReturn(user);
+            }
+            else
+                return FailActionResult<UserTb>("Email is already in used.");
         }
 
         private static ActionResult FailActionResult(string error)
@@ -274,10 +264,16 @@ namespace Auth.UserServices
             res.AddError(error);
             return res;
         }
-
-        private static List<User> ConvertUser(List<UserTb> users)
+        private static ActionResult<U> FailActionResult<U>(string error) where U : class
         {
-            List<User> result = new();
+            var res = new ActionResult<U>();
+            res.AddError(error);
+            return res;
+        }
+
+        private static List<UserTb> ConvertUser(List<UserTb> users)
+        {
+            List<UserTb> result = new();
             foreach (var user in users)
             {
                 result.Add(user);
@@ -292,7 +288,38 @@ namespace Auth.UserServices
 
         public async Task<ActionResult> HardDeleteRange(List<Guid> ids)
         {
-           return await _userRepo.DeleteRange(ids);
+            return await _userRepo.DeleteRange(ids);
+        }
+
+        public async Task<ActionResult> UpdateUser(UpdateUserDTO user)
+        {
+            var res = await _userRepo.FindById(user.Id);
+            if (res != null)
+            {
+                res.DOB = user.DOB;
+                res.Gender = user.Gender;
+                res.LastName = user.LastName;
+                res.MiddleName = user.MiddleName;
+                res.PhoneNo = user.PhoneNo;
+                return await _userRepo.Update(res);
+            }
+            else
+                return FailActionResult("User is not found.");
+        }
+
+        public async Task<ActionResult> UpdateLocation(UpdateLocationDTO locationDto)
+        {
+            var res = await _userRepo.FindById(locationDto.Id);
+            if (res != null)
+            {
+                res.Location = locationDto.Location;
+                res.State = locationDto.State;
+                return await _userRepo.Update(res);
+            }
+            else
+                return FailActionResult("User is not found.");
         }
     }
+
+
 }

@@ -1,21 +1,17 @@
-﻿using LCS.Domain.Models;
-using LCS.Domain.Repositories;
+﻿using Law.Application.Helpers;
+using Law.Application.Response;
+using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace LCS.Application.Queries.ClientQ
+namespace Law.Application.Queries.Client
 {
-    public record AllClientQuery:IQuery<List<Client>>;
+    public record AllClientQuery : IQuery<List<ClientResponse>>;
 
-    public class AllClientHandler : IQueryHandler<AllClientQuery, List<Client>>
+    public class AllClientHandler : IQueryHandler<AllClientQuery, List<ClientResponse>>
     {
-        public async Task<List<Client>> HandlerAsync(AllClientQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<List<ClientResponse>> HandlerAsync(AllClientQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
-            return repo.ClientRepo.Convertlist(await repo.ClientRepo.GetAll());
+            return (await repo.ClientRepo.GetAll()).ClientListConv();
         }
     }
 }

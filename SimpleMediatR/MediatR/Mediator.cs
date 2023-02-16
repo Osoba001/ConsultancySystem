@@ -1,12 +1,7 @@
-﻿using LCS.Domain.Repositories;
-using LCS.Domain.Response;
-using SimpleMediatR.MediatRContract;
+﻿using SimpleMediatR.MediatRContract;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Utilities.ActionResponse;
+using Law.Domain.Repositories;
 
 namespace SimpleMediatR.MediatR
 {
@@ -23,17 +18,22 @@ namespace SimpleMediatR.MediatR
             where TCommandHandler : ICommandHandler<TCommand>
             where TCommand : ICommand
         {
-            var handler=(TCommandHandler)Activator.CreateInstance(typeof(TCommandHandler));
+            var handler=(TCommandHandler)Activator.CreateInstance(typeof(TCommandHandler))!;
             return handler.HandleAsync(command, RepoWrapper);
         }
-
-        public Task<TResp> SendQueryAsync<TQueryHandler, TQuery, TResp>(TQuery query)
-            where TQueryHandler : IQueryHandler<TQuery,TResp>
-            where TQuery : IQuery<TResp>
+        public Task<TResp> QueryAsync<TQueryHandler, TQuery, TResp>(TQuery query)
+           where TQueryHandler : IQueryHandler<TQuery,TResp>
+           where TQuery : IQuery<TResp>
+        {
+            var handler = (TQueryHandler)Activator.CreateInstance(typeof(TQuery))!;
+            return handler.HandlerAsync(query, RepoWrapper);
+        }
+        public Task<ActionResult> QueryAsync<TQueryHandler, TQuery>(TQuery query)
+            where TQueryHandler : IQueryHandler<TQuery>
+            where TQuery : IQuery
         {
             var handler=(TQueryHandler)Activator.CreateInstance(typeof(TQuery))!;
             return handler.HandlerAsync(query, RepoWrapper);    
         }
-
     }
 }

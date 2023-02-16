@@ -1,15 +1,9 @@
-﻿using LCS.Domain.Entities;
-using LCS.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Law.Domain.Models;
 
-namespace LCS.Domain.Repositories
+namespace Law.Domain.Repositories
 {
-    public interface IDepartmentRepo: IBaseRepo<DepartmentTB>
+    public interface IDepartmentRepo : IBaseRepo<Department>
     {
-        List<Department> Convertlist(List<DepartmentTB> listTB);
+
     }
 }

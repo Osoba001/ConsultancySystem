@@ -37,24 +37,27 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "ActionResponse/1.0.0": {
+      "Law.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Utilities": "1.0.0"
+        },
         "compile": {
-          "bin/placeholder/ActionResponse.dll": {}
+          "bin/placeholder/Law.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ActionResponse.dll": {}
+          "bin/placeholder/Law.Domain.dll": {}
         }
       },
-      "LCS.Domain/1.0.0": {
+      "Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/LCS.Domain.dll": {}
+          "bin/placeholder/Utilities.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LCS.Domain.dll": {}
+          "bin/placeholder/Utilities.dll": {}
         }
       }
     }
@@ -118,22 +121,22 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "ActionResponse/1.0.0": {
+    "Law.Domain/1.0.0": {
       "type": "project",
-      "path": "../ActionResponse/ActionResponse.csproj",
-      "msbuildProject": "../ActionResponse/ActionResponse.csproj"
+      "path": "../LCS.Domain/Law.Domain.csproj",
+      "msbuildProject": "../LCS.Domain/Law.Domain.csproj"
     },
-    "LCS.Domain/1.0.0": {
+    "Utilities/1.0.0": {
       "type": "project",
-      "path": "../LCS.Domain/LCS.Domain.csproj",
-      "msbuildProject": "../LCS.Domain/LCS.Domain.csproj"
+      "path": "../Utilities/Utilities.csproj",
+      "msbuildProject": "../Utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ActionResponse >= 1.0.0",
-      "LCS.Domain >= 1.0.0",
-      "Microsoft.Extensions.DependencyInjection >= 7.0.0"
+      "Law.Domain >= 1.0.0",
+      "Microsoft.Extensions.DependencyInjection >= 7.0.0",
+      "Utilities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -163,11 +166,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\ActionResponse\\ActionResponse.csproj": {
-              "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\ActionResponse\\ActionResponse.csproj"
+            "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\Law.Domain.csproj": {
+              "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\Law.Domain.csproj"
             },
-            "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\LCS.Domain.csproj": {
-              "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\LCS.Domain.csproj"
+            "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\Utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\Utilities\\Utilities.csproj"
             }
           }
         }

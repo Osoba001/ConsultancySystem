@@ -1,7 +1,9 @@
-﻿using LCS.Domain.Models;
-
-namespace SimpleMediatR.MediatRContract
+﻿namespace SimpleMediatR.MediatRContract
 {
+    public interface IQuery
+    {
+
+    }
     public interface IQuery<TResp>
     {
 

@@ -1,15 +1,12 @@
-﻿using LCS.Domain.Repositories;
-using LCS.Domain.Response;
+﻿using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
+using Utilities.ActionResponse;
 
-namespace LCS.Application.Commands.Lawyer
+namespace Law.Application.Commands.Lawyer
 {
     public record VerifyLawyer(Guid Id) : ICommand
     {
-        public ActionResult Validate()
-        {
-            return new ActionResult();
-        }
+        public ActionResult Validate() => new();
     }
 
     public class VerifyLawyerHandler : ICommandHandler<VerifyLawyer>

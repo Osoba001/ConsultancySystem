@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kZeV2VoZ8+/w7mHCeCHo/QUgqhJCUiv29ktUvAKfUYf+h9VIKeMhUFJdpQLLUmzv2oyvh+S2hg/WibQ7Z6v8pg==",
+  "dgSpecHash": "1Sqo26Xx64aIBo9MP3marUdrhaPFvx3e75ahP5oYXQ584Dpyla3zNK9Hcg0wNWeTiGXKXq1Xu00rH/Uxq6alXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\LCS.Domain.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\Law.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

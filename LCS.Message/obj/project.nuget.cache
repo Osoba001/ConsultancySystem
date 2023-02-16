@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5wdKtc+ig1u+VDiH2xMbqOc9VgB5M1McakptKmM4BqXMpsVr478HZbHLnI+G2lzURQUzWjf4qZ+VJ8G8unPomA==",
+  "dgSpecHash": "v4oHEQymhAm3bwrzYAHjTxzBNENk7Ai2wdh7/OotGmw6c6tMAAw5rM9qFHvSuHU407PDxS3crzHYMRK/mEgq6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Message\\LCS.Message.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Message\\RedisServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\7.0.2\\microsoft.extensions.caching.stackexchangeredis.7.0.2.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",

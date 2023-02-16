@@ -1,4 +1,4 @@
-﻿using LCS.Domain.Response;
+﻿using Utilities.ActionResponse;
 
 namespace SimpleMediatR.MediatRContract
 {
@@ -8,10 +8,13 @@ namespace SimpleMediatR.MediatRContract
             where TCommand : ICommand
             where TCommandHandler : ICommandHandler<TCommand>;
 
-        Task<TResp> SendQueryAsync<TQueryHandler, TQuery, TResp>(TQuery query)
+        Task<ActionResult> QueryAsync<TQueryHandler, TQuery>(TQuery query)
+            where TQuery : IQuery
+            where TQueryHandler : IQueryHandler<TQuery>;
+
+        Task<TResp> QueryAsync<TQueryHandler, TQuery,TResp>(TQuery query)
             where TQuery : IQuery<TResp>
             where TQueryHandler : IQueryHandler<TQuery,TResp>;
-            
         IServiceProvider ServiceProvider { get; }
     }
 

@@ -8,9 +8,9 @@
     ".NETCoreApp,Version=v6.0": {
       "SimpleMediatR/1.0.0": {
         "dependencies": {
-          "ActionResponse": "1.0.0",
-          "LCS.Domain": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "7.0.0"
+          "Law.Domain": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0",
+          "Utilities": "1.0.0"
         },
         "runtime": {
           "SimpleMediatR.dll": {}
@@ -35,14 +35,17 @@
           }
         }
       },
-      "ActionResponse/1.0.0": {
+      "Law.Domain/1.0.0": {
+        "dependencies": {
+          "Utilities": "1.0.0"
+        },
         "runtime": {
-          "ActionResponse.dll": {}
+          "Law.Domain.dll": {}
         }
       },
-      "LCS.Domain/1.0.0": {
+      "Utilities/1.0.0": {
         "runtime": {
-          "LCS.Domain.dll": {}
+          "Utilities.dll": {}
         }
       }
     }
@@ -67,12 +70,12 @@
       "path": "microsoft.extensions.dependencyinjection.abstractions/7.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
     },
-    "ActionResponse/1.0.0": {
+    "Law.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "LCS.Domain/1.0.0": {
+    "Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

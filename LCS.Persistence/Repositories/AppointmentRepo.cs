@@ -1,14 +1,12 @@
-﻿using LCS.Domain.Entities;
-using LCS.Domain.Models;
-using LCS.Domain.Repositories;
-using LCS.Persistence.Data;
+﻿using Law.Domain.Models;
+using Law.Domain.Repositories;
+using Law.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq.Expressions;
 
-namespace LCS.Persistence.Repositories
+namespace Law.Persistence.Repositories
 {
-    public class AppointmentRepo : BaseRepo<AppointmentTB>, IAppointmentRepo
+    public class AppointmentRepo : BaseRepo<Appointment>, IAppointmentRepo
     {
         private readonly LCSDbContext _context;
 
@@ -16,20 +14,20 @@ namespace LCS.Persistence.Repositories
         {
             _context = context;
         }
-        public override async Task<List<AppointmentTB>> FindByPredicate(Expression<Func<AppointmentTB, bool>> predicate, bool IsEagerLoad = false)
+        public override async Task<List<Appointment>> FindByPredicate(Expression<Func<Appointment, bool>> predicate, bool IsEagerLoad = false)
         {
-            if(!IsEagerLoad)
+            if (!IsEagerLoad)
                 return await _context.AppointmentTB
                     .Where(predicate)
-                    .Include(x=>x.Lawyer)
-                    .Include(x=>x.Client)
-                    .Include(x=>x.TimeSlot)
-                    .Include(x=>x.Language)
+                    .Include(x => x.Lawyer)
+                    .Include(x => x.Client)
+                    .Include(x => x.TimeSlot)
+                    .Include(x => x.Language)
                     .ToListAsync();
 
             return await base.FindByPredicate(predicate, IsEagerLoad);
         }
-        public async override Task<AppointmentTB?> FindOneByPredicate(Expression<Func<AppointmentTB, bool>> predicate, bool IsEagerLoad = false)
+        public async override Task<Appointment?> FindOneByPredicate(Expression<Func<Appointment, bool>> predicate, bool IsEagerLoad = false)
         {
             if (!IsEagerLoad)
                 return await _context.AppointmentTB
@@ -41,7 +39,7 @@ namespace LCS.Persistence.Repositories
                     .FirstOrDefaultAsync();
             return await base.FindOneByPredicate(predicate, IsEagerLoad);
         }
-        public async override Task<AppointmentTB?> GetById(Guid id, bool IsEagerLoad = false)
+        public async override Task<Appointment?> GetById(Guid id, bool IsEagerLoad = false)
         {
             if (!IsEagerLoad)
                 return await _context.AppointmentTB
@@ -51,16 +49,6 @@ namespace LCS.Persistence.Repositories
                     .Include(x => x.Language)
                     .FirstAsync();
             return await base.GetById(id, IsEagerLoad);
-        }
-
-        public List<Appointment> Convertlist(List<AppointmentTB> listTB)
-        {
-            var res=new List<Appointment>();
-            foreach (var item in listTB)
-            {
-                res.Add(item);
-            }
-            return res;
         }
     }
 }

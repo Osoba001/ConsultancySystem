@@ -1,5 +1,5 @@
-﻿using LCS.Domain.Repositories;
-using LCS.Domain.Response;
+﻿using Law.Domain.Repositories;
+using Utilities.ActionResponse;
 
 namespace SimpleMediatR.MediatRContract
 {

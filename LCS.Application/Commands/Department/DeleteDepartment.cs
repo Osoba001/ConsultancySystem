@@ -1,16 +1,14 @@
-﻿using LCS.Domain.Repositories;
-using LCS.Domain.Response;
+﻿using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
+using Utilities.ActionResponse;
 
-namespace LCS.Application.Commands.Department
+namespace Law.Application.Commands.DepartmentC
 {
     public record DeleteDepartment(Guid Id) : ICommand
     {
-        public ActionResult Validate()
-        {
-            return new ActionResult();
-        }
+        public ActionResult Validate() => new();
     }
+
 
     public class DeleteDepartmentHandler : ICommandHandler<DeleteDepartment>
     {

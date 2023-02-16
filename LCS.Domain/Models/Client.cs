@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LCS.Domain.Models
+namespace Law.Domain.Models
 {
-    public class Client:Person
+    public class Client : Person
     {
         public Client()
         {

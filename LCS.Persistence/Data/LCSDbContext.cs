@@ -1,43 +1,31 @@
-﻿using LCS.Domain.Entities;
-using LCS.Domain.Response;
+﻿using Law.Domain.Models;
+using Law.Persistence.EntityConfig;
 using LCS.Persistence.EntityConfig;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Utilities.ActionResponse;
 
-namespace LCS.Persistence.Data
+namespace Law.Persistence.Data
 {
-    public class LCSDbContext:DbContext
+    public class LCSDbContext : DbContext
     {
 
-        public LCSDbContext(DbContextOptions<LCSDbContext> options):base(options)
+        public LCSDbContext(DbContextOptions<LCSDbContext> options) : base(options)
         {
         }
-        public DbSet<LawyerTB> LawyerTB { get; set; }
-        public DbSet<ClientTB> ClientTB { get; set; }
-        public DbSet<AppointmentTB> AppointmentTB { get; set; }
-        public DbSet<DepartmentTB> DepartmentTB { get; set; }
-        public DbSet<LawyerDepartmentTB> LawyerDepartmentTB { get; set; }
-        public DbSet<LanguageTB> LanguageTB { get; set; }
-        public DbSet<LawyerLanguageTB> LawyerLanguageTB { get; set; }
-        public DbSet<TimeSlotTB> TimeSlotTB { get; set; }
-        public DbSet<WorkingSlotTB> WorkingSlot { get; set; }
+        public DbSet<Lawyer> LawyerTB { get; set; }
+        public DbSet<Client> ClientTB { get; set; }
+        public DbSet<Appointment> AppointmentTB { get; set; }
+        public DbSet<Department> DepartmentTB { get; set; }
+        public DbSet<TimeSlot> TimeSlotTB { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            new AppointmentConfig().Configure(modelBuilder.Entity<AppointmentTB>());
-            new ClientConfig().Configure(modelBuilder.Entity<ClientTB>());
-            new DepartmentConfig().Configure(modelBuilder.Entity<DepartmentTB>());
-            new LanguageConfig().Configure(modelBuilder.Entity<LanguageTB>());
-            new LawyerConfig().Configure(modelBuilder.Entity<LawyerTB>());
-            new LawyerDepartmentConfig().Configure(modelBuilder.Entity<LawyerDepartmentTB>());
-            new LawyerLanguageConfig().Configure(modelBuilder.Entity<LawyerLanguageTB>());
-            new WorkSlotConfig().Configure(modelBuilder.Entity<WorkingSlotTB>());
-            new TimeSlotConfig().Configure(modelBuilder.Entity<TimeSlotTB>());
-            
+            new AppointmentConfig().Configure(modelBuilder.Entity<Appointment>());
+            new ClientConfig().Configure(modelBuilder.Entity<Client>());
+            new DepartmentConfig().Configure(modelBuilder.Entity<Department>());
+            new LawyerConfig().Configure(modelBuilder.Entity<Lawyer>());
+            new TimeSlotConfig().Configure(modelBuilder.Entity<TimeSlot>());
+
         }
         public async Task<ActionResult> SaveActionAsync()
         {
@@ -52,9 +40,9 @@ namespace LCS.Persistence.Data
             }
             return res;
         }
-        public async Task<ActionResult<T>> SaveActionAsync<T>(T entity) where T : class 
+        public async Task<ActionResult<T>> SaveActionAsync<T>(T entity) where T : class
         {
-            var res=new ActionResult<T>();
+            var res = new ActionResult<T>();
             try
             {
                 await SaveChangesAsync();

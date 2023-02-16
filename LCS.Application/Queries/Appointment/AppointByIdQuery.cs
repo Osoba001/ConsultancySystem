@@ -1,24 +1,26 @@
-﻿using LCS.Domain.Models;
-using LCS.Domain.Repositories;
+﻿using Law.Application.Response;
+using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Utilities.ActionResponse;
 
-namespace LCS.Application.Queries.AppointmentQ
+namespace Law.Application.Queries.Appointment
 {
-    public record AppointByIdQuery(Guid Id):IQuery<Appointment?>;
+    public record AppointByIdQuery(Guid Id) : IQuery;
 
-    public record AppointByIdHandler : IQueryHandler<AppointByIdQuery, Appointment?>
+    public record AppointByIdHandler : IQueryHandler<AppointByIdQuery>
     {
-        public async Task<Appointment?> HandlerAsync(AppointByIdQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandlerAsync(AppointByIdQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
-            var res= await repo.AppointmentRepo.GetById(query.Id);
-            if(res == null) return null;
-            Appointment appointment = res;
-            return appointment;
+            var resp = new ActionResult();
+            var res = await repo.AppointmentRepo.GetById(query.Id);
+            if (res == null)
+                resp.AddError("Record is not found.");
+            else
+            {
+                AppointmentResponse app = res;
+                resp.data = app;
+            }
+            return resp;
         }
     }
 }

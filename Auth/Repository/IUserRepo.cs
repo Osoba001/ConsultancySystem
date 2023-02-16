@@ -1,16 +1,11 @@
-﻿using Auth.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
+using User.Application.Entities;
 
-namespace Auth.Repository
+namespace User.Application.Repository
 {
-    public interface IUserRepo:IBaseRepo<UserTb>
+    public interface IUserRepo : IBaseRepo<UserTb>
     {
         Task<List<UserTb>> IgnorQueryFilter(Expression<Func<UserTb, bool>> predicate);
-        
+
     }
 }

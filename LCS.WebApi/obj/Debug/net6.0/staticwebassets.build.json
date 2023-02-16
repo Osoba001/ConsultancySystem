@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "jYGoplGuJHsmHFN96mX1r60ikj83ztnyb4uZjAkT/iw=",
-  "Source": "LCS.WebApi",
-  "BasePath": "_content/LCS.WebApi",
+  "Hash": "dlUBwkaWR9ujl8Yg8HJrILM5XYbqD7XdB3R88ppwdAI=",
+  "Source": "ConsultancySystem.WebApi",
+  "BasePath": "_content/ConsultancySystem.WebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

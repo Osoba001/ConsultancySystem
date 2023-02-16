@@ -1,18 +1,12 @@
-﻿using LCS.Domain.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Utilities.ActionResponse;
 
-namespace LCS.Domain.Repositories
+namespace Law.Domain.Repositories
 {
     public interface IRepoWrapper
     {
         IAppointmentRepo AppointmentRepo { get; }
         IClientRepo ClientRepo { get; }
         IDepartmentRepo DepartmentRepo { get; }
-        ILanguageRepo LanguageRepo { get; }
         ILawyerRepo LawyerRepo { get; }
         ITimeSlotRepo TimeSlotRepo { get; }
         ActionResult FailedAction(string message);

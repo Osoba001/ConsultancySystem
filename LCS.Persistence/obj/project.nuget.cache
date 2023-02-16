@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ldtjOjiVNKoP+5YwWbB/vJctYQBYwDsaKqSn8bLtYALH48YqclN62u1RFMz490j+rUPd2VJv3R6UIxoLP+D8Rg==",
+  "dgSpecHash": "95U+/VRpV9uhuw9FuwSycY9K0B1yIT5YSW01uFLdvXctjVB9fig0VAZJgm+GEEdMefknZszCgALJ/EdMs2Uzag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Persistence\\LCS.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Persistence\\Law.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

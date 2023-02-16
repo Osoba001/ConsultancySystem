@@ -1156,14 +1156,27 @@
           }
         }
       },
-      "LCS.Domain/1.0.0": {
+      "Law.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Law.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Law.Domain.dll": {}
+        }
+      },
+      "Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/LCS.Domain.dll": {}
+          "bin/placeholder/Utilities.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LCS.Domain.dll": {}
+          "bin/placeholder/Utilities.dll": {}
         }
       }
     }
@@ -3511,15 +3524,20 @@
         "version.txt"
       ]
     },
-    "LCS.Domain/1.0.0": {
+    "Law.Domain/1.0.0": {
       "type": "project",
-      "path": "../LCS.Domain/LCS.Domain.csproj",
-      "msbuildProject": "../LCS.Domain/LCS.Domain.csproj"
+      "path": "../LCS.Domain/Law.Domain.csproj",
+      "msbuildProject": "../LCS.Domain/Law.Domain.csproj"
+    },
+    "Utilities/1.0.0": {
+      "type": "project",
+      "path": "../Utilities/Utilities.csproj",
+      "msbuildProject": "../Utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "LCS.Domain >= 1.0.0",
+      "Law.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.2"
@@ -3531,9 +3549,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Persistence\\LCS.Persistence.csproj",
-      "projectName": "LCS.Persistence",
-      "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Persistence\\LCS.Persistence.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Persistence\\Law.Persistence.csproj",
+      "projectName": "Law.Persistence",
+      "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Persistence\\Law.Persistence.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Persistence\\obj\\",
       "projectStyle": "PackageReference",
@@ -3552,8 +3570,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\LCS.Domain.csproj": {
-              "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\LCS.Domain.csproj"
+            "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\Law.Domain.csproj": {
+              "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Domain\\Law.Domain.csproj"
             }
           }
         }

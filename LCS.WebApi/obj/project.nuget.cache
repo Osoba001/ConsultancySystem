@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gOJKzsfcKH+uDn5X7zieRdH/wn1h0osuYkr8/KkWxb5es9szZKAy06+a7L1nSUCrbvxk2EmosPscuuUYOb3hPQ==",
+  "dgSpecHash": "wD3T6IH+FWOWSvxZ/+H/e5GXSv/hYqQAMrY1PrZJvwt9/Eqn/GmwSJrBn8xFAhZFFY4oFAwsVH8d/YAvxpSTaA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.WebApi\\LCS.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.WebApi\\ConsultancySystem.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

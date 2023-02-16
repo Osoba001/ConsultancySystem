@@ -1,25 +1,26 @@
-﻿using LCS.Application.Queries.AppointmentQ;
-using LCS.Domain.Models;
-using LCS.Domain.Repositories;
+﻿using Law.Application.Response;
+using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Utilities.ActionResponse;
 
-namespace LCS.Application.Queries.DepartmentQ
+namespace Law.Application.Queries.Department
 {
-    public record DepartmentByIdQuery(Guid Id):IQuery<Department?>;
+    public record DepartmentByIdQuery(Guid Id) : IQuery;
 
-    public record DepartmentByIdHandler : IQueryHandler<DepartmentByIdQuery, Department?>
+    public record DepartmentByIdHandler : IQueryHandler<DepartmentByIdQuery>
     {
-        public async Task<Department?> HandlerAsync(DepartmentByIdQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandlerAsync(DepartmentByIdQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
+            ActionResult resp = new();
             var res = await repo.DepartmentRepo.GetById(query.Id);
-            if (res == null) return null;
-            Department d = res;
-            return d;
+            if (res == null)
+                resp.AddError("Record is not found.");
+            else
+            {
+                DepartmentResponse r = res;
+                resp.data = r;
+            }
+            return resp;
         }
     }
 }

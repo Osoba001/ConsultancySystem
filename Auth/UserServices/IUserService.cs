@@ -1,28 +1,28 @@
-﻿using Auth.Models;
-using Auth.Response;
+﻿using User.Application.DTO;
+using User.Application.Entities;
+using Utilities.ActionResponse;
 
 namespace Auth.UserServices
 {
     public interface IUserService
     {
-        Task<ActionResult<TokenModel>> Register(string email, string name,  string password);
-        Task<ActionResult<TokenModel>> Login(string email, string password);
+        
+        Task<ActionResult<TokenModel>> RegisterClient(CreateUserDTO user);
+        Task<ActionResult<TokenModel>> RegisterLawyer(CreateUserDTO user);
+        Task<ActionResult<TokenModel>> Login(LoginDTO login);
+        Task<ActionResult> UpdateUser(UpdateUserDTO user);
+        Task<ActionResult> UpdateLocation(UpdateLocationDTO locationDto);
         Task<int> ForgottenPassword(string email);
-        Task<ActionResult> RecoverPassword(string email,int recoverPin);
-        Task<ActionResult> NewPassword(string newPassword, string email, int recoverPin);
-        Task<ActionResult> ChangePassword(Guid id, string oldPassword, string newPassword);
+        Task<ActionResult> RecoverPassword(ConfirmPinDTO confirmPin);
+        Task<ActionResult> NewPassword(NewPasswordDTO newPassword);
+        Task<ActionResult> ChangePassword(ChangePasswordDTO changePassword);
         Task<ActionResult<TokenModel>> RefreshToken(string token);
         Task<ActionResult> HardDeleteUser(Guid id);
         Task<ActionResult> FalseDeleteUser(Guid id);
-        Task<List<User>> UsersByRoles(string role);
-        Task<List<User>> AllUsers();
-        Task<List<User>> GetFalseDeletedUsers(int days =0);
-        Task<ActionResult> AddRoleToUser(Guid id,string role);
-        Task<ActionResult> RemoveRoleFromUser(Guid id, string role);
+        Task<List<UserTb>> AllUsers();
+        Task<List<UserTb>> GetFalseDeletedUsers(int days =0);
         Task<ActionResult> UndoFalseDelete(Guid id);
         Task<ActionResult> HardDeleteRange(List<Guid> ids);
-        Task<ActionResult> AddRole(string name);
-        Task<ActionResult> RemoveRole(string name);
-        Task<List<string>> GetAllRoles();
+
     }
 }

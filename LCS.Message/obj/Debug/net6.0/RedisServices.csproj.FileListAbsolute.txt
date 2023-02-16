@@ -1,0 +1,12 @@
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\bin\Debug\net6.0\RedisServices.deps.json
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\bin\Debug\net6.0\RedisServices.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\bin\Debug\net6.0\RedisServices.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\obj\Debug\net6.0\RedisServices.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\obj\Debug\net6.0\RedisServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\obj\Debug\net6.0\RedisServices.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\obj\Debug\net6.0\RedisServices.AssemblyInfo.cs
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\obj\Debug\net6.0\RedisServices.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\obj\Debug\net6.0\RedisServices.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\obj\Debug\net6.0\refint\RedisServices.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\obj\Debug\net6.0\RedisServices.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\LCS.Message\obj\Debug\net6.0\ref\RedisServices.dll

@@ -1,13 +1,8 @@
-﻿using Auth.Entities;
-using Auth.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
+using User.Application.Entities;
+using Utilities.ActionResponse;
 
-namespace Auth.Repository
+namespace User.Application.Repository
 {
     public interface IBaseRepo<T> where T : EntityBase
     {

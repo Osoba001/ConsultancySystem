@@ -1,9 +1,10 @@
-using Auth.Data;
-using Auth.Models;
-using LCS.Persistence.Data;
+using Law.Persistence.Data;
 using LCS.WebApi.CustomMiddlewares;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using ShareServices.Models;
+using User.Application.DTO;
+using User.Persistence.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,7 @@ builder.Services.AddSqlServer<AuthDbContext>(config.GetConnectionString("AuthCon
     op.EnableRetryOnFailure(2);
 });
 builder.Services.Configure<AuthConfigModel>(config.GetSection(nameof(AuthConfigModel)));
+builder.Services.Configure<RedisConfigModel>(config.GetSection(nameof(RedisConfigModel)));
 builder.Services.AddScoped<IMiddleware, ExceptionHandlerMiddleware>();
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
@@ -63,7 +65,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddStackExchangeRedisCache(opt =>
 {
     opt.Configuration = config.GetConnectionString("Redis");
-    opt.InstanceName = "LCSWebApi_";
+    opt.InstanceName = "ConsultancyWebApi_";
 });
 
 var logger = new LoggerConfiguration()

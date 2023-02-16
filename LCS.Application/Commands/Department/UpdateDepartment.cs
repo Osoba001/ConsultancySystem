@@ -1,15 +1,15 @@
-﻿using LCS.Application.Validations;
-using LCS.Domain.Repositories;
-using LCS.Domain.Response;
+﻿using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
+using Utilities.ActionResponse;
+using Utilities.RegexFormatValidations;
 
-namespace LCS.Application.Commands.Department
+namespace Law.Application.Commands.DepartmentC
 {
     public record UpdateDepartment(Guid Id, string Description) : ICommand
     {
         public ActionResult Validate()
         {
-            var res=new ActionResult();
+            var res = new ActionResult();
             if (!Description.StringMaxLength(200))
             {
                 res.AddError("Department description is to long.");

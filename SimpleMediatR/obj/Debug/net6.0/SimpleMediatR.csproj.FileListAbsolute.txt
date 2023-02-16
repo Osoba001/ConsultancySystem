@@ -10,8 +10,8 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\obj\Deb
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\obj\Debug\net6.0\refint\SimpleMediatR.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\obj\Debug\net6.0\SimpleMediatR.pdb
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\obj\Debug\net6.0\ref\SimpleMediatR.dll
-C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\bin\Debug\net6.0\LCS.Domain.dll
-C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\bin\Debug\net6.0\LCS.Domain.pdb
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\obj\Debug\net6.0\SimpleMediatR.csproj.CopyComplete
-C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\bin\Debug\net6.0\ActionResponse.dll
-C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\bin\Debug\net6.0\ActionResponse.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\bin\Debug\net6.0\Law.Domain.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\bin\Debug\net6.0\Law.Domain.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\bin\Debug\net6.0\Utilities.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\SimpleMediatR\bin\Debug\net6.0\Utilities.pdb

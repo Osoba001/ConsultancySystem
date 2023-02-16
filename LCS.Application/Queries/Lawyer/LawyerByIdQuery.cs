@@ -1,25 +1,26 @@
-﻿using LCS.Domain.Models;
-using LCS.Domain.Repositories;
+﻿using Law.Application.Response;
+using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Utilities.ActionResponse;
 
-namespace LCS.Application.Queries.LawyerQ
+namespace Law.Application.Queries.Lawyer
 {
-    public record LawyerByIdQuery(Guid Id):IQuery<Lawyer?>;
+    public record LawyerByIdQuery(Guid Id) : IQuery;
 
-    public class LawyerByIdQueryHandler : IQueryHandler<LawyerByIdQuery, Lawyer?>
+    public class LawyerByIdQueryHandler : IQueryHandler<LawyerByIdQuery>
     {
-        public async Task<Lawyer?> HandlerAsync(LawyerByIdQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandlerAsync(LawyerByIdQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
+            ActionResult resp = new();
             var lawyer = await repo.LawyerRepo.GetById(query.Id);
-            if (lawyer == null) 
-                return null;
-            Lawyer lyr= lawyer;
-            return lyr;
+            if (lawyer == null)
+                resp.AddError("Record is not found.");
+            else
+            {
+                LawyerResponse res = lawyer;
+                resp.data = res;
+            }
+            return resp;
 
         }
     }

@@ -1,26 +1,22 @@
-﻿using LCS.Domain.Entities;
+﻿using Law.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 
-namespace LCS.Persistence.EntityConfig
+namespace LCS.Persistence.EntityConfig;
+
+public class LawyerConfig : IEntityTypeConfiguration<Lawyer>
 {
-    public class LawyerConfig : IEntityTypeConfiguration<LawyerTB>
+    public void Configure(EntityTypeBuilder<Lawyer> builder)
     {
-        public void Configure(EntityTypeBuilder<LawyerTB> builder)
-        {
-            builder.HasMany(x => x.Appointments).WithOne(x => x.Lawyer);
-            builder.HasMany(x => x.WorkingSlot);
-            builder.HasMany(x => x.Languages);
-            builder.HasMany(x => x.JoinedDepartments);
-            builder.Property(x=>x.FirstName).HasMaxLength(100);
-            builder.Property(x=>x.LastName).HasMaxLength(100);
-            builder.Property(x=>x.PhoneNo).HasMaxLength(25);
-            builder.HasQueryFilter(x => x.IsDelete == false);
-        }
+        builder.HasMany(x => x.Appointments).WithOne(x => x.Lawyer);
+        builder.HasMany(x => x.OnlineWorkingSlots);
+        builder.Property(x => x.Languages).HasConversion(
+            v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
+            v => JsonSerializer.Deserialize<List<string>>(v,(JsonSerializerOptions)null));
+        builder.HasMany(x => x.Departments).WithMany(x=>x.Lawyers);
+        builder.Property(x=>x.FirstName).HasMaxLength(100);
+        builder.Property(x=>x.PhoneNo).HasMaxLength(25);
+        builder.HasQueryFilter(x => x.IsDelete == false);
     }
 }

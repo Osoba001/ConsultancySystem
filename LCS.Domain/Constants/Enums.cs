@@ -4,17 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LCS.Domain.Constants
+namespace Law.Domain.Constants
 {
     public enum Star
     {
-        Zero,One, Two, Three,Four,Five
+        Zero, One, Two, Three, Four, Five
     }
 
-    public enum Gender
-    {
-        Male, Female
-    }
 
     public enum AppointmentType
     {

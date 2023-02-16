@@ -1,23 +1,40 @@
-﻿using LCS.Domain.Repositories;
-using LCS.Domain.Response;
+﻿using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
+using Utilities.ActionResponse;
 
-namespace LCS.Application.Commands.Lawyer
+namespace Law.Application.Commands.Lawyer
 {
     public record AddLawyerToDepartment(Guid LawyerId, Guid DeptId) : ICommand
     {
-        public ActionResult Validate()
-        {
-            return new ActionResult();
-        }
+        public ActionResult Validate() => new();
     }
+
 
     public record AddLawyerToDepartmentHandler : ICommandHandler<AddLawyerToDepartment>
     {
-       
+
         public async Task<ActionResult> HandleAsync(AddLawyerToDepartment command, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
-            return await repo.LawyerRepo.JoinDepartment(command.LawyerId, command.DeptId);
+            var dept = await repo.DepartmentRepo.GetById(command.DeptId);
+            if (dept != null)
+            {
+                var lawyer = dept.Lawyers.Where(x => x.Id == command.LawyerId).FirstOrDefault();
+                if (lawyer == null)
+                {
+                    lawyer = await repo.LawyerRepo.GetById(command.LawyerId);
+                    if (lawyer != null)
+                    {
+                        dept.Lawyers.Add(lawyer);
+                        return await repo.DepartmentRepo.Update(dept);
+                    }
+                    else
+                        return repo.FailedAction("User is not found.");
+                }
+                else
+                    return repo.FailedAction("User already exist in the department.");
+            }
+            else
+                return repo.FailedAction("Department is not found!");
         }
     }
 }

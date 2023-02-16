@@ -1,19 +1,14 @@
-﻿using Auth.Entities;
-using Auth.Models;
-using Auth.Repository;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+using User.Application.DTO;
+using User.Application.Entities;
+using User.Application.Repository;
 
-namespace Auth.AuthServices
+namespace User.Application.AuthServices
 {
     public class AuthService : IAuthService
     {
@@ -21,12 +16,12 @@ namespace Auth.AuthServices
         private readonly IUserRepo _userRepo;
         private readonly int _refreshTokenExpireTime;
         private readonly int _accessTokenExpireTime;
-        public AuthService(IUserRepo userRepo, IOptionsSnapshot<AuthConfigModel> authConfigOpton)
+        public AuthService(IUserRepo userRepo, IOptions<AuthConfigModel> authConfigOpton)
         {
             _secretKey = authConfigOpton.Value.SecretKey;
             _userRepo = userRepo;
             _refreshTokenExpireTime = authConfigOpton.Value.RefreshTokenLifespanInMins;
-            _accessTokenExpireTime=authConfigOpton.Value.AccessTokenLifespanInMins;
+            _accessTokenExpireTime = authConfigOpton.Value.AccessTokenLifespanInMins;
         }
         public void PasswordManager(string password, UserTb user)
         {
@@ -46,22 +41,23 @@ namespace Auth.AuthServices
 
             var claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name,user.Name),
+                new Claim(ClaimTypes.Name,user.FirstName),
                             new Claim(ClaimTypes.Email,user.Email),
                             new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+                            new Claim(ClaimTypes.Role,user.Role.ToString()),
             };
-            foreach (var role in user.AssignedUserRoles)
-            {
-                claims.Add(new Claim(ClaimTypes.Role, role.Role.Name));
-            }
-            
+            //foreach (var role in user.AssignedUserRoles)
+            //{
+            //    claims.Add(new Claim(ClaimTypes.Role, role.Role.Name));
+            //}
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                
+
                 Subject = new ClaimsIdentity(claims),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(encodedKey), SecurityAlgorithms.HmacSha256),
                 Expires = DateTime.UtcNow.AddMinutes(_accessTokenExpireTime),
-                
+
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);

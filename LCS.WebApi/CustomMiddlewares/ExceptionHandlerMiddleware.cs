@@ -1,8 +1,5 @@
-﻿using LCS.WebApi.Response;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
+﻿using ConsultancySystem.WebApi.Models;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace LCS.WebApi.CustomMiddlewares
 {

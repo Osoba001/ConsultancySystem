@@ -1,13 +1,16 @@
-﻿using LCS.Domain.Models;
-using LCS.Domain.Repositories;
-using LCS.Domain.Response;
+﻿using Law.Domain.Repositories;
+using Utilities.ActionResponse;
 
 namespace SimpleMediatR.MediatRContract
 {
-    public interface IQueryHandler< TQuery,TResp> where TQuery : IQuery<TResp>
+    public interface IQueryHandler< TQuery> where TQuery : IQuery
     {
-       public abstract Task<TResp> HandlerAsync(TQuery query,IRepoWrapper repo, CancellationToken cancellationToken=default) ;
+       Task<ActionResult> HandlerAsync(TQuery query,IRepoWrapper repo, CancellationToken cancellationToken=default) ;
     }
 
+    public interface IQueryHandler<TQuery,TResp> where TQuery : IQuery<TResp>
+    {
+        Task<TResp> HandlerAsync(TQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default);
+    }
 
 }   

@@ -1,24 +1,20 @@
-﻿using Auth.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using User.Application.Constants;
 
-namespace Auth.Entities
+namespace User.Application.Entities
 {
-    public class UserTb: EntityBase
+    public class UserTb : EntityBase
     {
-        
-         public UserTb(string name, string email)
-        {
-            Name = name;
-            Email = email;
-            AssignedUserRoles = new();
-        }
-        public string Name { get; set; }
+
+        public string FirstName { get; set; }
+        public DateTime DOB { get; set; }
+        public Gender Gender { get; set; }
+        public Role Role { get; set; }
+        public string? Location { get; set; }
+        public string? State { get; set; }
         public string Email { get; set; }
-        public List<AssignedUserRoleTb> AssignedUserRoles { get; set; }
+        public string? MiddleName { get; set; }
+        public string? LastName { get; set; }
+        public string? PhoneNo { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public string? RefreshToken { get; set; }
@@ -27,11 +23,7 @@ namespace Auth.Entities
         public DateTime? RefreshTokenExpireTime { get; set; }
         public int RecoveryPin { get; set; }
         public DateTime? RecoveryPinExpireTime { get; set; }
-        public static implicit operator User(UserTb user)
-        {
-            return new User(user.Id, user.Name, user.Email);
-        }
-        
+
 
     }
 }

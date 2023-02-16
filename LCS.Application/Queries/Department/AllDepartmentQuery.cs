@@ -1,23 +1,19 @@
-﻿using LCS.Domain.Models;
-using LCS.Domain.Repositories;
+﻿using Law.Application.Helpers;
+using Law.Application.Response;
+using Law.Domain.Repositories;
 using SimpleMediatR.MediatRContract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace LCS.Application.Queries.DepartmentQ
+namespace Law.Application.Queries.Department
 {
-    public record AllDepartmentQuery:IQuery<List<Department>>;
+    public record AllDepartmentQuery : IQuery<List<DepartmentResponse>>;
 
-    public class AllDepartmentHandler : IQueryHandler<AllDepartmentQuery, List<Department>>
+    public class AllDepartmentHandler : IQueryHandler<AllDepartmentQuery, List<DepartmentResponse>>
     {
-        public async Task<List<Department>> HandlerAsync(AllDepartmentQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<List<DepartmentResponse>> HandlerAsync(AllDepartmentQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
-            return repo.DepartmentRepo.Convertlist(await repo.DepartmentRepo.GetAll());
+            return (await repo.DepartmentRepo.GetAll()).DepartmentListConv();
         }
 
-       
+
     }
 }

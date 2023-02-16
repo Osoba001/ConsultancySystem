@@ -1,15 +1,9 @@
-﻿using LCS.Domain.Entities;
-using LCS.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Law.Domain.Models;
 
-namespace LCS.Domain.Repositories
+namespace Law.Domain.Repositories
 {
-    public interface ITimeSlotRepo:IBaseRepo<TimeSlotTB>
+    public interface ITimeSlotRepo : IBaseRepo<TimeSlot>
     {
-        List<TimeSlot> Convertlist(List<TimeSlotTB> listTB);
+
     }
 }

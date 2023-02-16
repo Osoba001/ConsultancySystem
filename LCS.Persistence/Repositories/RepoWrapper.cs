@@ -1,13 +1,8 @@
-﻿using LCS.Domain.Repositories;
-using LCS.Domain.Response;
-using LCS.Persistence.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Law.Domain.Repositories;
+using Law.Persistence.Data;
+using Utilities.ActionResponse;
 
-namespace LCS.Persistence.Repositories
+namespace Law.Persistence.Repositories
 {
     public class RepoWrapper : IRepoWrapper
     {
@@ -21,8 +16,9 @@ namespace LCS.Persistence.Repositories
         private IAppointmentRepo? appointmentRepo;
         public IAppointmentRepo AppointmentRepo
         {
-            get {
-                appointmentRepo??= new AppointmentRepo(_context);
+            get
+            {
+                appointmentRepo ??= new AppointmentRepo(_context);
                 return appointmentRepo;
             }
         }
@@ -30,8 +26,9 @@ namespace LCS.Persistence.Repositories
         private IClientRepo? clientRepo;
         public IClientRepo ClientRepo
         {
-            get {
-                clientRepo??= new ClientRepo(_context);
+            get
+            {
+                clientRepo ??= new ClientRepo(_context);
                 return clientRepo;
             }
         }
@@ -39,32 +36,28 @@ namespace LCS.Persistence.Repositories
         private IDepartmentRepo? departmentRepo;
         public IDepartmentRepo DepartmentRepo
         {
-            get {
-                departmentRepo??= new DepartmentRepo(_context);
-                return departmentRepo; }
-        }
-        private ILanguageRepo? languageRepo;
-
-        public ILanguageRepo LanguageRepo
-        {
-            get {
-                languageRepo ??= new LanguageRepo(_context);
-                return languageRepo ; }
+            get
+            {
+                departmentRepo ??= new DepartmentRepo(_context);
+                return departmentRepo;
+            }
         }
 
         private ILawyerRepo? lawyerRepo;
         public ILawyerRepo LawyerRepo
         {
-            get { 
-                lawyerRepo??= new LawyerRepo(_context);
+            get
+            {
+                lawyerRepo ??= new LawyerRepo(_context);
                 return lawyerRepo;
             }
         }
         private ITimeSlotRepo? timeSlotRepo;
         public ITimeSlotRepo TimeSlotRepo
         {
-            get { 
-                timeSlotRepo??= new TimeSlotRepo(_context);
+            get
+            {
+                timeSlotRepo ??= new TimeSlotRepo(_context);
                 return timeSlotRepo;
             }
         }

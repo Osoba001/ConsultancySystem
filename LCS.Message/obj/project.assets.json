@@ -59,25 +59,6 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
-        },
-        "compile": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
       "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
@@ -222,55 +203,6 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
-      },
-      "ActionResponse/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/ActionResponse.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ActionResponse.dll": {}
-        }
-      },
-      "LCS.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "LCS.Domain": "1.0.0",
-          "SimpleMediatR": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/LCS.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LCS.Application.dll": {}
-        }
-      },
-      "LCS.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/LCS.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LCS.Domain.dll": {}
-        }
-      },
-      "SimpleMediatR/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "ActionResponse": "1.0.0",
-          "LCS.Domain": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "7.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SimpleMediatR.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SimpleMediatR.dll": {}
-        }
       }
     }
   },
@@ -345,35 +277,6 @@
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
         "microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
         "microsoft.extensions.configuration.abstractions.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.DependencyInjection/7.0.0": {
-      "sha512": "elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencyinjection/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.targets",
-        "lib/net462/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net462/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net6.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net7.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
-        "microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
-        "microsoft.extensions.dependencyinjection.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -656,31 +559,10 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "ActionResponse/1.0.0": {
-      "type": "project",
-      "path": "../ActionResponse/ActionResponse.csproj",
-      "msbuildProject": "../ActionResponse/ActionResponse.csproj"
-    },
-    "LCS.Application/1.0.0": {
-      "type": "project",
-      "path": "../LCS.Application/LCS.Application.csproj",
-      "msbuildProject": "../LCS.Application/LCS.Application.csproj"
-    },
-    "LCS.Domain/1.0.0": {
-      "type": "project",
-      "path": "../LCS.Domain/LCS.Domain.csproj",
-      "msbuildProject": "../LCS.Domain/LCS.Domain.csproj"
-    },
-    "SimpleMediatR/1.0.0": {
-      "type": "project",
-      "path": "../SimpleMediatR/SimpleMediatR.csproj",
-      "msbuildProject": "../SimpleMediatR/SimpleMediatR.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "LCS.Application >= 1.0.0",
       "Microsoft.Extensions.Caching.StackExchangeRedis >= 7.0.2",
       "Microsoft.Extensions.Configuration.Abstractions >= 7.0.0",
       "Newtonsoft.Json >= 13.0.2",
@@ -693,9 +575,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Message\\LCS.Message.csproj",
-      "projectName": "LCS.Message",
-      "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Message\\LCS.Message.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Message\\RedisServices.csproj",
+      "projectName": "RedisServices",
+      "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Message\\RedisServices.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Message\\obj\\",
       "projectStyle": "PackageReference",
@@ -713,11 +595,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Application\\LCS.Application.csproj": {
-              "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\LCS.Application\\LCS.Application.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
