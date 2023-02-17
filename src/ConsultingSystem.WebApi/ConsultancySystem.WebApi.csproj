@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>4ded5272-e907-4013-a0ee-daa33fb2dff8</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LawModule\Core\Law.Application\Law.Application.csproj" />
+    <ProjectReference Include="..\LawModule\Infractructure\Law.Persistence\Law.Persistence.csproj" />
+    <ProjectReference Include="..\ShareResource\ShareService\ShareServices.csproj" />
+    <ProjectReference Include="..\UserModule\User.Appication\User.Application.csproj" />
+    <ProjectReference Include="..\UserModule\User.Persistence\User.Persistence.csproj" />
+  </ItemGroup>
+
+  
+</Project>

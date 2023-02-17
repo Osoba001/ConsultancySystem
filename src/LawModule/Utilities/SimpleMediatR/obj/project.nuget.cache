@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "qwrFwC8JK+S635tiFlixozUsopL/OC5ikz9pFq6GIMevH5EEiJKnyiV5UTNP+Y3KprC0Mvuh3f83Koujb8RmSQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\LawModule\\Utilities\\SimpleMediatR\\SimpleMediatR.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
