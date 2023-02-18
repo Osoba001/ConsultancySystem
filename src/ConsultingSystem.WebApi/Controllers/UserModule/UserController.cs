@@ -102,15 +102,8 @@ namespace LCS.WebApi.Controllers.AuthModule
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgottonPassword(string email)
         {
-            var pin = await _userService.ForgottenPassword(email);
-            if (pin > 0)
-            {
-                //send pin to the user email or sms.
-                // for testing purpose i will return pin
-                return Ok(pin);
-            }
-            else
-                return BadRequest("Invalid email");
+            var res = await _userService.ForgottenPassword(email);
+            return ReturnAction(res);
         }
 
         [HttpPost("confirm-password-recovery-pin")]

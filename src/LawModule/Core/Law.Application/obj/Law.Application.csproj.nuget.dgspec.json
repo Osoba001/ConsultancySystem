@@ -157,6 +157,9 @@
             "projectReferences": {
               "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\LawModule\\Core\\Law.Domain\\Law.Domain.csproj": {
                 "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\LawModule\\Core\\Law.Domain\\Law.Domain.csproj"
+              },
+              "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\ShareResource\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\ShareResource\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -232,17 +235,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
               "version": "[7.0.2, )"
-            },
-            "Microsoft.Extensions.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.2, )"
             },
             "StackExchange.Redis": {
               "target": "Package",

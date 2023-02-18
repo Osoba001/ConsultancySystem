@@ -78,19 +78,19 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpGet("by-Id")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            return await QueryAsync<LawyerByIdQueryHandler, LawyerByIdQuery>(new LawyerByIdQuery(id));
+            return await QueryNullableAsync<LawyerByIdQueryHandler, LawyerByIdQuery>(new LawyerByIdQuery(id));
         }
 
         [HttpGet("appointment")]
         public async Task<IActionResult> GetAppointmentByLawyer(Guid lawyerId)
         {
-            return await QueryAsync<AppointmentByLawyerHandler,AppointmentByLawyerQuery,List<AppointmentResponse>>(new AppointmentByLawyerQuery(lawyerId));
+            return await QueryAsync<AppointmentByLawyerHandler,AppointmentByLawyerQuery>(new AppointmentByLawyerQuery(lawyerId));
         }
 
         [HttpGet("by-department")]
         public async Task<IActionResult> LawyerByDepartment(Guid departmentId)
         {
-            return await QueryAsync<LawyerByDepartmentHandler,LawyerByDepartmentQuery,List<LawyerResponse>>(new LawyerByDepartmentQuery(departmentId));
+            return await QueryAsync<LawyerByDepartmentHandler,LawyerByDepartmentQuery>(new LawyerByDepartmentQuery(departmentId));
         }
 
         [HttpPatch("office-address")]

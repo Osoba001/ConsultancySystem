@@ -1,6 +1,7 @@
 ﻿using Law.Domain.Models;
 using Law.Domain.Repositories;
 using ShareServices.Events;
+using ShareServices.Events.EventArgData;
 
 namespace Law.Application.Commands.ClientC
 {

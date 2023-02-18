@@ -5,11 +5,11 @@ using SimpleMediatR.MediatRContract;
 
 namespace Law.Application.Queries.Client
 {
-    public record LawyerForOnlineAppointment(string languge) : IQuery<List<LawyerResponse>>;
+    public record LawyerForOnlineAppointment(string languge) : IQuery;
 
-    public class LawyerForOnlineAppointmentHandler : IQueryHandler<LawyerForOnlineAppointment, List<LawyerResponse>>
+    public class LawyerForOnlineAppointmentHandler : QueryHandler<LawyerForOnlineAppointment>
     {
-        public async Task<List<LawyerResponse>> HandlerAsync(LawyerForOnlineAppointment query, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public override async Task<object> HandlerAsync(LawyerForOnlineAppointment query, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
             return (await repo.LawyerRepo.FindByPredicate(x => x.OnlineWorkingSlots.Any() && x.Languages.Contains(query.languge))).LawyerListConv();
         }

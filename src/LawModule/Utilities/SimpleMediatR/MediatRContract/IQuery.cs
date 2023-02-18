@@ -4,9 +4,5 @@
     {
 
     }
-    public interface IQuery<TResp>
-    {
-
-    }
 
 }   

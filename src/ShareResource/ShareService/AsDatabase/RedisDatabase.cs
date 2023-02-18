@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Configuration;
-using StackExchange.Redis;
 using System.Text.Json;
 
 namespace ShareServices.AsDatabase

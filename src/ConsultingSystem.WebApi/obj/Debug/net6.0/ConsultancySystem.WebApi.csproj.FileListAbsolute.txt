@@ -156,7 +156,6 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\Serilog.dll
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\Serilog.AspNetCore.dll
@@ -218,3 +217,6 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\obj\Debug\net6.0\ConsultancySystem.WebApi.csproj.CopyComplete
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\obj\Debug\net6.0\ConsultancySystem.WebApi.genruntimeconfig.cache
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\obj\Debug\net6.0\ref\ConsultancySystem.WebApi.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\MailKit.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\MimeKit.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\bin\Debug\net6.0\BouncyCastle.Crypto.dll

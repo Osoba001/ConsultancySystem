@@ -1,4 +1,6 @@
 ﻿using Auth.UserServices;
+using ShareServices.ASMessages;
+using ShareServices.RedisMsgDTO;
 using User.Application.AuthServices;
 using User.Application.Constants;
 using User.Application.DTO;
@@ -13,13 +15,13 @@ namespace User.Application.UserServices
 
         private readonly IUserRepo _userRepo;
         private readonly IAuthService _authService;
+        private readonly IRedisMsg _redisMsg;
 
-
-
-        public UserService(IUserRepo userRepo, IAuthService authService)
+        public UserService(IUserRepo userRepo, IAuthService authService, IRedisMsg redisMsg)
         {
             _userRepo = userRepo;
             _authService = authService;
+            _redisMsg = redisMsg;
         }
 
         public async Task<ActionResult> ChangePassword(ChangePasswordDTO changePassword)
@@ -100,25 +102,29 @@ namespace User.Application.UserServices
             return FailActionResult("User not found.");
         }
 
-        public async Task<int> ForgottenPassword(string email)
+        public async Task<ActionResult> ForgottenPassword(string email)
         {
             email = email.Trim().ToLower();
             var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == email);
             if (user != null)
             {
                 user.RecoveryPin = RandomPin();
-                await _userRepo.Update(user);
-                return user.RecoveryPin;
+                user.RecoveryPinExpireTime = DateTime.UtcNow.AddMinutes(20);
+               var rs= await _userRepo.Update(user);
+                if (!rs.IsSuccess)
+                    await  _redisMsg.PublishAsync(new RecoveringPasswordDTO { Email = user.Email, Name = user.FirstName, Pin = user.RecoveryPin }, "forgetPassword");
+                return rs;
             }
-            else
-                return -1;
+            var res = new ActionResult();
+            res.AddError("User is not found.");
+            return res;
         }
 
-        public async Task<List<UserTb>> AllUsers()
+        public async Task<List<UserResponse>> AllUsers()
         {
             return ConvertUser(await _userRepo.GetAll());
         }
-        public async Task<List<UserTb>> GetFalseDeletedUsers(int days = 0)
+        public async Task<List<UserResponse>> GetFalseDeletedUsers(int days = 0)
         {
             return ConvertUser(await _userRepo
                 .IgnorQueryFilter(x => x.IsDeleted && x.DeletedDate != null && DateTime.UtcNow.Day - x.DeletedDate.Value.Day >= days));
@@ -168,18 +174,21 @@ namespace User.Application.UserServices
             var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == confirmPin.Email.ToLower().Trim());
             if (user != null)
             {
-                if (user.RecoveryPin == confirmPin.RecoveryPin)
+                if (user.RecoveryPinExpireTime!=null && user.RecoveryPinExpireTime>DateTime.UtcNow)
                 {
-                    user.RecoveryPinExpireTime = DateTime.UtcNow;
-                }
-                else
-                    user.RecoveryPinExpireTime = null;
-                await _userRepo.Update(user);
+                    if (user.RecoveryPin == confirmPin.RecoveryPin)
+                    {
+                        user.RecoveryPinExpireTime = null;
+                        res.AddError("Invalid recovering code.");
+                    }
+                    await _userRepo.Update(user);
+                }else
+                    res.AddError("Invalid session.");
             }
             else
-                res.AddError("User not found.");
-
+                res.AddError("Invalid Email.");
             return res;
+            
         }
 
         public async Task<ActionResult<TokenModel>> RefreshToken(string token)
@@ -194,9 +203,8 @@ namespace User.Application.UserServices
                 }
                 else
                     res.AddError("Session expired.");
-            }
-            else
-                res.AddError("User not found.");
+            }else
+                res.AddError("User is not found.");
             return res;
         }
 
@@ -271,9 +279,9 @@ namespace User.Application.UserServices
             return res;
         }
 
-        private static List<UserTb> ConvertUser(List<UserTb> users)
+        private static List<UserResponse> ConvertUser(List<UserTb> users)
         {
-            List<UserTb> result = new();
+            List<UserResponse> result = new();
             foreach (var user in users)
             {
                 result.Add(user);

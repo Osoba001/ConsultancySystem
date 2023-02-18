@@ -5,11 +5,11 @@ using SimpleMediatR.MediatRContract;
 
 namespace Law.Application.Queries.TimeSlotQ
 {
-    public record TimeSlotQuery : IQuery<List<TimeSlotResponse>>;
+    public record TimeSlotQuery : IQuery;
 
-    public class TimeSlotQueryHandler : IQueryHandler<TimeSlotQuery, List<TimeSlotResponse>>
+    public class TimeSlotQueryHandler : QueryHandler<TimeSlotQuery>
     {
-        public async Task<List<TimeSlotResponse>> HandlerAsync(TimeSlotQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public override async Task<object> HandlerAsync(TimeSlotQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
             return (await repo.TimeSlotRepo.GetAll()).TimeSlotListConv();
         }

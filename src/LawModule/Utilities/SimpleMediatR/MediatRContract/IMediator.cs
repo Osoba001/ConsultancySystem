@@ -8,13 +8,13 @@ namespace SimpleMediatR.MediatRContract
             where TCommand : ICommand
             where TCommandHandler : ICommandHandler<TCommand>;
 
-        Task<ActionResult> QueryAsync<TQueryHandler, TQuery>(TQuery query)
+        Task<ActionResult> QueryNullableAsync<TQueryHandler, TQuery>(TQuery query)
             where TQuery : IQuery
             where TQueryHandler : IQueryHandler<TQuery>;
 
-        Task<TResp> QueryAsync<TQueryHandler, TQuery,TResp>(TQuery query)
-            where TQuery : IQuery<TResp>
-            where TQueryHandler : IQueryHandler<TQuery,TResp>;
+        Task<object> QueryAsync<TQueryHandler, TQuery>(TQuery query)
+            where TQuery : IQuery
+            where TQueryHandler : QueryHandler<TQuery>;
         IServiceProvider ServiceProvider { get; }
     }
 

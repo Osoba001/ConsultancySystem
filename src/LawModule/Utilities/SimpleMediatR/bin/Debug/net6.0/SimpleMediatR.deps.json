@@ -9,7 +9,8 @@
       "SimpleMediatR/1.0.0": {
         "dependencies": {
           "Law.Domain": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection": "7.0.0"
+          "Microsoft.Extensions.DependencyInjection": "7.0.0",
+          "Utilities": "1.0.0"
         },
         "runtime": {
           "SimpleMediatR.dll": {}

@@ -1,4 +1,6 @@
-﻿namespace ShareServices.Events
+﻿using ShareServices.Events.EventArgData;
+
+namespace ShareServices.Events
 {
     public interface IClientEventService
     {

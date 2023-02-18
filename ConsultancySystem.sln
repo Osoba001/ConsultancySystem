@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.Persistence", "src\Use
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsultancySystem.WebApi", "src\ConsultingSystem.WebApi\ConsultancySystem.WebApi.csproj", "{D751987F-D7EE-4D88-9D0B-6B588F925F09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MedicalModule", "MedicalModule", "{FAA98989-1AD0-414A-B992-BDBF6CE3D4D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -112,6 +114,7 @@ Global
 		{61E52FCB-40E7-4EE2-A850-A52745A7859A} = {2311FC3E-710C-42EE-A461-41DB95C32BC9}
 		{0E089B75-E77B-4E3A-B930-B3DEACCF535B} = {CD338516-CBC6-44F2-8070-21EC610FA4CF}
 		{D751987F-D7EE-4D88-9D0B-6B588F925F09} = {2C097678-83B8-4AC5-881C-D689B604001E}
+		{FAA98989-1AD0-414A-B992-BDBF6CE3D4D1} = {2C097678-83B8-4AC5-881C-D689B604001E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5342453-8962-4747-BCA4-AC26A5C3C5DA}

@@ -1,4 +1,4 @@
-﻿namespace ShareServices.Events
+﻿namespace ShareServices.Events.EventArgData
 {
     public class CreatedUserArgs : EventArgs
     {

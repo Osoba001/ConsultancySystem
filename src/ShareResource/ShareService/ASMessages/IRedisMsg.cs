@@ -8,8 +8,7 @@ namespace ShareServices.ASMessages
 {
     public interface IRedisMsg
     {
-        ValueTask<bool> PublishAsync<T>(T record, string channel);
+        ValueTask<long> PublishAsync<T>(T record, string channel);
 
-        void SubscribeAsync<T>(string channel, Action<T> action);
     }
 }

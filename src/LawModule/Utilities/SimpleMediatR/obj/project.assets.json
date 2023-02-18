@@ -135,7 +135,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Law.Domain >= 1.0.0",
-      "Microsoft.Extensions.DependencyInjection >= 7.0.0"
+      "Microsoft.Extensions.DependencyInjection >= 7.0.0",
+      "Utilities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -167,6 +168,9 @@
           "projectReferences": {
             "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\LawModule\\Core\\Law.Domain\\Law.Domain.csproj": {
               "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\LawModule\\Core\\Law.Domain\\Law.Domain.csproj"
+            },
+            "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\ShareResource\\Utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\ShareResource\\Utilities\\Utilities.csproj"
             }
           }
         }

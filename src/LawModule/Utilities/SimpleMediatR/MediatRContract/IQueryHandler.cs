@@ -8,9 +8,8 @@ namespace SimpleMediatR.MediatRContract
        Task<ActionResult> HandlerAsync(TQuery query,IRepoWrapper repo, CancellationToken cancellationToken=default) ;
     }
 
-    public interface IQueryHandler<TQuery,TResp> where TQuery : IQuery<TResp>
+    public abstract class QueryHandler<TQuery> where TQuery : IQuery
     {
-        Task<TResp> HandlerAsync(TQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default);
+       public abstract  Task<object> HandlerAsync(TQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default);
     }
-
 }   

@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ShareResource\Utilities\Utilities.csproj" />
     <ProjectReference Include="..\..\Core\Law.Domain\Law.Domain.csproj" />
   </ItemGroup>
 

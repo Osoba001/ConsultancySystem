@@ -1,6 +1,8 @@
 ﻿using Law.Domain.Constants;
 using Law.Domain.Models;
 using Law.Domain.Repositories;
+using ShareServices.Events;
+using ShareServices.Events.EventArgData;
 using SimpleMediatR.MediatRContract;
 
 using Utilities.ActionResponse;
@@ -25,8 +27,14 @@ namespace Law.Application.Commands.ClientC
             return res;
         }
     }
-    public class BookOfflineAppointmentHandler : ICommandHandler<BookOfflineAppointment>
+    public class BookOfflineAppointmentHandler : ICommandHandler<BookOfflineAppointment>, IAppointmentEvent
     {
+        public event EventHandler<BookedAppointmentEventArg>? BookedAppointmentEvent;
+
+        protected virtual void OnBookedAppointment(BookedAppointmentEventArg arg)
+        {
+            BookedAppointmentEvent?.Invoke(this, arg);
+        }
         public async Task<ActionResult> HandleAsync(BookOfflineAppointment command, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
             var client = await repo.ClientRepo.GetById(command.ClientId);
@@ -58,7 +66,22 @@ namespace Law.Application.Commands.ClientC
                     Charge = lawyer.OfflineCharge,
                     Language = command.Language
                 };
-                return await repo.AppointmentRepo.Add(appointment);
+                var res= await repo.AppointmentRepo.Add(appointment);
+                if (res.IsSuccess)
+                {
+                    var bkAppAgr = new BookedAppointmentEventArg
+                    {
+                        AppointmentName = "Offline",
+                        Receiver = lawyer.FirstName,
+                        Client = client.FirstName,
+                        ReceiverEmail = lawyer.Email,
+                        ClientEmail = lawyer.Email,
+                        ReviewAddress = $"{lawyer.OfficeAddress},{lawyer.Location}, {lawyer.State}",
+                        ReviewDate = appointTime,
+                    };
+                    OnBookedAppointment(bkAppAgr);
+                }
+                return res;
             }
             else
                 return repo.FailedAction("This lawyer just booked few seconds ago.");

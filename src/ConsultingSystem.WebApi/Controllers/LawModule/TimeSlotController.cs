@@ -19,7 +19,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-           return await QueryAsync<TimeSlotQueryHandler, TimeSlotQuery, List<TimeSlotResponse>>(new TimeSlotQuery(),SlotsRedisChanelId);
+           return await QueryAsync<TimeSlotQueryHandler, TimeSlotQuery>(new TimeSlotQuery(),SlotsRedisChanelId);
         }
         [HttpPost]
         public async Task<IActionResult> CreateTimeSlots()

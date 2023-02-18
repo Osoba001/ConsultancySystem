@@ -9,5 +9,6 @@ namespace User.Application.Entities
     public class EntityBase
     {
         public Guid Id { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

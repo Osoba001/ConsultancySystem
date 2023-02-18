@@ -12,15 +12,15 @@ namespace Auth.UserServices
         Task<ActionResult<TokenModel>> Login(LoginDTO login);
         Task<ActionResult> UpdateUser(UpdateUserDTO user);
         Task<ActionResult> UpdateLocation(UpdateLocationDTO locationDto);
-        Task<int> ForgottenPassword(string email);
+        Task<ActionResult> ForgottenPassword(string email);
         Task<ActionResult> RecoverPassword(ConfirmPinDTO confirmPin);
         Task<ActionResult> NewPassword(NewPasswordDTO newPassword);
         Task<ActionResult> ChangePassword(ChangePasswordDTO changePassword);
         Task<ActionResult<TokenModel>> RefreshToken(string token);
         Task<ActionResult> HardDeleteUser(Guid id);
         Task<ActionResult> FalseDeleteUser(Guid id);
-        Task<List<UserTb>> AllUsers();
-        Task<List<UserTb>> GetFalseDeletedUsers(int days =0);
+        Task<List<UserResponse>> AllUsers();
+        Task<List<UserResponse>> GetFalseDeletedUsers(int days =0);
         Task<ActionResult> UndoFalseDelete(Guid id);
         Task<ActionResult> HardDeleteRange(List<Guid> ids);
 

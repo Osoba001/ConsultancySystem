@@ -5,11 +5,11 @@ using SimpleMediatR.MediatRContract;
 
 namespace Law.Application.Queries.Lawyer
 {
-    public record AllLawyerQuery : IQuery<List<LawyerResponse>>;
+    public record AllLawyerQuery : IQuery;
 
-    public class AllLawyerHandler : IQueryHandler<AllLawyerQuery, List<LawyerResponse>>
+    public class AllLawyerHandler : QueryHandler<AllLawyerQuery>
     {
-        public async Task<List<LawyerResponse>> HandlerAsync(AllLawyerQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public override async Task<object> HandlerAsync(AllLawyerQuery query, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
             return (await repo.LawyerRepo.GetAll()).LawyerListConv();
             ;

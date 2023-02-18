@@ -35,12 +35,12 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return await QueryAsync<AllDepartmentHandler,AllDepartmentQuery,List<DepartmentResponse>>(new AllDepartmentQuery(),DepartmentsRedisChinnelId);
+            return await QueryAsync<AllDepartmentHandler,AllDepartmentQuery>(new AllDepartmentQuery(),DepartmentsRedisChinnelId);
         }
         [HttpGet("byId")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            return await QueryAsync<DepartmentByIdHandler,DepartmentByIdQuery>(new DepartmentByIdQuery(id));
+            return await QueryNullableAsync<DepartmentByIdHandler,DepartmentByIdQuery>(new DepartmentByIdQuery(id));
         }
     }
 }

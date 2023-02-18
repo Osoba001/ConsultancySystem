@@ -29,6 +29,7 @@ builder.Services.AddSqlServer<AuthDbContext>(config.GetConnectionString("AuthCon
 {
     op.EnableRetryOnFailure(2);
 });
+builder.Services.Configure<EmailConfigData>(config.GetSection(nameof(EmailConfigData)));
 builder.Services.Configure<AuthConfigModel>(config.GetSection(nameof(AuthConfigModel)));
 builder.Services.Configure<RedisConfigModel>(config.GetSection(nameof(RedisConfigModel)));
 builder.Services.AddScoped<IMiddleware, ExceptionHandlerMiddleware>();

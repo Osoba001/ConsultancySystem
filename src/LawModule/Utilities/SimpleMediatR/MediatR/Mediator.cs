@@ -21,14 +21,14 @@ namespace SimpleMediatR.MediatR
             var handler=(TCommandHandler)Activator.CreateInstance(typeof(TCommandHandler))!;
             return handler.HandleAsync(command, RepoWrapper);
         }
-        public Task<TResp> QueryAsync<TQueryHandler, TQuery, TResp>(TQuery query)
-           where TQueryHandler : IQueryHandler<TQuery,TResp>
-           where TQuery : IQuery<TResp>
+        public Task<object> QueryAsync<TQueryHandler, TQuery>(TQuery query)
+           where TQueryHandler : QueryHandler<TQuery>
+           where TQuery : IQuery
         {
             var handler = (TQueryHandler)Activator.CreateInstance(typeof(TQuery))!;
             return handler.HandlerAsync(query, RepoWrapper);
         }
-        public Task<ActionResult> QueryAsync<TQueryHandler, TQuery>(TQuery query)
+        public Task<ActionResult> QueryNullableAsync<TQueryHandler, TQuery>(TQuery query)
             where TQueryHandler : IQueryHandler<TQuery>
             where TQuery : IQuery
         {

@@ -42,30 +42,30 @@ namespace LCS.WebApi.Controllers.LawyerModule
             return Ok("Success");
 
         }
-        public async Task<IActionResult> QueryAsync<TQueryHandler, TQuery, TResponse>(TQuery query, string RedisChinnelId)
-            where TQuery: IQuery<TResponse>
-            where TQueryHandler : IQueryHandler<TQuery, TResponse>
+        public async Task<IActionResult> QueryAsync<TQueryHandler, TQuery>(TQuery query, string RedisChinnelId)
+            where TQuery: IQuery
+            where TQueryHandler : QueryHandler<TQuery>
         {
-            var res = await _redisDatabase.GetRecordAsync<TResponse>(RedisChinnelId);
+            var res = await _redisDatabase.GetRecordAsync<object>(RedisChinnelId);
             if (res != null)
                 return Ok(res);
-            TResponse response = await _mediator.QueryAsync<TQueryHandler, TQuery, TResponse>(query);
+            var response = await _mediator.QueryAsync<TQueryHandler, TQuery>(query);
              await _redisDatabase.SetRecordAsync(RedisChinnelId, response);
             return Ok(response); 
 
         }
-        public async Task<IActionResult> QueryAsync<TQueryHandler, TQuery, TResponse>(TQuery query)
-            where TQuery : IQuery<TResponse>
-            where TQueryHandler : IQueryHandler<TQuery, TResponse>
+        public async Task<IActionResult> QueryAsync<TQueryHandler, TQuery>(TQuery query)
+            where TQuery : IQuery
+            where TQueryHandler : QueryHandler<TQuery>
         {
-            return Ok(await _mediator.QueryAsync<TQueryHandler, TQuery, TResponse>(query));
+            return Ok(await _mediator.QueryAsync<TQueryHandler, TQuery>(query));
 
         }
-        public async Task<IActionResult> QueryAsync<TQueryHandler, TQuery>(TQuery query)
+        public async Task<IActionResult> QueryNullableAsync<TQueryHandler, TQuery>(TQuery query)
             where TQuery : IQuery
             where TQueryHandler : IQueryHandler<TQuery>
         {
-            var res = await _mediator.QueryAsync<TQueryHandler, TQuery>(query);
+            var res = await _mediator.QueryNullableAsync<TQueryHandler, TQuery>(query);
             if (res.IsSuccess)
                 return Ok(res);
             return BadRequest(res.ToString());

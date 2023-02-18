@@ -89,6 +89,9 @@
             "projectReferences": {
               "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\LawModule\\Core\\Law.Domain\\Law.Domain.csproj": {
                 "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\LawModule\\Core\\Law.Domain\\Law.Domain.csproj"
+              },
+              "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\ShareResource\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\ShareResource\\Utilities\\Utilities.csproj"
               }
             }
           }
