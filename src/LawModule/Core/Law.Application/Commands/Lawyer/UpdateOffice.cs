@@ -9,8 +9,12 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Commands.Lawyer
 {
-    public record UpdateOffice(Guid LawyerId,string State, string Location, string Address ) : ICommand
+    public record UpdateOffice : ICommand
     {
+        public Guid LawyerId { get; set; }
+        public string State { get; set; }
+        public string Location { get; set; }
+        public string Address { get; set; }
         public ActionResult Validate() => new();
         
     }

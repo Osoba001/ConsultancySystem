@@ -6,8 +6,10 @@ using Utilities.RegexFormatValidations;
 
 namespace Law.Application.Commands.DepartmentC
 {
-    public record CreateDepartment(string Name, string Description) : ICommand
+    public record CreateDepartment: ICommand
     {
+        public string Name { get; set; }
+        public string Description { get; set; }
         public ActionResult Validate()
         {
             var res = new ActionResult();

@@ -4,8 +4,9 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Commands.DepartmentC
 {
-    public record DeleteDepartment(Guid Id) : ICommand
+    public record DeleteDepartment : ICommand
     {
+        public Guid Id { get; set; }
         public ActionResult Validate() => new();
     }
 

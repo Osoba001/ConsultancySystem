@@ -6,9 +6,9 @@ namespace Law.Persistence.Repositories
 {
     public class RepoWrapper : IRepoWrapper
     {
-        private readonly LCSDbContext _context;
+        private readonly LawDbContext _context;
 
-        public RepoWrapper(LCSDbContext context)
+        public RepoWrapper(LawDbContext context)
         {
             _context = context;
         }

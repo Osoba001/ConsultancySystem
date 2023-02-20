@@ -5,7 +5,10 @@ using SimpleMediatR.MediatRContract;
 
 namespace Law.Application.Queries.Lawyer
 {
-    public record AppointmentByLawyerQuery(Guid LawyerId) : IQuery;
+    public record AppointmentByLawyerQuery: IQuery
+    {
+        public Guid LawyerId { get; set; }
+    }
 
     public class AppointmentByLawyerHandler : QueryHandler<AppointmentByLawyerQuery>
     {

@@ -9,9 +9,9 @@ namespace User.Persistence.Repositories
 {
     public class BaseRepo<T> : IBaseRepo<T> where T : EntityBase
     {
-        private readonly AuthDbContext _context;
+        private readonly UserDbContext _context;
 
-        public BaseRepo(AuthDbContext context)
+        public BaseRepo(UserDbContext context)
         {
             _context = context;
         }

@@ -33,24 +33,24 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpGet("byId")]
         public async Task<IActionResult> GetClientById(Guid id)
         {
-            return await QueryNullableAsync<ClientByIdHandler,ClientByIdQuery>(new ClientByIdQuery(id));
+            return await QueryNullableAsync<ClientByIdHandler,ClientByIdQuery>(new ClientByIdQuery {Id= id });
         }
 
         [HttpGet("appointment")]
         public async Task<IActionResult> GetAppointmentByClient(Guid ClientId)
         {
-            return await QueryAsync<AppointmentByClientHandler,AppointmentByClientQuery>(new AppointmentByClientQuery(ClientId));
+            return await QueryAsync<AppointmentByClientHandler,AppointmentByClientQuery>(new AppointmentByClientQuery { ClientId = ClientId });
         }
 
         [HttpGet("lawyers-for-online")]
         public async Task<IActionResult> LawyersForOnline(string language)
         {
-            return await QueryAsync<LawyerForOnlineAppointmentHandler, LawyerForOnlineAppointment>(new LawyerForOnlineAppointment(language));
+            return await QueryAsync<LawyerForOnlineAppointmentHandler, LawyerForOnlineAppointment>(new LawyerForOnlineAppointment { Languge= language });
         }
         [HttpGet("lawyers-for-offline")]
         public async Task<IActionResult> LawyersForOffline(string language, string state, string location)
         {
-            return await QueryAsync<LawyerForOfflineAppointmentHandler, LawyerForOfflineAppointment>(new LawyerForOfflineAppointment(language,state,location));
+            return await QueryAsync<LawyerForOfflineAppointmentHandler, LawyerForOfflineAppointment>(new LawyerForOfflineAppointment{Language= language,State= state,Location= location });
         }
     }
 }

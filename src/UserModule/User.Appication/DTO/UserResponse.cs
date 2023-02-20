@@ -28,6 +28,7 @@ namespace User.Application.DTO
         public string? Location { get; set; }
         public string? State { get; set; }
         public DateTime CreatedDate { get; set; }
+        public byte[]? ImageArray { get; set; }
         public int Age => ComputeAge();
         private int ComputeAge()
         {
@@ -50,7 +51,8 @@ namespace User.Application.DTO
                 Gender = user.Gender.ToString(),
                 Location = user.Location,
                 State = user.State,
-                CreatedDate=user.CreatedDate
+                CreatedDate=user.CreatedDate,
+                ImageArray = user.ImageArray,
             };
         }
     }

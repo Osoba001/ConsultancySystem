@@ -30,6 +30,8 @@ namespace Law.Domain.Models
         public Lawyer Lawyer { get; set; }
         public Client Client { get; set; }
         public TimeSlot TimeSlot { get; set; }
+        public Guid LawyerId { get; set; }
+        public Guid ClientId { get; set; }
         public string Language { get; set; }
         public string CaseDescription { get; set; }
         public DateTime ReviewDate { get; set; }

@@ -1,10 +1,13 @@
 using Law.Persistence.Data;
+using Law.Persistence.Dependency;
 using LCS.WebApi.CustomMiddlewares;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using ShareServices.Dependency;
 using ShareServices.Models;
 using User.Application.DTO;
 using User.Persistence.Data;
+using User.Persistence.Dependency;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,11 +24,11 @@ builder.Services.AddCors(opt =>
     });
 });
 var config = builder.Configuration;
-builder.Services.AddSqlServer<LCSDbContext>(config.GetConnectionString("LawConString"), opt =>
+builder.Services.AddSqlServer<LawDbContext>(config.GetConnectionString("LawConString"), opt =>
 {
     opt.EnableRetryOnFailure(2);
 });
-builder.Services.AddSqlServer<AuthDbContext>(config.GetConnectionString("AuthConString"), op =>
+builder.Services.AddSqlServer<UserDbContext>(config.GetConnectionString("AuthConString"), op =>
 {
     op.EnableRetryOnFailure(2);
 });
@@ -33,8 +36,13 @@ builder.Services.Configure<EmailConfigData>(config.GetSection(nameof(EmailConfig
 builder.Services.Configure<AuthConfigModel>(config.GetSection(nameof(AuthConfigModel)));
 builder.Services.Configure<RedisConfigModel>(config.GetSection(nameof(RedisConfigModel)));
 builder.Services.AddScoped<IMiddleware, ExceptionHandlerMiddleware>();
+builder.Services.AuthenticationSetup(config.GetSection("AuthConfigModel:SecretKey").Value);
+builder.Services.UserServiceCollection();
+builder.Services.ShareServiceCollection();
+builder.Services.LawDependencyCollection();
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
+builder.Services.AddTransient<ExceptionHandlerMiddleware>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -89,7 +97,7 @@ app.UseHttpsRedirection();
 
 app.UseCors();
 
-//app.UseAuthentication();
+app.UseAuthentication();
 
 app.UseAuthorization();
 app.UseMiddleware<ExceptionHandlerMiddleware>();

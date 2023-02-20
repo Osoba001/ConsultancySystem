@@ -1,4 +1,5 @@
-﻿using User.Application.Constants;
+﻿using ShareServices.Constant;
+using User.Application.Constants;
 
 namespace User.Application.Entities
 {
@@ -23,7 +24,6 @@ namespace User.Application.Entities
         public DateTime? RefreshTokenExpireTime { get; set; }
         public int RecoveryPin { get; set; }
         public DateTime? RecoveryPinExpireTime { get; set; }
-
-
+        public byte[]? ImageArray { get; set; }
     }
 }

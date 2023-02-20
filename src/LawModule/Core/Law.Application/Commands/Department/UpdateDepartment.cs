@@ -5,8 +5,10 @@ using Utilities.RegexFormatValidations;
 
 namespace Law.Application.Commands.DepartmentC
 {
-    public record UpdateDepartment(Guid Id, string Description) : ICommand
+    public record UpdateDepartment: ICommand
     {
+        public Guid Id { get; set; }
+        public string Description { get; set; }
         public ActionResult Validate()
         {
             var res = new ActionResult();

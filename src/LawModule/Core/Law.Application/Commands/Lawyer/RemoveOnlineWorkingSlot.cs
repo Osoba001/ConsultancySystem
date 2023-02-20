@@ -4,8 +4,10 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Commands.Lawyer
 {
-    public record RemoveOnlineWorkingSlot(Guid LawyerId, List<Guid> SlotIds) : ICommand
+    public record RemoveOnlineWorkingSlot : ICommand
     {
+        public Guid LawyerId { get; set; }
+        public List<Guid> SlotIds { get; set; }
         public ActionResult Validate() => new();
     }
 

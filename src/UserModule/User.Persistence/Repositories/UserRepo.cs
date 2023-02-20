@@ -8,9 +8,9 @@ namespace User.Persistence.Repositories
 {
     internal class UserRepo : BaseRepo<UserTb>, IUserRepo
     {
-        private readonly AuthDbContext _context;
+        private readonly UserDbContext _context;
 
-        public UserRepo(AuthDbContext context) : base(context)
+        public UserRepo(UserDbContext context) : base(context)
         {
             _context = context;
         }

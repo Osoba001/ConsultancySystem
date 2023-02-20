@@ -1,27 +1,30 @@
 ﻿using Auth.UserServices;
 using ShareServices.ASMessages;
+using ShareServices.Constant;
+using ShareServices.Events;
 using ShareServices.RedisMsgDTO;
 using User.Application.AuthServices;
-using User.Application.Constants;
 using User.Application.DTO;
 using User.Application.Entities;
 using User.Application.Repository;
 using Utilities.ActionResponse;
+using Utilities.UtlityExtensions;
 
 namespace User.Application.UserServices
 {
     public partial class UserService : IUserService
     {
-
+        private readonly ILawModuleEventService _lawModuleEvent;
         private readonly IUserRepo _userRepo;
         private readonly IAuthService _authService;
         private readonly IRedisMsg _redisMsg;
 
-        public UserService(IUserRepo userRepo, IAuthService authService, IRedisMsg redisMsg)
+        public UserService(IUserRepo userRepo, IAuthService authService,IRedisMsg redisMsg, ILawModuleEventService lawModuleEvent)
         {
             _userRepo = userRepo;
             _authService = authService;
             _redisMsg = redisMsg;
+            _lawModuleEvent = lawModuleEvent;
         }
 
         public async Task<ActionResult> ChangePassword(ChangePasswordDTO changePassword)
@@ -52,11 +55,9 @@ namespace User.Application.UserServices
                 var res = await _userRepo.Update(user);
                 if (res.IsSuccess)
                 {
-                    if (user.Role == Role.Client)
-                        // _redisMsg.PublishAsync(user.Id, "falseDeleteClient");
-                        OnFalseDeletedClient(id);
-                    else
-                        OnFalseDeletedLawyer(user.Id);
+                    CreatedUser += _lawModuleEvent.CreatedHandler;
+                    OnFalseDeletedUser(user);
+                    CreatedUser-= _lawModuleEvent.CreatedHandler;
                 }
                 return res;
             }
@@ -73,11 +74,9 @@ namespace User.Application.UserServices
                 var res = await _userRepo.Update(user);
                 if (res.IsSuccess)
                 {
-                    if (user.Role == Role.Client)
-                        // await _redisMsg.PublishAsync(user.Id, "undoFalseDeleteClient");
-                        OnUndoFalseDeletedClient(user.Id);
-                    else
-                        OnUndoFalseDeletedLawyer(user.Id);
+                    UndoFalseDeletedUser+= _lawModuleEvent.UndoFalsedHandler;
+                    OnUndoFalseDeletedUser(user);
+                    UndoFalseDeletedUser -= _lawModuleEvent.UndoFalsedHandler;
                 }
                 return res;
             }
@@ -91,11 +90,9 @@ namespace User.Application.UserServices
                 var res = await _userRepo.Delete(user);
                 if (res.IsSuccess)
                 {
-                    if (user.Role == Role.Client)
-                        // await _redisMsg.PublishAsync(user.Id, "hardDeleteClient");
-                        OnHardDeletedClient(user.Id);
-                    else
-                        OnHardDeletedLawyer(user.Id);
+                    HardDeletedUser += _lawModuleEvent.HardDeletedHandler;
+                    OnHardDeletedUser(user);
+                    HardDeletedUser -= _lawModuleEvent.HardDeletedHandler;
                 }
                 return res;
             }
@@ -132,6 +129,9 @@ namespace User.Application.UserServices
 
         public async Task<ActionResult<TokenModel>> Login(LoginDTO login)
         {
+            var validate = login.ValidateModel();
+            if (!validate.IsSuccess)
+                return validate;
             var res = new ActionResult<TokenModel>();
             var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == login.Email.Trim().ToLower());
             if (user != null)
@@ -216,7 +216,6 @@ namespace User.Application.UserServices
             var result = await Register(dto, Role.Client);
             if (result.IsSuccess)
             {
-                OnCreateClient(result.Item!);
                 return await GenerateToken(result.Item!);
             }
             res.AddError(result.Errors());
@@ -230,7 +229,6 @@ namespace User.Application.UserServices
             var result = await Register(dto, Role.Lawyer);
             if (result.IsSuccess)
             {
-                OnCreatedLawyer(result.Item!);
                 return await GenerateToken(result.Item!);
             }
             res.AddError(result.Errors());
@@ -246,8 +244,6 @@ namespace User.Application.UserServices
 
         private async Task<ActionResult<UserTb>> Register(CreateUserDTO dto, Role role)
         {
-
-
             var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == dto.Email.ToLower().Trim());
             if (user == null)
             {
@@ -260,7 +256,14 @@ namespace User.Application.UserServices
                     DOB = dto.DOB
                 };
                 _authService.PasswordManager(dto.Password, user);
-                return await _userRepo.AddAndReturn(user);
+                var res= await _userRepo.AddAndReturn(user);
+                if (res.IsSuccess)
+                {
+                    CreatedUser += _lawModuleEvent.CreatedHandler;
+                    OnCreatedUser(user);
+                    CreatedUser -= _lawModuleEvent.CreatedHandler;
+                }
+                return res;
             }
             else
                 return FailActionResult<UserTb>("Email is already in used.");
@@ -301,6 +304,9 @@ namespace User.Application.UserServices
 
         public async Task<ActionResult> UpdateUser(UpdateUserDTO user)
         {
+            var validate = user.Validate();
+            if (!validate.IsSuccess)
+                return validate;
             var res = await _userRepo.FindById(user.Id);
             if (res != null)
             {
@@ -327,7 +333,20 @@ namespace User.Application.UserServices
             else
                 return FailActionResult("User is not found.");
         }
+
+        public async Task<ActionResult> UploadProfilePicture(UploadProfilePictureDTO profilePictureDTO)
+        {
+            var validate = profilePictureDTO.Validate();
+            if (!validate.IsSuccess)
+                return validate;
+            var user = await _userRepo.FindById(profilePictureDTO.userId);
+            if (user != null)
+                return FailActionResult("User is not found.");
+            
+            user.ImageArray = profilePictureDTO.File.ResizeImage(170, 170).BitmapToByteArray();
+            return await _userRepo.Update(user);
+        }
     }
-
-
 }
+
+

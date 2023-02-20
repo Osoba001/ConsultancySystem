@@ -1,0 +1,1265 @@
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 2001.9567ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 23.8956ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 139.3741ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 600.0514ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.6162ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.1605ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.4744ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.8568ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 29.6538ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 31.7666ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.2552ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 70.8741ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 45.4214ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3521ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 97.8429ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 19.4648ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.2974ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.6771ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/TimeSlot - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[ERR]  Something went wrong. Unhandle exception: 
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location ---
+   at LCS.WebApi.CustomMiddlewares.ExceptionHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\CustomMiddlewares\ExceptionHandlerMiddleware.cs:line 19 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/TimeSlot - - - 500 - application/json 640.6279ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 17.9541ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/TimeSlot - 0 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.CreateTimeSlots (ConsultancySystem.WebApi)' 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.CreateTimeSlots (ConsultancySystem.WebApi)' 
+[ERR]  Something went wrong. Unhandle exception: 
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location ---
+   at LCS.WebApi.CustomMiddlewares.ExceptionHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\CustomMiddlewares\ExceptionHandlerMiddleware.cs:line 19 
+[INF]  Request finished HTTP/2 POST https://localhost:7208/api/TimeSlot - 0 - 500 - application/json 66.5042ms 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 115.6507ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.5797ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 254.7210ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 836.1083ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1119.4854ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 2138.5248ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 22.0978ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.2834ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1539.4735ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 32.9289ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.4293ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 727.2144ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 156.4545ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.7144ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.9243ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 20.5578ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.2982ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.5639ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 39.7555ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/TimeSlot - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3661ms 
+[ERR]  Something went wrong. Unhandle exception: 
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location ---
+   at LCS.WebApi.CustomMiddlewares.ExceptionHandlerMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\CustomMiddlewares\ExceptionHandlerMiddleware.cs:line 19 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/TimeSlot - - - 500 - application/json 692.3030ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.9801ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 29.3489ms 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 202.1133ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.5038ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 257.5975ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 859.9833ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 566.3775ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 1674.1621ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 16.6533ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3266ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 785.1538ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 23.6373ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.7843ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.7407ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 13.2077ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 5.6210ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.8797ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 22.0057ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.6152ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.6532ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 19.7937ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.4463ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.9584ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3241ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.2143ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/TimeSlot - 0 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.CreateTimeSlots (ConsultancySystem.WebApi)' 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.CreateTimeSlots (ConsultancySystem.WebApi)' 
+[ERR]  An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[INF]  Request finished HTTP/2 POST https://localhost:7208/api/TimeSlot - 0 - 500 - text/plain;+charset=utf-8 293.0810ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 25.4458ms 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 769.1687ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.5505ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 3296.5349ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3958ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 326.0333ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 896.8485ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 734.8564ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.1263ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 27.9985ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 26.2523ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.5742ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 170.3169ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 22.1750ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.2904ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.6930ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 17.6389ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3251ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.3019ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.3208ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.6722ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 66.0986ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/TimeSlot - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Route matched with {action = "Get", controller = "TimeSlot"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller LCS.WebApi.Controllers.LawyerModule.TimeSlotController (ConsultancySystem.WebApi). 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.9447ms 
+[INF]  Executed action LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi) in 991.2059ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[ERR]  An unhandled exception has occurred while executing the request. 
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 789
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at ShareServices.AsDatabase.RedisDatabase.GetRecordAsync[T](String recordId) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ShareResource\ShareService\AsDatabase\RedisDatabase.cs:line 25
+   at LCS.WebApi.Controllers.LawyerModule.CustomControllerBase.QueryAsync[TQueryHandler,TQuery](TQuery query, String RedisChinnelId) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\CustomControllerBase.cs:line 49
+   at LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get() in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\TimeSlotController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/TimeSlot - - - 500 - text/plain;+charset=utf-8 1442.8675ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/TimeSlot - 0 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.CreateTimeSlots (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "CreateTimeSlots", controller = "TimeSlot"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateTimeSlots() on controller LCS.WebApi.Controllers.LawyerModule.TimeSlotController (ConsultancySystem.WebApi). 
+[WRN]  There are multiple relationships between 'TimeSlot' and 'Lawyer' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TimeSlot' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'. 
+[WRN]  Entity 'Client' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+[WRN]  The property 'Lawyer.Languages' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. 
+[WRN]  The foreign key property 'TimeSlot.LawyerId1' was created in shadow state because a conflicting property with the simple name 'LawyerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. 
+[INF]  Executed DbCommand (332ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedDate], [t].[EndHour], [t].[EndMinute], [t].[Index], [t].[LawyerId], [t].[LawyerId1], [t].[StartHour], [t].[StartMinute]
+FROM [TimeSlotTB] AS [t] 
+[INF]  Executed DbCommand (318ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Guid), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Guid), @p24='?' (DbType = Guid), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = Guid), @p28='?' (DbType = DateTime2), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Int32), @p35='?' (DbType = Int32), @p36='?' (DbType = Guid), @p37='?' (DbType = DateTime2), @p38='?' (DbType = Int32), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (DbType = Guid), @p46='?' (DbType = DateTime2), @p47='?' (DbType = Int32), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Guid), @p51='?' (DbType = Guid), @p52='?' (DbType = Int32), @p53='?' (DbType = Int32), @p54='?' (DbType = Guid), @p55='?' (DbType = DateTime2), @p56='?' (DbType = Int32), @p57='?' (DbType = Int32), @p58='?' (DbType = Int32), @p59='?' (DbType = Guid), @p60='?' (DbType = Guid), @p61='?' (DbType = Int32), @p62='?' (DbType = Int32), @p63='?' (DbType = Guid), @p64='?' (DbType = DateTime2), @p65='?' (DbType = Int32), @p66='?' (DbType = Int32), @p67='?' (DbType = Int32), @p68='?' (DbType = Guid), @p69='?' (DbType = Guid), @p70='?' (DbType = Int32), @p71='?' (DbType = Int32), @p72='?' (DbType = Guid), @p73='?' (DbType = DateTime2), @p74='?' (DbType = Int32), @p75='?' (DbType = Int32), @p76='?' (DbType = Int32), @p77='?' (DbType = Guid), @p78='?' (DbType = Guid), @p79='?' (DbType = Int32), @p80='?' (DbType = Int32), @p81='?' (DbType = Guid), @p82='?' (DbType = DateTime2), @p83='?' (DbType = Int32), @p84='?' (DbType = Int32), @p85='?' (DbType = Int32), @p86='?' (DbType = Guid), @p87='?' (DbType = Guid), @p88='?' (DbType = Int32), @p89='?' (DbType = Int32), @p90='?' (DbType = Guid), @p91='?' (DbType = DateTime2), @p92='?' (DbType = Int32), @p93='?' (DbType = Int32), @p94='?' (DbType = Int32), @p95='?' (DbType = Guid), @p96='?' (DbType = Guid), @p97='?' (DbType = Int32), @p98='?' (DbType = Int32), @p99='?' (DbType = Guid), @p100='?' (DbType = DateTime2), @p101='?' (DbType = Int32), @p102='?' (DbType = Int32), @p103='?' (DbType = Int32), @p104='?' (DbType = Guid), @p105='?' (DbType = Guid), @p106='?' (DbType = Int32), @p107='?' (DbType = Int32), @p108='?' (DbType = Guid), @p109='?' (DbType = DateTime2), @p110='?' (DbType = Int32), @p111='?' (DbType = Int32), @p112='?' (DbType = Int32), @p113='?' (DbType = Guid), @p114='?' (DbType = Guid), @p115='?' (DbType = Int32), @p116='?' (DbType = Int32), @p117='?' (DbType = Guid), @p118='?' (DbType = DateTime2), @p119='?' (DbType = Int32), @p120='?' (DbType = Int32), @p121='?' (DbType = Int32), @p122='?' (DbType = Guid), @p123='?' (DbType = Guid), @p124='?' (DbType = Int32), @p125='?' (DbType = Int32), @p126='?' (DbType = Guid), @p127='?' (DbType = DateTime2), @p128='?' (DbType = Int32), @p129='?' (DbType = Int32), @p130='?' (DbType = Int32), @p131='?' (DbType = Guid), @p132='?' (DbType = Guid), @p133='?' (DbType = Int32), @p134='?' (DbType = Int32), @p135='?' (DbType = Guid), @p136='?' (DbType = DateTime2), @p137='?' (DbType = Int32), @p138='?' (DbType = Int32), @p139='?' (DbType = Int32), @p140='?' (DbType = Guid), @p141='?' (DbType = Guid), @p142='?' (DbType = Int32), @p143='?' (DbType = Int32), @p144='?' (DbType = Guid), @p145='?' (DbType = DateTime2), @p146='?' (DbType = Int32), @p147='?' (DbType = Int32), @p148='?' (DbType = Int32), @p149='?' (DbType = Guid), @p150='?' (DbType = Guid), @p151='?' (DbType = Int32), @p152='?' (DbType = Int32), @p153='?' (DbType = Guid), @p154='?' (DbType = DateTime2), @p155='?' (DbType = Int32), @p156='?' (DbType = Int32), @p157='?' (DbType = Int32), @p158='?' (DbType = Guid), @p159='?' (DbType = Guid), @p160='?' (DbType = Int32), @p161='?' (DbType = Int32), @p162='?' (DbType = Guid), @p163='?' (DbType = DateTime2), @p164='?' (DbType = Int32), @p165='?' (DbType = Int32), @p166='?' (DbType = Int32), @p167='?' (DbType = Guid), @p168='?' (DbType = Guid), @p169='?' (DbType = Int32), @p170='?' (DbType = Int32), @p171='?' (DbType = Guid), @p172='?' (DbType = DateTime2), @p173='?' (DbType = Int32), @p174='?' (DbType = Int32), @p175='?' (DbType = Int32), @p176='?' (DbType = Guid), @p177='?' (DbType = Guid), @p178='?' (DbType = Int32), @p179='?' (DbType = Int32), @p180='?' (DbType = Guid), @p181='?' (DbType = DateTime2), @p182='?' (DbType = Int32), @p183='?' (DbType = Int32), @p184='?' (DbType = Int32), @p185='?' (DbType = Guid), @p186='?' (DbType = Guid), @p187='?' (DbType = Int32), @p188='?' (DbType = Int32), @p189='?' (DbType = Guid), @p190='?' (DbType = DateTime2), @p191='?' (DbType = Int32), @p192='?' (DbType = Int32), @p193='?' (DbType = Int32), @p194='?' (DbType = Guid), @p195='?' (DbType = Guid), @p196='?' (DbType = Int32), @p197='?' (DbType = Int32), @p198='?' (DbType = Guid), @p199='?' (DbType = DateTime2), @p200='?' (DbType = Int32), @p201='?' (DbType = Int32), @p202='?' (DbType = Int32), @p203='?' (DbType = Guid), @p204='?' (DbType = Guid), @p205='?' (DbType = Int32), @p206='?' (DbType = Int32), @p207='?' (DbType = Guid), @p208='?' (DbType = DateTime2), @p209='?' (DbType = Int32), @p210='?' (DbType = Int32), @p211='?' (DbType = Int32), @p212='?' (DbType = Guid), @p213='?' (DbType = Guid), @p214='?' (DbType = Int32), @p215='?' (DbType = Int32), @p216='?' (DbType = Guid), @p217='?' (DbType = DateTime2), @p218='?' (DbType = Int32), @p219='?' (DbType = Int32), @p220='?' (DbType = Int32), @p221='?' (DbType = Guid), @p222='?' (DbType = Guid), @p223='?' (DbType = Int32), @p224='?' (DbType = Int32), @p225='?' (DbType = Guid), @p226='?' (DbType = DateTime2), @p227='?' (DbType = Int32), @p228='?' (DbType = Int32), @p229='?' (DbType = Int32), @p230='?' (DbType = Guid), @p231='?' (DbType = Guid), @p232='?' (DbType = Int32), @p233='?' (DbType = Int32), @p234='?' (DbType = Guid), @p235='?' (DbType = DateTime2), @p236='?' (DbType = Int32), @p237='?' (DbType = Int32), @p238='?' (DbType = Int32), @p239='?' (DbType = Guid), @p240='?' (DbType = Guid), @p241='?' (DbType = Int32), @p242='?' (DbType = Int32), @p243='?' (DbType = Guid), @p244='?' (DbType = DateTime2), @p245='?' (DbType = Int32), @p246='?' (DbType = Int32), @p247='?' (DbType = Int32), @p248='?' (DbType = Guid), @p249='?' (DbType = Guid), @p250='?' (DbType = Int32), @p251='?' (DbType = Int32), @p252='?' (DbType = Guid), @p253='?' (DbType = DateTime2), @p254='?' (DbType = Int32), @p255='?' (DbType = Int32), @p256='?' (DbType = Int32), @p257='?' (DbType = Guid), @p258='?' (DbType = Guid), @p259='?' (DbType = Int32), @p260='?' (DbType = Int32), @p261='?' (DbType = Guid), @p262='?' (DbType = DateTime2), @p263='?' (DbType = Int32), @p264='?' (DbType = Int32), @p265='?' (DbType = Int32), @p266='?' (DbType = Guid), @p267='?' (DbType = Guid), @p268='?' (DbType = Int32), @p269='?' (DbType = Int32), @p270='?' (DbType = Guid), @p271='?' (DbType = DateTime2), @p272='?' (DbType = Int32), @p273='?' (DbType = Int32), @p274='?' (DbType = Int32), @p275='?' (DbType = Guid), @p276='?' (DbType = Guid), @p277='?' (DbType = Int32), @p278='?' (DbType = Int32), @p279='?' (DbType = Guid), @p280='?' (DbType = DateTime2), @p281='?' (DbType = Int32), @p282='?' (DbType = Int32), @p283='?' (DbType = Int32), @p284='?' (DbType = Guid), @p285='?' (DbType = Guid), @p286='?' (DbType = Int32), @p287='?' (DbType = Int32), @p288='?' (DbType = Guid), @p289='?' (DbType = DateTime2), @p290='?' (DbType = Int32), @p291='?' (DbType = Int32), @p292='?' (DbType = Int32), @p293='?' (DbType = Guid), @p294='?' (DbType = Guid), @p295='?' (DbType = Int32), @p296='?' (DbType = Int32), @p297='?' (DbType = Guid), @p298='?' (DbType = DateTime2), @p299='?' (DbType = Int32), @p300='?' (DbType = Int32), @p301='?' (DbType = Int32), @p302='?' (DbType = Guid), @p303='?' (DbType = Guid), @p304='?' (DbType = Int32), @p305='?' (DbType = Int32), @p306='?' (DbType = Guid), @p307='?' (DbType = DateTime2), @p308='?' (DbType = Int32), @p309='?' (DbType = Int32), @p310='?' (DbType = Int32), @p311='?' (DbType = Guid), @p312='?' (DbType = Guid), @p313='?' (DbType = Int32), @p314='?' (DbType = Int32), @p315='?' (DbType = Guid), @p316='?' (DbType = DateTime2), @p317='?' (DbType = Int32), @p318='?' (DbType = Int32), @p319='?' (DbType = Int32), @p320='?' (DbType = Guid), @p321='?' (DbType = Guid), @p322='?' (DbType = Int32), @p323='?' (DbType = Int32), @p324='?' (DbType = Guid), @p325='?' (DbType = DateTime2), @p326='?' (DbType = Int32), @p327='?' (DbType = Int32), @p328='?' (DbType = Int32), @p329='?' (DbType = Guid), @p330='?' (DbType = Guid), @p331='?' (DbType = Int32), @p332='?' (DbType = Int32), @p333='?' (DbType = Guid), @p334='?' (DbType = DateTime2), @p335='?' (DbType = Int32), @p336='?' (DbType = Int32), @p337='?' (DbType = Int32), @p338='?' (DbType = Guid), @p339='?' (DbType = Guid), @p340='?' (DbType = Int32), @p341='?' (DbType = Int32), @p342='?' (DbType = Guid), @p343='?' (DbType = DateTime2), @p344='?' (DbType = Int32), @p345='?' (DbType = Int32), @p346='?' (DbType = Int32), @p347='?' (DbType = Guid), @p348='?' (DbType = Guid), @p349='?' (DbType = Int32), @p350='?' (DbType = Int32), @p351='?' (DbType = Guid), @p352='?' (DbType = DateTime2), @p353='?' (DbType = Int32), @p354='?' (DbType = Int32), @p355='?' (DbType = Int32), @p356='?' (DbType = Guid), @p357='?' (DbType = Guid), @p358='?' (DbType = Int32), @p359='?' (DbType = Int32), @p360='?' (DbType = Guid), @p361='?' (DbType = DateTime2), @p362='?' (DbType = Int32), @p363='?' (DbType = Int32), @p364='?' (DbType = Int32), @p365='?' (DbType = Guid), @p366='?' (DbType = Guid), @p367='?' (DbType = Int32), @p368='?' (DbType = Int32), @p369='?' (DbType = Guid), @p370='?' (DbType = DateTime2), @p371='?' (DbType = Int32), @p372='?' (DbType = Int32), @p373='?' (DbType = Int32), @p374='?' (DbType = Guid), @p375='?' (DbType = Guid), @p376='?' (DbType = Int32), @p377='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [TimeSlotTB] ([Id], [CreatedDate], [EndHour], [EndMinute], [Index], [LawyerId], [LawyerId1], [StartHour], [StartMinute])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8),
+(@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17),
+(@p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26),
+(@p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35),
+(@p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44),
+(@p45, @p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53),
+(@p54, @p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62),
+(@p63, @p64, @p65, @p66, @p67, @p68, @p69, @p70, @p71),
+(@p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, @p80),
+(@p81, @p82, @p83, @p84, @p85, @p86, @p87, @p88, @p89),
+(@p90, @p91, @p92, @p93, @p94, @p95, @p96, @p97, @p98),
+(@p99, @p100, @p101, @p102, @p103, @p104, @p105, @p106, @p107),
+(@p108, @p109, @p110, @p111, @p112, @p113, @p114, @p115, @p116),
+(@p117, @p118, @p119, @p120, @p121, @p122, @p123, @p124, @p125),
+(@p126, @p127, @p128, @p129, @p130, @p131, @p132, @p133, @p134),
+(@p135, @p136, @p137, @p138, @p139, @p140, @p141, @p142, @p143),
+(@p144, @p145, @p146, @p147, @p148, @p149, @p150, @p151, @p152),
+(@p153, @p154, @p155, @p156, @p157, @p158, @p159, @p160, @p161),
+(@p162, @p163, @p164, @p165, @p166, @p167, @p168, @p169, @p170),
+(@p171, @p172, @p173, @p174, @p175, @p176, @p177, @p178, @p179),
+(@p180, @p181, @p182, @p183, @p184, @p185, @p186, @p187, @p188),
+(@p189, @p190, @p191, @p192, @p193, @p194, @p195, @p196, @p197),
+(@p198, @p199, @p200, @p201, @p202, @p203, @p204, @p205, @p206),
+(@p207, @p208, @p209, @p210, @p211, @p212, @p213, @p214, @p215),
+(@p216, @p217, @p218, @p219, @p220, @p221, @p222, @p223, @p224),
+(@p225, @p226, @p227, @p228, @p229, @p230, @p231, @p232, @p233),
+(@p234, @p235, @p236, @p237, @p238, @p239, @p240, @p241, @p242),
+(@p243, @p244, @p245, @p246, @p247, @p248, @p249, @p250, @p251),
+(@p252, @p253, @p254, @p255, @p256, @p257, @p258, @p259, @p260),
+(@p261, @p262, @p263, @p264, @p265, @p266, @p267, @p268, @p269),
+(@p270, @p271, @p272, @p273, @p274, @p275, @p276, @p277, @p278),
+(@p279, @p280, @p281, @p282, @p283, @p284, @p285, @p286, @p287),
+(@p288, @p289, @p290, @p291, @p292, @p293, @p294, @p295, @p296),
+(@p297, @p298, @p299, @p300, @p301, @p302, @p303, @p304, @p305),
+(@p306, @p307, @p308, @p309, @p310, @p311, @p312, @p313, @p314),
+(@p315, @p316, @p317, @p318, @p319, @p320, @p321, @p322, @p323),
+(@p324, @p325, @p326, @p327, @p328, @p329, @p330, @p331, @p332),
+(@p333, @p334, @p335, @p336, @p337, @p338, @p339, @p340, @p341),
+(@p342, @p343, @p344, @p345, @p346, @p347, @p348, @p349, @p350),
+(@p351, @p352, @p353, @p354, @p355, @p356, @p357, @p358, @p359),
+(@p360, @p361, @p362, @p363, @p364, @p365, @p366, @p367, @p368),
+(@p369, @p370, @p371, @p372, @p373, @p374, @p375, @p376, @p377); 
+[INF]  Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Guid), @p6='?' (DbType = Guid), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Guid), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Guid), @p24='?' (DbType = Guid), @p25='?' (DbType = Int32), @p26='?' (DbType = Int32), @p27='?' (DbType = Guid), @p28='?' (DbType = DateTime2), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Guid), @p33='?' (DbType = Guid), @p34='?' (DbType = Int32), @p35='?' (DbType = Int32), @p36='?' (DbType = Guid), @p37='?' (DbType = DateTime2), @p38='?' (DbType = Int32), @p39='?' (DbType = Int32), @p40='?' (DbType = Int32), @p41='?' (DbType = Guid), @p42='?' (DbType = Guid), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (DbType = Guid), @p46='?' (DbType = DateTime2), @p47='?' (DbType = Int32), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Guid), @p51='?' (DbType = Guid), @p52='?' (DbType = Int32), @p53='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [TimeSlotTB] ([Id], [CreatedDate], [EndHour], [EndMinute], [Index], [LawyerId], [LawyerId1], [StartHour], [StartMinute])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8),
+(@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17),
+(@p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26),
+(@p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35),
+(@p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43, @p44),
+(@p45, @p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53); 
+[INF]  Executing OkObjectResult, writing value of type 'System.String'. 
+[INF]  Executed action LCS.WebApi.Controllers.LawyerModule.TimeSlotController.CreateTimeSlots (ConsultancySystem.WebApi) in 6749.8248ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.CreateTimeSlots (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 POST https://localhost:7208/api/TimeSlot - 0 - 200 - text/plain;+charset=utf-8 6805.4239ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/TimeSlot - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "Get", controller = "TimeSlot"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller LCS.WebApi.Controllers.LawyerModule.TimeSlotController (ConsultancySystem.WebApi). 
+[INF]  Executed action LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi) in 242.6092ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[ERR]  An unhandled exception has occurred while executing the request. 
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 789
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at ShareServices.AsDatabase.RedisDatabase.GetRecordAsync[T](String recordId) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ShareResource\ShareService\AsDatabase\RedisDatabase.cs:line 25
+   at LCS.WebApi.Controllers.LawyerModule.CustomControllerBase.QueryAsync[TQueryHandler,TQuery](TQuery query, String RedisChinnelId) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\CustomControllerBase.cs:line 49
+   at LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get() in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\TimeSlotController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/TimeSlot - - - 500 - text/plain;+charset=utf-8 248.4898ms 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 449.0458ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 1.8308ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1978.4339ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 573.1875ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1159.4638ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.5043ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 3409.5671ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.2541ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 934.8908ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 69.6322ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3055ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 133.7881ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 20.1378ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3669ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 93.7924ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 17.7502ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.2765ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 81.3309ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 18.5950ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3851ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 304.7383ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 19.3655ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 1.0394ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.0298ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 20.5652ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/Department - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.DepartmentController.Get (ConsultancySystem.WebApi)' 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.DepartmentController.Get (ConsultancySystem.WebApi)' 
+[ERR]  An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'LCS.WebApi.Controllers.LawyerModule.DepartmentController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/Department - - - 500 - text/plain;+charset=utf-8 299.0118ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/TimeSlot - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "Get", controller = "TimeSlot"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller LCS.WebApi.Controllers.LawyerModule.TimeSlotController (ConsultancySystem.WebApi). 
+[INF]  Executed action LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi) in 1124.6128ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[ERR]  An unhandled exception has occurred while executing the request. 
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 789
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at ShareServices.AsDatabase.RedisDatabase.GetRecordAsync[T](String recordId) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ShareResource\ShareService\AsDatabase\RedisDatabase.cs:line 25
+   at LCS.WebApi.Controllers.LawyerModule.CustomControllerBase.QueryAsync[TQueryHandler,TQuery](TQuery query, String RedisChinnelId) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\CustomControllerBase.cs:line 49
+   at LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get() in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\TimeSlotController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/TimeSlot - - - 500 - text/plain;+charset=utf-8 1269.4765ms 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 353.5888ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1564.8101ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 3122.1960ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.4369ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 131.2910ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 542.7464ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 23.6979ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 0.3226ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.4453ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.9710ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/TimeSlot - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "Get", controller = "TimeSlot"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller LCS.WebApi.Controllers.LawyerModule.TimeSlotController (ConsultancySystem.WebApi). 
+[INF]  Executed action LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi) in 407.8093ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[ERR]  An unhandled exception has occurred while executing the request. 
+System.InvalidCastException: Unable to cast object of type 'Law.Application.Queries.TimeSlotQ.TimeSlotQuery' to type 'Law.Application.Queries.TimeSlotQ.TimeSlotQueryHandler'.
+   at SimpleMediatR.MediatR.Mediator.QueryAsync[TQueryHandler,TQuery](TQuery query) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Utilities\SimpleMediatR\MediatR\Mediator.cs:line 28
+   at LCS.WebApi.Controllers.LawyerModule.CustomControllerBase.QueryAsync[TQueryHandler,TQuery](TQuery query) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\CustomControllerBase.cs:line 61
+   at LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get() in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\TimeSlotController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/TimeSlot - - - 500 - text/plain;+charset=utf-8 684.2593ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/Department - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.DepartmentController.Get (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "Get", controller = "Department"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller LCS.WebApi.Controllers.LawyerModule.DepartmentController (ConsultancySystem.WebApi). 
+[INF]  Executed action LCS.WebApi.Controllers.LawyerModule.DepartmentController.Get (ConsultancySystem.WebApi) in 139.1902ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.DepartmentController.Get (ConsultancySystem.WebApi)' 
+[ERR]  An unhandled exception has occurred while executing the request. 
+System.InvalidCastException: Unable to cast object of type 'Law.Application.Queries.Department.AllDepartmentQuery' to type 'Law.Application.Queries.Department.AllDepartmentHandler'.
+   at SimpleMediatR.MediatR.Mediator.QueryAsync[TQueryHandler,TQuery](TQuery query) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Utilities\SimpleMediatR\MediatR\Mediator.cs:line 28
+   at LCS.WebApi.Controllers.LawyerModule.CustomControllerBase.QueryAsync[TQueryHandler,TQuery](TQuery query) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\CustomControllerBase.cs:line 61
+   at LCS.WebApi.Controllers.LawyerModule.DepartmentController.Get() in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\DepartmentController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/Department - - - 500 - text/plain;+charset=utf-8 158.5560ms 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger - - - 301 0 - 940.1516ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 1207.9148ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/swagger-ui-standalone-preset.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/swagger-ui.css - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/swagger-ui-bundle.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 9.7293ms 
+[INF]  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+[INF]  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 205.7985ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/swagger-ui.css - - - 200 143632 text/css 203.7690ms 
+[INF]  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 311.8855ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 607.9003ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/favicon-32x32.png - - 
+[INF]  Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/favicon-32x32.png - - - 200 628 image/png 0.4661ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 529.8923ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/TimeSlot - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "Get", controller = "TimeSlot"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller LCS.WebApi.Controllers.LawyerModule.TimeSlotController (ConsultancySystem.WebApi). 
+[WRN]  There are multiple relationships between 'TimeSlot' and 'Lawyer' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TimeSlot' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'. 
+[WRN]  Entity 'Client' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+[WRN]  The property 'Lawyer.Languages' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. 
+[WRN]  The foreign key property 'TimeSlot.LawyerId1' was created in shadow state because a conflicting property with the simple name 'LawyerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. 
+[INF]  Executed DbCommand (7,905ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedDate], [t].[EndHour], [t].[EndMinute], [t].[Index], [t].[LawyerId], [t].[LawyerId1], [t].[StartHour], [t].[StartMinute]
+FROM [TimeSlotTB] AS [t] 
+[INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Law.Application.Response.TimeSlotResponse, Law.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[INF]  Executed action LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi) in 24947.5084ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/TimeSlot - - - 200 - application/json;+charset=utf-8 25139.3590ms 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 1222.2022ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 6.5285ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 179.6038ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 560.3098ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/TimeSlot - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "Get", controller = "TimeSlot"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller LCS.WebApi.Controllers.LawyerModule.TimeSlotController (ConsultancySystem.WebApi). 
+[INF]  Executed action LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi) in 541.8673ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get (ConsultancySystem.WebApi)' 
+[ERR]  An unhandled exception has occurred while executing the request. 
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 789
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetStringAsync(IDistributedCache cache, String key, CancellationToken token)
+   at ShareServices.AsDatabase.RedisDatabase.GetRecordAsync[T](String recordId) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ShareResource\ShareService\AsDatabase\RedisDatabase.cs:line 25
+   at LCS.WebApi.Controllers.LawyerModule.CustomControllerBase.QueryAsync[TQueryHandler,TQuery](TQuery query, String RedisChinnelId) in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\CustomControllerBase.cs:line 49
+   at LCS.WebApi.Controllers.LawyerModule.TimeSlotController.Get() in C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\Controllers\LawModule\TimeSlotController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/TimeSlot - - - 500 - text/plain;+charset=utf-8 876.0271ms 
+[INF]  Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[INF]  Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[INF]  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[INF]  Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[INF]  Applying migration '20230220053156_InitialUserMigration'. 
+[ERR]  Failed executing DbCommand (138ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserTb] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(300) NOT NULL,
+    [DOB] datetime2 NOT NULL,
+    [Gender] int NOT NULL,
+    [Role] int NOT NULL,
+    [Location] nvarchar(max) NULL,
+    [State] nvarchar(max) NULL,
+    [Email] nvarchar(300) NOT NULL,
+    [MiddleName] nvarchar(max) NULL,
+    [LastName] nvarchar(max) NULL,
+    [PhoneNo] nvarchar(max) NULL,
+    [PasswordHash] varbinary(max) NOT NULL,
+    [PasswordSalt] varbinary(max) NOT NULL,
+    [RefreshToken] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    [RefreshTokenExpireTime] datetime2 NULL,
+    [RecoveryPin] int NOT NULL,
+    [RecoveryPinExpireTime] datetime2 NULL,
+    [ImageArray] varbinary(max) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_UserTb] PRIMARY KEY ([Id])
+); 
+[INF]  Executed DbCommand (393ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [UserDb]; 
+[INF]  Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [UserDb] SET READ_COMMITTED_SNAPSHOT ON;
+END; 
+[INF]  Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[INF]  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+); 
+[INF]  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[INF]  Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[INF]  Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[INF]  Applying migration '20230220053156_InitialUserMigration'. 
+[INF]  Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserTb] (
+    [Id] uniqueidentifier NOT NULL,
+    [FirstName] nvarchar(300) NOT NULL,
+    [DOB] datetime2 NOT NULL,
+    [Gender] int NOT NULL,
+    [Role] int NOT NULL,
+    [Location] nvarchar(max) NULL,
+    [State] nvarchar(max) NULL,
+    [Email] nvarchar(300) NOT NULL,
+    [MiddleName] nvarchar(max) NULL,
+    [LastName] nvarchar(max) NULL,
+    [PhoneNo] nvarchar(max) NULL,
+    [PasswordHash] varbinary(max) NOT NULL,
+    [PasswordSalt] varbinary(max) NOT NULL,
+    [RefreshToken] nvarchar(max) NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    [RefreshTokenExpireTime] datetime2 NULL,
+    [RecoveryPin] int NOT NULL,
+    [RecoveryPinExpireTime] datetime2 NULL,
+    [ImageArray] varbinary(max) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_UserTb] PRIMARY KEY ([Id])
+); 
+[INF]  Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_UserTb_Email] ON [UserTb] ([Email]); 
+[INF]  Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230220053156_InitialUserMigration', N'7.0.3'); 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 1156.1342ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 10.2715ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 120.2919ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 525.8741ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/User/client application/json 137 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(User.Application.DTO.CreateUserDTO) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (168ms) [Parameters=[@__Trim_0='?' (Size = 300)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND LOWER([u].[Email]) = @__Trim_0 
+[INF]  Executed DbCommand (31ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 300), @p5='?' (Size = 300), @p6='?' (DbType = Int32), @p7='?' (Size = 8000) (DbType = Binary), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 8000) (DbType = Binary), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (DbType = DateTime2), @p17='?' (Size = 4000), @p18='?' (DbType = DateTime2), @p19='?' (DbType = Int32), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserTb] ([Id], [CreatedDate], [DOB], [DeletedDate], [Email], [FirstName], [Gender], [ImageArray], [IsDeleted], [LastName], [Location], [MiddleName], [PasswordHash], [PasswordSalt], [PhoneNo], [RecoveryPin], [RecoveryPinExpireTime], [RefreshToken], [RefreshTokenExpireTime], [Role], [State])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20); 
+[INF]  Executed DbCommand (15ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 300), @p4='?' (Size = 300), @p5='?' (DbType = Int32), @p6='?' (Size = 8000) (DbType = Binary), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 8000) (DbType = Binary), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = DateTime2), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserTb] SET [CreatedDate] = @p0, [DOB] = @p1, [DeletedDate] = @p2, [Email] = @p3, [FirstName] = @p4, [Gender] = @p5, [ImageArray] = @p6, [IsDeleted] = @p7, [LastName] = @p8, [Location] = @p9, [MiddleName] = @p10, [PasswordHash] = @p11, [PasswordSalt] = @p12, [PhoneNo] = @p13, [RecoveryPin] = @p14, [RecoveryPinExpireTime] = @p15, [RefreshToken] = @p16, [RefreshTokenExpireTime] = @p17, [Role] = @p18, [State] = @p19
+OUTPUT 1
+WHERE [Id] = @p20; 
+[INF]  Executing OkObjectResult, writing value of type 'System.String'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi) in 5597.5254ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 POST https://localhost:7208/api/User/client application/json 137 - 200 - text/plain;+charset=utf-8 5779.1146ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/User/all-users - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) 
+[INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[User.Application.DTO.UserResponse, User.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi) in 307.6931ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/User/all-users - - - 200 - application/json;+charset=utf-8 331.5403ms 
+[INF]  Request starting HTTP/2 DELETE https://localhost:7208/api/User/false-delete?userId=e15b3365-74ba-4263-c4bd-08db1304d039 - - 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.FalseDeleteUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "FalseDeleteUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FalseDeleteUser(System.Guid) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[Id] = @__id_0 
+[INF]  Executed DbCommand (9ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 300), @p4='?' (Size = 300), @p5='?' (DbType = Int32), @p6='?' (Size = 8000) (DbType = Binary), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 8000) (DbType = Binary), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = DateTime2), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserTb] SET [CreatedDate] = @p0, [DOB] = @p1, [DeletedDate] = @p2, [Email] = @p3, [FirstName] = @p4, [Gender] = @p5, [ImageArray] = @p6, [IsDeleted] = @p7, [LastName] = @p8, [Location] = @p9, [MiddleName] = @p10, [PasswordHash] = @p11, [PasswordSalt] = @p12, [PhoneNo] = @p13, [RecoveryPin] = @p14, [RecoveryPinExpireTime] = @p15, [RefreshToken] = @p16, [RefreshTokenExpireTime] = @p17, [Role] = @p18, [State] = @p19
+OUTPUT 1
+WHERE [Id] = @p20; 
+[INF]  Executing StatusCodeResult, setting HTTP status code 200 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.FalseDeleteUser (ConsultancySystem.WebApi) in 68.2314ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.FalseDeleteUser (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 DELETE https://localhost:7208/api/User/false-delete?userId=e15b3365-74ba-4263-c4bd-08db1304d039 - - - 200 0 - 87.3229ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/User/False-deleted-users - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetFalseDeletedUsers (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "GetFalseDeletedUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFalseDeletedUsers() on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (38ms) [Parameters=[@__days_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(1 AS bit) AND ([u].[DeletedDate] IS NOT NULL) AND (DATEPART(day, GETUTCDATE()) - DATEPART(day, [u].[DeletedDate])) >= @__days_0 
+[INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[User.Application.DTO.UserResponse, User.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.GetFalseDeletedUsers (ConsultancySystem.WebApi) in 114.7977ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetFalseDeletedUsers (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/User/False-deleted-users - - - 200 - application/json;+charset=utf-8 120.9670ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/User/all-users - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) 
+[INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[User.Application.DTO.UserResponse, User.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi) in 13.5559ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/User/all-users - - - 200 - application/json;+charset=utf-8 15.2496ms 
+[INF]  Request starting HTTP/2 PUT https://localhost:7208/api/User/undo-False-delete?userId=e15b3365-74ba-4263-c4bd-08db1304d039 - 0 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.UndoFalseDelete (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "UndoFalseDelete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UndoFalseDelete(System.Guid) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[Id] = @__id_0 
+[INF]  Executed DbCommand (7ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 300), @p4='?' (Size = 300), @p5='?' (DbType = Int32), @p6='?' (Size = 8000) (DbType = Binary), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 8000) (DbType = Binary), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = DateTime2), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserTb] SET [CreatedDate] = @p0, [DOB] = @p1, [DeletedDate] = @p2, [Email] = @p3, [FirstName] = @p4, [Gender] = @p5, [ImageArray] = @p6, [IsDeleted] = @p7, [LastName] = @p8, [Location] = @p9, [MiddleName] = @p10, [PasswordHash] = @p11, [PasswordSalt] = @p12, [PhoneNo] = @p13, [RecoveryPin] = @p14, [RecoveryPinExpireTime] = @p15, [RefreshToken] = @p16, [RefreshTokenExpireTime] = @p17, [Role] = @p18, [State] = @p19
+OUTPUT 1
+WHERE [Id] = @p20; 
+[INF]  Executing StatusCodeResult, setting HTTP status code 200 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.UndoFalseDelete (ConsultancySystem.WebApi) in 30.0375ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.UndoFalseDelete (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 PUT https://localhost:7208/api/User/undo-False-delete?userId=e15b3365-74ba-4263-c4bd-08db1304d039 - 0 - 200 0 - 50.2387ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/User/all-users - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) 
+[INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[User.Application.DTO.UserResponse, User.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi) in 12.6286ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/User/all-users - - - 200 - application/json;+charset=utf-8 23.9741ms 
+[INF]  Request starting HTTP/2 DELETE https://localhost:7208/api/User/hard-delete?userId=e15b3365-74ba-4263-c4bd-08db1304d039 - - 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.HardDeleteUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "HardDeleteUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] HardDeleteUser(System.Guid) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[Id] = @__id_0 
+[INF]  Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [UserTb]
+OUTPUT 1
+WHERE [Id] = @p0; 
+[INF]  Executing StatusCodeResult, setting HTTP status code 200 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.HardDeleteUser (ConsultancySystem.WebApi) in 46.7123ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.HardDeleteUser (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 DELETE https://localhost:7208/api/User/hard-delete?userId=e15b3365-74ba-4263-c4bd-08db1304d039 - - - 200 0 - 62.0295ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/User/False-deleted-users - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetFalseDeletedUsers (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "GetFalseDeletedUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFalseDeletedUsers() on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (110ms) [Parameters=[@__days_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(1 AS bit) AND ([u].[DeletedDate] IS NOT NULL) AND (DATEPART(day, GETUTCDATE()) - DATEPART(day, [u].[DeletedDate])) >= @__days_0 
+[INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[User.Application.DTO.UserResponse, User.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.GetFalseDeletedUsers (ConsultancySystem.WebApi) in 116.7593ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetFalseDeletedUsers (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/User/False-deleted-users - - - 200 - application/json;+charset=utf-8 117.4521ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/User/all-users - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) 
+[INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[User.Application.DTO.UserResponse, User.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi) in 25.0576ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/User/all-users - - - 200 - application/json;+charset=utf-8 26.6234ms 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 1835.7306ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 21.8965ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 385.1378ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 589.1834ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/User/client application/json 133 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(User.Application.DTO.CreateUserDTO) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (504ms) [Parameters=[@__Trim_0='?' (Size = 300)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND LOWER([u].[Email]) = @__Trim_0 
+[INF]  Executed DbCommand (112ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 300), @p5='?' (Size = 300), @p6='?' (DbType = Int32), @p7='?' (Size = 8000) (DbType = Binary), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 8000) (DbType = Binary), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (DbType = DateTime2), @p17='?' (Size = 4000), @p18='?' (DbType = DateTime2), @p19='?' (DbType = Int32), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserTb] ([Id], [CreatedDate], [DOB], [DeletedDate], [Email], [FirstName], [Gender], [ImageArray], [IsDeleted], [LastName], [Location], [MiddleName], [PasswordHash], [PasswordSalt], [PhoneNo], [RecoveryPin], [RecoveryPinExpireTime], [RefreshToken], [RefreshTokenExpireTime], [Role], [State])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20); 
+[INF]  Executed DbCommand (189ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 300), @p4='?' (Size = 300), @p5='?' (DbType = Int32), @p6='?' (Size = 8000) (DbType = Binary), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 8000) (DbType = Binary), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = DateTime2), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserTb] SET [CreatedDate] = @p0, [DOB] = @p1, [DeletedDate] = @p2, [Email] = @p3, [FirstName] = @p4, [Gender] = @p5, [ImageArray] = @p6, [IsDeleted] = @p7, [LastName] = @p8, [Location] = @p9, [MiddleName] = @p10, [PasswordHash] = @p11, [PasswordSalt] = @p12, [PhoneNo] = @p13, [RecoveryPin] = @p14, [RecoveryPinExpireTime] = @p15, [RefreshToken] = @p16, [RefreshTokenExpireTime] = @p17, [Role] = @p18, [State] = @p19
+OUTPUT 1
+WHERE [Id] = @p20; 
+[INF]  Executing OkObjectResult, writing value of type 'System.String'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi) in 9047.7125ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 POST https://localhost:7208/api/User/client application/json 133 - 200 - text/plain;+charset=utf-8 9359.3393ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/User/client application/json 133 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(User.Application.DTO.CreateUserDTO) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (120ms) [Parameters=[@__Trim_0='?' (Size = 300)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND LOWER([u].[Email]) = @__Trim_0 
+[INF]  Executing BadRequestObjectResult, writing value of type 'System.String'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi) in 313.0221ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 POST https://localhost:7208/api/User/client application/json 133 - 400 - text/plain;+charset=utf-8 328.7144ms 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 981.0114ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 6.1265ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 80.8087ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 439.3196ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/User/client application/json 132 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(User.Application.DTO.CreateUserDTO) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (268ms) [Parameters=[@__Trim_0='?' (Size = 300)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND LOWER([u].[Email]) = @__Trim_0 
+[INF]  Executing BadRequestObjectResult, writing value of type 'System.String'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi) in 5756.9658ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 POST https://localhost:7208/api/User/client application/json 132 - 400 - text/plain;+charset=utf-8 6127.5612ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/User/client application/json 133 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(User.Application.DTO.CreateUserDTO) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executing BadRequestObjectResult, writing value of type 'System.String'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi) in 2.4164ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 POST https://localhost:7208/api/User/client application/json 133 - 400 - text/plain;+charset=utf-8 19.1686ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/User/client application/json 132 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(User.Application.DTO.CreateUserDTO) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (9ms) [Parameters=[@__Trim_0='?' (Size = 300)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND LOWER([u].[Email]) = @__Trim_0 
+[INF]  Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 300), @p5='?' (Size = 300), @p6='?' (DbType = Int32), @p7='?' (Size = 8000) (DbType = Binary), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 8000) (DbType = Binary), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (DbType = DateTime2), @p17='?' (Size = 4000), @p18='?' (DbType = DateTime2), @p19='?' (DbType = Int32), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserTb] ([Id], [CreatedDate], [DOB], [DeletedDate], [Email], [FirstName], [Gender], [ImageArray], [IsDeleted], [LastName], [Location], [MiddleName], [PasswordHash], [PasswordSalt], [PhoneNo], [RecoveryPin], [RecoveryPinExpireTime], [RefreshToken], [RefreshTokenExpireTime], [Role], [State])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20); 
+[WRN]  There are multiple relationships between 'TimeSlot' and 'Lawyer' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TimeSlot' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'. 
+[WRN]  Entity 'Client' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+[WRN]  The property 'Lawyer.Languages' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. 
+[WRN]  The foreign key property 'TimeSlot.LawyerId1' was created in shadow state because a conflicting property with the simple name 'LawyerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. 
+[ERR]  Failed executing DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SET IDENTITY_INSERT .ClientTB ON 
+[ERR]  Failed executing DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SET IDENTITY_INSERT .ClientTB OFF 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 1127.6211ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 10.7165ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 236.9888ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 445.9597ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/User/client application/json 137 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(User.Application.DTO.CreateUserDTO) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (177ms) [Parameters=[@__Trim_0='?' (Size = 300)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND LOWER([u].[Email]) = @__Trim_0 
+[INF]  Executed DbCommand (65ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 300), @p5='?' (Size = 300), @p6='?' (DbType = Int32), @p7='?' (Size = 8000) (DbType = Binary), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 8000) (DbType = Binary), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (DbType = DateTime2), @p17='?' (Size = 4000), @p18='?' (DbType = DateTime2), @p19='?' (DbType = Int32), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserTb] ([Id], [CreatedDate], [DOB], [DeletedDate], [Email], [FirstName], [Gender], [ImageArray], [IsDeleted], [LastName], [Location], [MiddleName], [PasswordHash], [PasswordSalt], [PhoneNo], [RecoveryPin], [RecoveryPinExpireTime], [RefreshToken], [RefreshTokenExpireTime], [Role], [State])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20); 
+[WRN]  There are multiple relationships between 'TimeSlot' and 'Lawyer' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TimeSlot' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'. 
+[WRN]  Entity 'Client' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+[WRN]  The property 'Lawyer.Languages' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. 
+[WRN]  The foreign key property 'TimeSlot.LawyerId1' was created in shadow state because a conflicting property with the simple name 'LawyerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. 
+[ERR]  Failed executing DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SET IDENTITY_INSERT .ClientTB ON 
+[WRN]  There are multiple relationships between 'TimeSlot' and 'Lawyer' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TimeSlot' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'. 
+[WRN]  Entity 'Client' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+[WRN]  The property 'Lawyer.Languages' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. 
+[WRN]  The foreign key property 'TimeSlot.LawyerId1' was created in shadow state because a conflicting property with the simple name 'LawyerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. 
+[WRN]  There are multiple relationships between 'TimeSlot' and 'Lawyer' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TimeSlot' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'. 
+[WRN]  Entity 'Client' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+[WRN]  The property 'Lawyer.Languages' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. 
+[WRN]  The foreign key property 'TimeSlot.LawyerId1' was created in shadow state because a conflicting property with the simple name 'LawyerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. 
+[WRN]  There are multiple relationships between 'TimeSlot' and 'Lawyer' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TimeSlot' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'. 
+[WRN]  Entity 'Client' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+[WRN]  The property 'Lawyer.Languages' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. 
+[WRN]  The foreign key property 'TimeSlot.LawyerId1' was created in shadow state because a conflicting property with the simple name 'LawyerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. 
+[WRN]  There are multiple relationships between 'TimeSlot' and 'Lawyer' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TimeSlot' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'. 
+[WRN]  Entity 'Client' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+[WRN]  The property 'Lawyer.Languages' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. 
+[WRN]  The foreign key property 'TimeSlot.LawyerId1' was created in shadow state because a conflicting property with the simple name 'LawyerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. 
+[INF]  Executed DbCommand (371ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [LawDb]; 
+[INF]  Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [LawDb] SET READ_COMMITTED_SNAPSHOT ON;
+END; 
+[INF]  Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[INF]  Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+); 
+[INF]  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1 
+[INF]  Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+[INF]  Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+[INF]  Applying migration '20230220160231_InitialMigration'. 
+[INF]  Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ClientTB] (
+    [Id] uniqueidentifier NOT NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [IsDelete] bit NOT NULL,
+    CONSTRAINT [PK_ClientTB] PRIMARY KEY ([Id])
+); 
+[INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [DepartmentTB] (
+    [Id] uniqueidentifier NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [Name] nvarchar(250) NOT NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_DepartmentTB] PRIMARY KEY ([Id])
+); 
+[INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [LawyerTB] (
+    [Id] uniqueidentifier NOT NULL,
+    [OnlineCharge] float NOT NULL,
+    [OfflineCharge] float NOT NULL,
+    [IsVerify] bit NOT NULL,
+    [OfficeEmail] nvarchar(max) NULL,
+    [Title] nvarchar(max) NOT NULL,
+    [PhoneNo] nvarchar(25) NOT NULL,
+    [Languages] nvarchar(max) NOT NULL,
+    [OfficeAddress] nvarchar(max) NULL,
+    [Location] nvarchar(max) NULL,
+    [State] nvarchar(max) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [FirstName] nvarchar(100) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [IsDelete] bit NOT NULL,
+    CONSTRAINT [PK_LawyerTB] PRIMARY KEY ([Id])
+); 
+[INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [DepartmentLawyer] (
+    [DepartmentsId] uniqueidentifier NOT NULL,
+    [LawyersId] uniqueidentifier NOT NULL,
+    CONSTRAINT [PK_DepartmentLawyer] PRIMARY KEY ([DepartmentsId], [LawyersId]),
+    CONSTRAINT [FK_DepartmentLawyer_DepartmentTB_DepartmentsId] FOREIGN KEY ([DepartmentsId]) REFERENCES [DepartmentTB] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_DepartmentLawyer_LawyerTB_LawyersId] FOREIGN KEY ([LawyersId]) REFERENCES [LawyerTB] ([Id]) ON DELETE CASCADE
+); 
+[INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TimeSlotTB] (
+    [Id] uniqueidentifier NOT NULL,
+    [Index] int NOT NULL,
+    [StartHour] int NOT NULL,
+    [StartMinute] int NOT NULL,
+    [EndHour] int NOT NULL,
+    [EndMinute] int NOT NULL,
+    [LawyerId] uniqueidentifier NULL,
+    [LawyerId1] uniqueidentifier NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_TimeSlotTB] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TimeSlotTB_LawyerTB_LawyerId] FOREIGN KEY ([LawyerId]) REFERENCES [LawyerTB] ([Id]),
+    CONSTRAINT [FK_TimeSlotTB_LawyerTB_LawyerId1] FOREIGN KEY ([LawyerId1]) REFERENCES [LawyerTB] ([Id])
+); 
+[INF]  Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AppointmentTB] (
+    [Id] uniqueidentifier NOT NULL,
+    [TimeSlotId] uniqueidentifier NOT NULL,
+    [LawyerId] uniqueidentifier NOT NULL,
+    [ClientId] uniqueidentifier NOT NULL,
+    [Language] nvarchar(max) NOT NULL,
+    [CaseDescription] nvarchar(max) NOT NULL,
+    [ReviewDate] datetime2 NOT NULL,
+    [HasReviewed] bit NOT NULL,
+    [IsCancel] bit NOT NULL,
+    [Charge] float NOT NULL,
+    [AppointmentType] int NOT NULL,
+    [LawyerReport] nvarchar(max) NULL,
+    [ClientFeedBack] nvarchar(max) NULL,
+    [Stars] int NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_AppointmentTB] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AppointmentTB_ClientTB_ClientId] FOREIGN KEY ([ClientId]) REFERENCES [ClientTB] ([Id]),
+    CONSTRAINT [FK_AppointmentTB_LawyerTB_LawyerId] FOREIGN KEY ([LawyerId]) REFERENCES [LawyerTB] ([Id]),
+    CONSTRAINT [FK_AppointmentTB_TimeSlotTB_TimeSlotId] FOREIGN KEY ([TimeSlotId]) REFERENCES [TimeSlotTB] ([Id]) ON DELETE CASCADE
+); 
+[INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_AppointmentTB_ClientId_ReviewDate] ON [AppointmentTB] ([ClientId], [ReviewDate]); 
+[INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_AppointmentTB_LawyerId_ReviewDate] ON [AppointmentTB] ([LawyerId], [ReviewDate]); 
+[INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AppointmentTB_TimeSlotId] ON [AppointmentTB] ([TimeSlotId]); 
+[INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_DepartmentLawyer_LawyersId] ON [DepartmentLawyer] ([LawyersId]); 
+[INF]  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_DepartmentTB_Name] ON [DepartmentTB] ([Name]); 
+[INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_TimeSlotTB_Index] ON [TimeSlotTB] ([Index]); 
+[INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TimeSlotTB_LawyerId] ON [TimeSlotTB] ([LawyerId]); 
+[INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TimeSlotTB_LawyerId1] ON [TimeSlotTB] ([LawyerId1]); 
+[INF]  Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230220160231_InitialMigration', N'7.0.3'); 
+[INF]  User profile is available. Using 'C:\Users\DELL\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+[INF]  Now listening on: https://localhost:7208 
+[INF]  Now listening on: http://localhost:5114 
+[INF]  Application started. Press Ctrl+C to shut down. 
+[INF]  Hosting environment: Development 
+[INF]  Content root path: C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\ConsultingSystem.WebApi\ 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/index.html - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/index.html - - - 200 - text/html;charset=utf-8 958.9314ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_vs/browserLink - - 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 5.6718ms 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 152.2455ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 449.0396ms 
+[INF]  Request starting HTTP/2 POST https://localhost:7208/api/User/client application/json 136 
+[INF]  CORS policy execution successful. 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RegisterUser(User.Application.DTO.CreateUserDTO) on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (190ms) [Parameters=[@__Trim_0='?' (Size = 300)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND LOWER([u].[Email]) = @__Trim_0 
+[INF]  Executed DbCommand (21ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 300), @p5='?' (Size = 300), @p6='?' (DbType = Int32), @p7='?' (Size = 8000) (DbType = Binary), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 8000) (DbType = Binary), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (DbType = DateTime2), @p17='?' (Size = 4000), @p18='?' (DbType = DateTime2), @p19='?' (DbType = Int32), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserTb] ([Id], [CreatedDate], [DOB], [DeletedDate], [Email], [FirstName], [Gender], [ImageArray], [IsDeleted], [LastName], [Location], [MiddleName], [PasswordHash], [PasswordSalt], [PhoneNo], [RecoveryPin], [RecoveryPinExpireTime], [RefreshToken], [RefreshTokenExpireTime], [Role], [State])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20); 
+[WRN]  There are multiple relationships between 'TimeSlot' and 'Lawyer' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TimeSlot' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'. 
+[WRN]  Entity 'Client' has a global query filter defined and is the required end of a relationship with the entity 'Appointment'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information. 
+[WRN]  The property 'Lawyer.Languages' is a collection or enumeration type with a value converter but with no value comparer. Set a value comparer to ensure the collection/enumeration elements are compared correctly. 
+[WRN]  The foreign key property 'TimeSlot.LawyerId1' was created in shadow state because a conflicting property with the simple name 'LawyerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core. 
+[INF]  Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ClientTB] ([Id], [CreatedDate], [Email], [FirstName], [IsDelete])
+VALUES (@p0, @p1, @p2, @p3, @p4); 
+[INF]  Executed DbCommand (13ms) [Parameters=[@p20='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 300), @p4='?' (Size = 300), @p5='?' (DbType = Int32), @p6='?' (Size = 8000) (DbType = Binary), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 8000) (DbType = Binary), @p12='?' (Size = 8000) (DbType = Binary), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = DateTime2), @p18='?' (DbType = Int32), @p19='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserTb] SET [CreatedDate] = @p0, [DOB] = @p1, [DeletedDate] = @p2, [Email] = @p3, [FirstName] = @p4, [Gender] = @p5, [ImageArray] = @p6, [IsDeleted] = @p7, [LastName] = @p8, [Location] = @p9, [MiddleName] = @p10, [PasswordHash] = @p11, [PasswordSalt] = @p12, [PhoneNo] = @p13, [RecoveryPin] = @p14, [RecoveryPinExpireTime] = @p15, [RefreshToken] = @p16, [RefreshTokenExpireTime] = @p17, [Role] = @p18, [State] = @p19
+OUTPUT 1
+WHERE [Id] = @p20; 
+[INF]  Executing OkObjectResult, writing value of type 'System.String'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi) in 6349.5649ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.RegisterUser (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 POST https://localhost:7208/api/User/client application/json 136 - 200 - text/plain;+charset=utf-8 6680.4441ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/User/all-users - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller LCS.WebApi.Controllers.AuthModule.UserController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedDate], [u].[DOB], [u].[DeletedDate], [u].[Email], [u].[FirstName], [u].[Gender], [u].[ImageArray], [u].[IsDeleted], [u].[LastName], [u].[Location], [u].[MiddleName], [u].[PasswordHash], [u].[PasswordSalt], [u].[PhoneNo], [u].[RecoveryPin], [u].[RecoveryPinExpireTime], [u].[RefreshToken], [u].[RefreshTokenExpireTime], [u].[Role], [u].[State]
+FROM [UserTb] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) 
+[INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[User.Application.DTO.UserResponse, User.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[INF]  Executed action LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi) in 140.1335ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.AuthModule.UserController.GetAllUsers (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/User/all-users - - - 200 - application/json;+charset=utf-8 157.6100ms 
+[INF]  Request starting HTTP/2 GET https://localhost:7208/api/Client/byId?id=d87028dc-3ef1-434f-6b0a-08db135cb72c - - 
+[INF]  Executing endpoint 'LCS.WebApi.Controllers.LawyerModule.ClientController.GetClientById (ConsultancySystem.WebApi)' 
+[INF]  Route matched with {action = "GetClientById", controller = "Client"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetClientById(System.Guid) on controller LCS.WebApi.Controllers.LawyerModule.ClientController (ConsultancySystem.WebApi). 
+[INF]  Executed DbCommand (7ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedDate], [c].[Email], [c].[FirstName], [c].[IsDelete]
+FROM [ClientTB] AS [c]
+WHERE [c].[IsDelete] = CAST(0 AS bit) AND [c].[Id] = @__get_Item_0 
+[INF]  Executing OkObjectResult, writing value of type 'Utilities.ActionResponse.ActionResult'. 
+[INF]  Executed action LCS.WebApi.Controllers.LawyerModule.ClientController.GetClientById (ConsultancySystem.WebApi) in 78.4876ms 
+[INF]  Executed endpoint 'LCS.WebApi.Controllers.LawyerModule.ClientController.GetClientById (ConsultancySystem.WebApi)' 
+[INF]  Request finished HTTP/2 GET https://localhost:7208/api/Client/byId?id=d87028dc-3ef1-434f-6b0a-08db135cb72c - - - 200 - application/json;+charset=utf-8 93.8406ms 

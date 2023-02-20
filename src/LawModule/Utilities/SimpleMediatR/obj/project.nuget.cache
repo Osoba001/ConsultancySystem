@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "ITK/FrOXZWVNJc+Pfj9lzjnazUiTJvCnHjDu3UXU5pY0zpfYGk3I4UCQuD2jLL5x4v20PpEOK/bx6bYdsInoxA==",
+  "dgSpecHash": "Ubp2GLWxQSkKTr2CbYgXVrz7/vB/pRmy3Ouh1GPhQfoyF6zVcCR/7IJJ6drWLxpWPoMhhqLMVG6YwkfxL0J9Tw==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\Desktop\\Apps\\LCS Backend\\LawConsultingSystem\\src\\LawModule\\Utilities\\SimpleMediatR\\SimpleMediatR.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
-    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

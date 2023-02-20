@@ -5,9 +5,14 @@ using Utilities.RegexFormatValidations;
 
 namespace Law.Application.Commands.Lawyer
 {
-    public record UpdateLawyer(Guid Id, string OfficeEmail,
-        string PhoneNo, double OnlineCharge, double OfflineCharge, string Title) : ICommand
+    public record UpdateLawyer: ICommand
     {
+        public Guid Id { get; set; }
+        public string OfficeEmail { get; set; }
+        public string PhoneNo { get; set; }
+        public double OnlineCharge { get; set; }
+        public double OfflineCharge { get; set; }
+        public string Title { get; set; }
         public ActionResult Validate()
         {
             var res = new ActionResult();

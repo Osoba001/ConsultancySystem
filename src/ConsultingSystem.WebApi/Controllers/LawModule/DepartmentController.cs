@@ -12,7 +12,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
     public class DepartmentController : CustomControllerBase
     {
         private const string DepartmentsRedisChinnelId = "departments";
-        public DepartmentController(IMediator mediator) : base(mediator) { }
+        //public DepartmentController(IMediator mediator) : base(mediator) { }
         public DepartmentController(IMediator mediator, IRedisDatabase redisDatabase) : base(mediator, redisDatabase) { }
 
 
@@ -29,7 +29,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpDelete]
         public async Task<IActionResult> DeleteDepartment(Guid id)
         {
-            return await ExecuteAsync<DeleteDepartmentHandler,DeleteDepartment>(new DeleteDepartment(id));
+            return await ExecuteAsync<DeleteDepartmentHandler,DeleteDepartment>(new DeleteDepartment { Id=id});
         }
 
         [HttpGet]
@@ -40,7 +40,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpGet("byId")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            return await QueryNullableAsync<DepartmentByIdHandler,DepartmentByIdQuery>(new DepartmentByIdQuery(id));
+            return await QueryNullableAsync<DepartmentByIdHandler,DepartmentByIdQuery>(new DepartmentByIdQuery{ Id = id });
         }
     }
 }

@@ -4,8 +4,10 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Commands.Lawyer
 {
-    public record AddOfflineWorkingSlot(Guid LawyerId, List<Guid> TimeSlotIds) : ICommand
+    public record AddOfflineWorkingSlot : ICommand
     {
+        public Guid LawyerId { get; set; }
+        public List<Guid> TimeSlotIds { get; set; }
         public ActionResult Validate() => new();
     }
 

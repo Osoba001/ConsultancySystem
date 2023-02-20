@@ -4,8 +4,10 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Commands.Lawyer
 {
-    public record AddLanguageToLawyer(Guid LawyerId, string Language) : ICommand
+    public record AddLanguageToLawyer: ICommand
     {
+        public Guid LawyerId { get; set; }
+        public string Language { get; set; }
         public ActionResult Validate() => new();
     }
 

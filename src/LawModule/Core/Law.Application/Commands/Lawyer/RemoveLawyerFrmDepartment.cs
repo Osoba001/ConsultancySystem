@@ -4,8 +4,16 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Commands.Lawyer
 {
-    public record RemoveLawyerFrmDepartment(Guid LawyerId, Guid DeptId) : ICommand
+    public record RemoveLawyerFrmDepartment: ICommand
     {
+        public Guid LawyerId
+        {
+            get; set;
+        }
+        public Guid DeptId
+        {
+            get; set;
+        }
         public ActionResult Validate() => new();
     }
 

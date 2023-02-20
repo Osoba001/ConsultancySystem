@@ -119,6 +119,12 @@ namespace LCS.WebApi.Controllers.AuthModule
             var res = await _userService.NewPassword(newPassword);
             return ReturnAction(res);
         }
+        [HttpPost("propfile-picture")]
+        public async Task<IActionResult> UploadProfilePicture(IFormFile photo,Guid id)
+        {
+            var res = await _userService.UploadProfilePicture(new UploadProfilePictureDTO(photo,id));
+            return ReturnAction(res);
+        }
 
         private IActionResult ReturnAction(Utilities.ActionResponse.ActionResult res)
         {

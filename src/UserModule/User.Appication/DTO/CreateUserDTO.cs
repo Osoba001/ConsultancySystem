@@ -13,14 +13,14 @@ namespace User.Application.DTO
                 res.AddError("Invalid email.");
             if (!FirstName.StringMaxLength())
                 res.AddError("First name length is out of range.");
-            if (Password.StringMaxLength(35))
+            if (!Password.StringMaxLength(35))
                 res.AddError("Password is too long.");
             if (Password.Length < 5)
                 res.AddError("Password is too short.");
             if (!DOB.PastDate(DateTime.Now.AddYears(-150)))
-                res.AddError("Date of birth is out of range.");
-            if (Gender != Gender.Male || Gender != Gender.Female)
-                res.AddError("Invalid gender");
+                res.AddError("Invalid date of birth.");
+            if ((int)Gender < 0 || (int)Gender > 1)
+                res.AddError("Invalid gender.");
             return res;
         }
     }

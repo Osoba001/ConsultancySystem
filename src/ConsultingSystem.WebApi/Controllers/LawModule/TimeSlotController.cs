@@ -13,8 +13,8 @@ namespace LCS.WebApi.Controllers.LawyerModule
     {
         private const string SlotsRedisChanelId = "timeslots";
 
-        public TimeSlotController(IMediator mediator, IRedisDatabase redisDatabase) : base(mediator, redisDatabase) { }
-        public TimeSlotController(IMediator mediator) : base(mediator) { }
+        public TimeSlotController(IMediator mediator,IRedisDatabase redisDatabase) : base(mediator,redisDatabase) { }
+
        
         [HttpGet]
         public async Task<IActionResult> Get()

@@ -6,7 +6,7 @@ namespace Law.Persistence.Repositories
 {
     public class TimeSlotRepo : BaseRepo<TimeSlot>, ITimeSlotRepo
     {
-        public TimeSlotRepo(LCSDbContext context) : base(context)
+        public TimeSlotRepo(LawDbContext context) : base(context)
         {
         }
 

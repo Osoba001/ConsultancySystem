@@ -25,14 +25,14 @@ namespace SimpleMediatR.MediatR
            where TQueryHandler : QueryHandler<TQuery>
            where TQuery : IQuery
         {
-            var handler = (TQueryHandler)Activator.CreateInstance(typeof(TQuery))!;
+            var handler = (TQueryHandler)Activator.CreateInstance(typeof(TQueryHandler))!;
             return handler.HandlerAsync(query, RepoWrapper);
         }
         public Task<ActionResult> QueryNullableAsync<TQueryHandler, TQuery>(TQuery query)
             where TQueryHandler : IQueryHandler<TQuery>
             where TQuery : IQuery
         {
-            var handler=(TQueryHandler)Activator.CreateInstance(typeof(TQuery))!;
+            var handler=(TQueryHandler)Activator.CreateInstance(typeof(TQueryHandler))!;
             return handler.HandlerAsync(query, RepoWrapper);    
         }
     }

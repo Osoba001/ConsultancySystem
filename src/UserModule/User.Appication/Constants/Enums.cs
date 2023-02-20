@@ -4,8 +4,8 @@
     {
         Male, Female
     }
-    public enum Role
-    {
-        Client, Lawyer, Admin
-    }
+    //public enum Role
+    //{
+    //    Client, Lawyer, Admin
+    //}
 }

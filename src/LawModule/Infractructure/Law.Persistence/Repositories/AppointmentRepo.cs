@@ -8,9 +8,9 @@ namespace Law.Persistence.Repositories
 {
     public class AppointmentRepo : BaseRepo<Appointment>, IAppointmentRepo
     {
-        private readonly LCSDbContext _context;
+        private readonly LawDbContext _context;
 
-        public AppointmentRepo(LCSDbContext context) : base(context)
+        public AppointmentRepo(LawDbContext context) : base(context)
         {
             _context = context;
         }

@@ -1,4 +1,5 @@
-﻿using Law.Domain.Constants;
+﻿using Law.Application.Commands.AppointmentB;
+using Law.Domain.Constants;
 using Law.Domain.Models;
 using Law.Domain.Repositories;
 using ShareServices.Events;
@@ -10,31 +11,30 @@ using Utilities.RegexFormatValidations;
 
 namespace Law.Application.Commands.ClientC
 {
-    public record BookOfflineAppointment(Guid ClientId, Guid LawyerId, DateTime reviewDate,
-       Guid TimeSlotId, string CaseDescription, string Language) : ICommand
+    public record BookOfflineAppointment: ICommand
     {
+        public Guid ClientId { get; set; }
+        public Guid LawyerId { get; set; }
+        public DateTime ReviewDate { get; set; }
+        public Guid TimeSlotId { get; set; }
+        public string CaseDescription { get; set; }
+        public string Language { get; set; }
         public ActionResult Validate()
         {
             ActionResult res = new();
-            if (!reviewDate.FutureDate())
+            if (!ReviewDate.FutureDate())
             {
                 res.AddError("Appointment date must be a future date.");
             }
-            else if (!reviewDate.FutureDate(DateTime.Now.AddMonths(1)))
+            else if (!ReviewDate.FutureDate(DateTime.Now.AddMonths(1)))
             {
                 res.AddError("Appointment date is tool high. It should not be more than 30 days.");
             }
             return res;
         }
     }
-    public class BookOfflineAppointmentHandler : ICommandHandler<BookOfflineAppointment>, IAppointmentEvent
-    {
-        public event EventHandler<BookedAppointmentEventArg>? BookedAppointmentEvent;
-
-        protected virtual void OnBookedAppointment(BookedAppointmentEventArg arg)
-        {
-            BookedAppointmentEvent?.Invoke(this, arg);
-        }
+    public class BookOfflineAppointmentHandler : BookAppointmentBase, ICommandHandler<BookOfflineAppointment>
+    { 
         public async Task<ActionResult> HandleAsync(BookOfflineAppointment command, IRepoWrapper repo, CancellationToken cancellationToken = default)
         {
             var client = await repo.ClientRepo.GetById(command.ClientId);
@@ -49,7 +49,7 @@ namespace Law.Application.Commands.ClientC
                 return repo.FailedAction("Time slot not found.");
 
             TimeSpan tim = new(slot.StartHour, slot.StartMinute, 0);
-            DateTime appointTime = command.reviewDate.Date + tim;
+            DateTime appointTime = command.ReviewDate.Date + tim;
             var bookedLawyer = await repo.AppointmentRepo.FindOneByPredicate(x => x.Lawyer.Id == lawyer.Id &&
             x.ReviewDate == appointTime);
             if (bookedLawyer == null)
@@ -69,17 +69,7 @@ namespace Law.Application.Commands.ClientC
                 var res= await repo.AppointmentRepo.Add(appointment);
                 if (res.IsSuccess)
                 {
-                    var bkAppAgr = new BookedAppointmentEventArg
-                    {
-                        AppointmentName = "Offline",
-                        Receiver = lawyer.FirstName,
-                        Client = client.FirstName,
-                        ReceiverEmail = lawyer.Email,
-                        ClientEmail = lawyer.Email,
-                        ReviewAddress = $"{lawyer.OfficeAddress},{lawyer.Location}, {lawyer.State}",
-                        ReviewDate = appointTime,
-                    };
-                    OnBookedAppointment(bkAppAgr);
+                    BookAppointmentEventManager(appointment);
                 }
                 return res;
             }

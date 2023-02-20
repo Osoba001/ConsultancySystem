@@ -5,7 +5,7 @@ using SimpleMediatR.MediatRContract;
 
 namespace Law.Application.Queries.TimeSlotQ
 {
-    public record TimeSlotQuery : IQuery;
+    public class TimeSlotQuery : IQuery { }
 
     public class TimeSlotQueryHandler : QueryHandler<TimeSlotQuery>
     {

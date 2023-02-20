@@ -5,8 +5,10 @@ using Utilities.RegexFormatValidations;
 
 namespace Law.Application.Commands.Lawyer
 {
-    public record ReviewAppointment(Guid AppointmentId, string Report) : ICommand
+    public record ReviewAppointment : ICommand
     {
+        public Guid AppointmentId { get; set; }
+        public string Report { get; set; }
         public ActionResult Validate()
         {
             ActionResult res = new ActionResult();

@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ShareResource\ShareService\ShareServices.csproj" />
+    <ProjectReference Include="..\..\Core\Law.Application\Law.Application.csproj" />
     <ProjectReference Include="..\..\Core\Law.Domain\Law.Domain.csproj" />
   </ItemGroup>
 

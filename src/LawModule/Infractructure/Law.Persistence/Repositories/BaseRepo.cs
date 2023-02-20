@@ -9,9 +9,9 @@ namespace Law.Persistence.Repositories
 {
     public class BaseRepo<T> : IBaseRepo<T> where T : ModelBase
     {
-        private readonly LCSDbContext _context;
+        private readonly LawDbContext _context;
 
-        public BaseRepo(LCSDbContext context)
+        public BaseRepo(LawDbContext context)
         {
             _context = context;
         }

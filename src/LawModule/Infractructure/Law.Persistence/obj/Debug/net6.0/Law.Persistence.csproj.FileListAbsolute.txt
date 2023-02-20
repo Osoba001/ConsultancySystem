@@ -36,3 +36,9 @@ C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infract
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infractructure\Law.Persistence\obj\Debug\net6.0\Law.Persistence.csproj.CopyComplete
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infractructure\Law.Persistence\obj\Debug\net6.0\Law.Persistence.genruntimeconfig.cache
 C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infractructure\Law.Persistence\obj\Debug\net6.0\ref\Law.Persistence.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infractructure\Law.Persistence\bin\Debug\net6.0\Law.Application.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infractructure\Law.Persistence\bin\Debug\net6.0\ShareServices.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infractructure\Law.Persistence\bin\Debug\net6.0\SimpleMediatR.dll
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infractructure\Law.Persistence\bin\Debug\net6.0\ShareServices.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infractructure\Law.Persistence\bin\Debug\net6.0\Law.Application.pdb
+C:\Users\DELL\Desktop\Apps\LCS Backend\LawConsultingSystem\src\LawModule\Infractructure\Law.Persistence\bin\Debug\net6.0\SimpleMediatR.pdb

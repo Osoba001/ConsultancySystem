@@ -4,8 +4,9 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Commands.Lawyer
 {
-    public record VerifyLawyer(Guid Id) : ICommand
+    public record VerifyLawyer : ICommand
     {
+        public Guid Id { get; set; }
         public ActionResult Validate() => new();
     }
 

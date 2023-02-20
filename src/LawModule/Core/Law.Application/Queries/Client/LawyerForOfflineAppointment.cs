@@ -5,7 +5,12 @@ using SimpleMediatR.MediatRContract;
 
 namespace Law.Application.Queries.Client
 {
-    public record LawyerForOfflineAppointment(string Language, string State, string Location) : IQuery;
+    public record LawyerForOfflineAppointment : IQuery
+    {
+        public string Language { get; set; }
+        public string State { get; set; }
+        public string Location { get; set; }
+    }
 
     public class LawyerForOfflineAppointmentHandler : QueryHandler<LawyerForOfflineAppointment>
     {

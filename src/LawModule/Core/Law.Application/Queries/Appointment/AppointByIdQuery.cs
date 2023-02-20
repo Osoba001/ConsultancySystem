@@ -5,7 +5,10 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Queries.Appointment
 {
-    public record AppointByIdQuery(Guid Id) : IQuery;
+    public record AppointByIdQuery: IQuery
+    {
+        public Guid Id { get; set; }
+    }
 
     public record AppointByIdHandler : IQueryHandler<AppointByIdQuery>
     {

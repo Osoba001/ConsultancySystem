@@ -4,7 +4,7 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Commands.TimeSlot
 {
-    public record CreateTimeSlot() : ICommand
+    public class CreateTimeSlot : ICommand
     {
         public ActionResult Validate() => new();
     }

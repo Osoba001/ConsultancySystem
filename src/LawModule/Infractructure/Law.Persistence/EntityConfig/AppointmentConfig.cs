@@ -8,10 +8,10 @@ namespace Law.Persistence.EntityConfig
     {
         public void Configure(EntityTypeBuilder<Appointment> builder)
         {
-            builder.HasOne(x => x.Lawyer).WithMany(x => x.Appointments).OnDelete(DeleteBehavior.NoAction);
-            builder.HasOne(x => x.Client).WithMany(x => x.Appointments).OnDelete(DeleteBehavior.NoAction);
-            builder.HasIndex(x => new { x.Lawyer, x.ReviewDate }).IsUnique();
-            builder.HasIndex(x => new { x.Client, x.ReviewDate }).IsUnique();
+            builder.HasOne(x => x.Lawyer).WithMany(x => x.Appointments).HasForeignKey(x => x.LawyerId).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(x => x.Client).WithMany(x => x.Appointments).HasForeignKey(x => x.ClientId).OnDelete(DeleteBehavior.NoAction);
+            builder.HasIndex(x => new { x.LawyerId, x.ReviewDate }).IsUnique();
+            builder.HasIndex(x => new { x.ClientId, x.ReviewDate }).IsUnique();
             builder.Property(x => x.Language);
             builder.HasOne(x => x.TimeSlot);
             builder.Property(x => x.AppointmentType).IsRequired();

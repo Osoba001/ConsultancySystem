@@ -5,7 +5,10 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Queries.Lawyer
 {
-    public record LawyerByIdQuery(Guid Id) : IQuery;
+    public record LawyerByIdQuery : IQuery
+    {
+        public Guid Id { get; set; }
+    }
 
     public class LawyerByIdQueryHandler : IQueryHandler<LawyerByIdQuery>
     {

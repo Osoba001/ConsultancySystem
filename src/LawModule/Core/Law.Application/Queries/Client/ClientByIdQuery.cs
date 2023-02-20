@@ -5,7 +5,13 @@ using Utilities.ActionResponse;
 
 namespace Law.Application.Queries.Client
 {
-    public record ClientByIdQuery(Guid Id) : IQuery;
+    public record ClientByIdQuery: IQuery
+    {
+        public Guid Id
+        {
+            get; set;
+        }
+    }
 
     public class ClientByIdHandler : IQueryHandler<ClientByIdQuery>
     {

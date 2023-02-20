@@ -10,41 +10,41 @@ namespace Law.Persistence.Repositories
 {
     public class LawyerRepo : BaseRepo<Lawyer>, ILawyerRepo
     {
-        private readonly LCSDbContext _context;
+        private readonly LawDbContext _context;
 
-        public LawyerRepo(LCSDbContext context) : base(context)
+        public LawyerRepo(LawDbContext context) : base(context)
         {
             _context = context;
         }
 
-        public override async Task<ActionResult> Add(Lawyer entity)
-        {
-            var res = new ActionResult();
-            IEntityType metadata = _context.Model.FindEntityType(typeof(Lawyer).FullName!)!;
-            var schema = metadata.GetSchema();
-            var tableName = metadata.GetTableName();
+        //public override async Task<ActionResult> Add(Lawyer entity)
+        //{
+        //    var res = new ActionResult();
+        //    IEntityType metadata = _context.Model.FindEntityType(typeof(Lawyer).FullName!)!;
+        //    var schema = metadata.GetSchema();
+        //    var tableName = metadata.GetTableName();
 
-            var stratagy = _context.Database.CreateExecutionStrategy();
-            await stratagy.ExecuteAsync(async () =>
-            {
-                using var trans = _context.Database.BeginTransaction();
-                try
-                {
-                    await _context.Database.ExecuteSqlRawAsync($"SET IDENTITY_INSERT {schema}.{tableName} ON");
-                    res = await base.Add(entity);
-                }
-                catch (Exception ex)
-                {
-                    await trans.RollbackAsync();
-                    res = FailedAction(ex.Message);
-                }
-                finally
-                {
-                    await _context.Database.ExecuteSqlRawAsync($"SET IDENTITY_INSERT {schema}.{tableName} OFF");
-                }
-            });
-            return res;
-        }
+        //    var stratagy = _context.Database.CreateExecutionStrategy();
+        //    await stratagy.ExecuteAsync(async () =>
+        //    {
+        //        using var trans = _context.Database.BeginTransaction();
+        //        try
+        //        {
+        //            await _context.Database.ExecuteSqlRawAsync($"SET IDENTITY_INSERT {schema}.{tableName} ON");
+        //            res = await base.Add(entity);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            await trans.RollbackAsync();
+        //            res = FailedAction(ex.Message);
+        //        }
+        //        finally
+        //        {
+        //            await _context.Database.ExecuteSqlRawAsync($"SET IDENTITY_INSERT {schema}.{tableName} OFF");
+        //        }
+        //    });
+        //    return res;
+        //}
 
 
 

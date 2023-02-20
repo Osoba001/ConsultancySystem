@@ -1,4 +1,6 @@
-﻿using Law.Application.Commands.Lawyer;
+﻿using ConsultancySystem.WebApi.Files.Manager;
+using ConsultancySystem.WebApi.Models;
+using Law.Application.Commands.Lawyer;
 using Law.Application.Queries.Lawyer;
 using Law.Application.Response;
 using Microsoft.AspNetCore.Mvc;
@@ -10,8 +12,11 @@ namespace LCS.WebApi.Controllers.LawyerModule
     [ApiController]
     public class LawyerController : CustomControllerBase
     {
-        public LawyerController(IMediator mediator) : base(mediator)
+        private readonly IFileManager _fileManager;
+
+        public LawyerController(IMediator mediator,IFileManager fileManager) : base(mediator)
         {
+            _fileManager = fileManager;
         }
         [HttpPost("review-appointment")]
         public async Task<IActionResult> ReviewAppointment([FromBody] ReviewAppointment reviewAppointment)
@@ -27,7 +32,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpDelete("remove-language")]
         public async Task<IActionResult> RemoveLanguage(Guid lawyerId, string language)
         {
-            return await ExecuteAsync<RemoveLanguageFromLawyerHandler,RemoveLanguageFromLawyer>(new RemoveLanguageFromLawyer(lawyerId,language));
+            return await ExecuteAsync<RemoveLanguageFromLawyerHandler,RemoveLanguageFromLawyer>(new RemoveLanguageFromLawyer { LawyerId = lawyerId, Language = language });
         }
 
         [HttpPost("Join-department")]
@@ -39,7 +44,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpDelete("leave-department")]
         public async Task<IActionResult> LeaveDepartment(Guid lawyerId,Guid deptId)
         {
-            return await ExecuteAsync<RemoveLawyerFrmDepartmentHandler, RemoveLawyerFrmDepartment>(new RemoveLawyerFrmDepartment(lawyerId, deptId));
+            return await ExecuteAsync<RemoveLawyerFrmDepartmentHandler, RemoveLawyerFrmDepartment>(new RemoveLawyerFrmDepartment { LawyerId = lawyerId, DeptId = deptId });
         }
 
         [HttpPost("add-online-slot")]
@@ -53,14 +58,14 @@ namespace LCS.WebApi.Controllers.LawyerModule
             return await ExecuteAsync<AddOfflineWorkinSlotHandler, AddOfflineWorkingSlot>(addWorkingSlot);
         }
         [HttpDelete("remove-online-slot")]
-        public async Task<IActionResult> RemoveOnlineWorkinSlot(Guid lawyerId,List<Guid> slotIds)
+        public async Task<IActionResult> RemoveOnlineWorkinSlot(Guid lawyerId, List<Guid> slotIds)
         {
-            return await ExecuteAsync<RemoveOnlineWorkingSlotHandler, RemoveOnlineWorkingSlot>(new RemoveOnlineWorkingSlot(lawyerId, slotIds));
+            return await ExecuteAsync<RemoveOnlineWorkingSlotHandler, RemoveOnlineWorkingSlot>(new RemoveOnlineWorkingSlot{LawyerId = lawyerId, SlotIds = slotIds});
         }
         [HttpDelete("remove-offline-slot")]
         public async Task<IActionResult> RemoveOfflineWorkinSlot(Guid lawyerId, List<Guid> slotIds)
         {
-            return await ExecuteAsync<RemoveOfflineWorkingSlotHandler, RemoveOfflineWorkingSlot>(new RemoveOfflineWorkingSlot(lawyerId, slotIds));
+            return await ExecuteAsync<RemoveOfflineWorkingSlotHandler, RemoveOfflineWorkingSlot>(new RemoveOfflineWorkingSlot{ LawyerId = lawyerId, SlotIds = slotIds });
         }
 
         [HttpPost("verify-lawyer")]
@@ -78,19 +83,19 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpGet("by-Id")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            return await QueryNullableAsync<LawyerByIdQueryHandler, LawyerByIdQuery>(new LawyerByIdQuery(id));
+            return await QueryNullableAsync<LawyerByIdQueryHandler, LawyerByIdQuery>(new LawyerByIdQuery { Id=id});
         }
 
         [HttpGet("appointment")]
         public async Task<IActionResult> GetAppointmentByLawyer(Guid lawyerId)
         {
-            return await QueryAsync<AppointmentByLawyerHandler,AppointmentByLawyerQuery>(new AppointmentByLawyerQuery(lawyerId));
+            return await QueryAsync<AppointmentByLawyerHandler,AppointmentByLawyerQuery>(new AppointmentByLawyerQuery { LawyerId=lawyerId});
         }
 
         [HttpGet("by-department")]
         public async Task<IActionResult> LawyerByDepartment(Guid departmentId)
         {
-            return await QueryAsync<LawyerByDepartmentHandler,LawyerByDepartmentQuery>(new LawyerByDepartmentQuery(departmentId));
+            return await QueryAsync<LawyerByDepartmentHandler,LawyerByDepartmentQuery>(new LawyerByDepartmentQuery { DepartmentId = departmentId });
         }
 
         [HttpPatch("office-address")]
@@ -99,6 +104,25 @@ namespace LCS.WebApi.Controllers.LawyerModule
             return await ExecuteAsync<UpdateOfficeHandler, UpdateOffice>(office);
         }
 
+        [HttpPost("upload-qualification")]
+        public async Task<IActionResult> UploadQualification([FromBody] UploadQualificationDTO qualificationDTO)
+        {
+            var res = await _fileManager.SaveFile(qualificationDTO.File, qualificationDTO.UserId);
+            if (res.IsSuccess)
+                return Ok("Success");
+            else
+                return BadRequest(res.ToString());
+        }
+
+        [HttpGet("download-Certificate")]
+        public FileContentResult? DownloadFile(Guid id)
+        {
+            string filePath = $"Files\\Qualification\\{id}.zip";
+            if (Directory.Exists(filePath))
+                return File(System.IO.File.ReadAllBytes(filePath), "application/octet-stream", $"{id}.zip");
+            return null;
+
+        }
 
     }
 }

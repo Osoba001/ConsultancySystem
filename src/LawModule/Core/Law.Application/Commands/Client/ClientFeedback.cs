@@ -6,8 +6,11 @@ using Utilities.RegexFormatValidations;
 
 namespace Law.Application.Commands.ClientC
 {
-    public record ClientFeedback(Guid AppointmentId, string Feedback, Star Star) : ICommand
+    public record ClientFeedback: ICommand
     {
+        public Guid AppointmentId { get; set; }
+        public string Feedback { get; set; }
+        public Star Star { get; set; }
         public ActionResult Validate()
         {
             ActionResult res = new();

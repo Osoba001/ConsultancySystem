@@ -17,9 +17,9 @@ namespace ShareServices.Services
     internal class EmailServices
     {
         private readonly IEmailSender _emailSender;
-        private readonly IAppointmentEvent _appointmentEvent;
+        private readonly ILawAppointmentEvent _appointmentEvent;
         private readonly string conString;
-        public EmailServices(IEmailSender emailSender, IOptionsSnapshot<RedisConfigModel> redisConfModelOpt, IAppointmentEvent appointmentEvent)
+        public EmailServices(IEmailSender emailSender, IOptionsSnapshot<RedisConfigModel> redisConfModelOpt, ILawAppointmentEvent appointmentEvent)
         {
             _emailSender = emailSender;
             _appointmentEvent = appointmentEvent;

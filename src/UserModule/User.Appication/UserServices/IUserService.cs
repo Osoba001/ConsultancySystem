@@ -23,6 +23,6 @@ namespace Auth.UserServices
         Task<List<UserResponse>> GetFalseDeletedUsers(int days =0);
         Task<ActionResult> UndoFalseDelete(Guid id);
         Task<ActionResult> HardDeleteRange(List<Guid> ids);
-
+        Task<ActionResult> UploadProfilePicture(UploadProfilePictureDTO profilePictureDTO);
     }
 }

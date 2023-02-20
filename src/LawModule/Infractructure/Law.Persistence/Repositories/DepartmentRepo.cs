@@ -8,9 +8,9 @@ namespace Law.Persistence.Repositories
 {
     public class DepartmentRepo : BaseRepo<Department>, IDepartmentRepo
     {
-        private readonly LCSDbContext _context;
+        private readonly LawDbContext _context;
 
-        public DepartmentRepo(LCSDbContext context) : base(context)
+        public DepartmentRepo(LawDbContext context) : base(context)
         {
             _context = context;
         }
