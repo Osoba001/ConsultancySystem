@@ -1,7 +1,7 @@
 ﻿using Law.Domain.Models;
 using Microsoft.Extensions.DependencyInjection;
 using ShareServices.EmailService;
-using ShareServices.RedisMsgDTO;
+using ShareServices.Models;
 
 namespace Law.Application.Commands.AppointmentB
 {

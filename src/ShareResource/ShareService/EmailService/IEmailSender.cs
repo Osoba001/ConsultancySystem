@@ -1,4 +1,4 @@
-﻿using ShareServices.RedisMsgDTO;
+﻿using ShareServices.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -73,7 +73,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 builder.Services.AddStackExchangeRedisCache(opt =>
 {
-    opt.Configuration = config.GetSection("RedisConfigModel:ConString").Value;
+    opt.Configuration = config.GetConnectionString("RedisConString");
     opt.InstanceName = "ConsultancyWebApi_";
 });
 

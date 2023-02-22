@@ -2,7 +2,6 @@
 using ShareServices.Constant;
 using ShareServices.EmailService;
 using ShareServices.Events;
-using ShareServices.RedisMsgDTO;
 using User.Application.AuthServices;
 using User.Application.DTO;
 using User.Application.Entities;
