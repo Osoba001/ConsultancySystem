@@ -1,8 +1,7 @@
 ﻿using Law.Application.Commands.TimeSlot;
 using Law.Application.Queries.TimeSlotQ;
-using Law.Application.Response;
 using Microsoft.AspNetCore.Mvc;
-using ShareServices.AsDatabase;
+using ShareServices.RedisService;
 using SimpleMediatR.MediatRContract;
 
 namespace LCS.WebApi.Controllers.LawyerModule

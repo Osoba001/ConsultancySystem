@@ -11,7 +11,7 @@ namespace Law.Application.Commands.TimeSlot
 
     public class CreateTimeSlotHandler : ICommandHandler<CreateTimeSlot>
     {
-        public async Task<ActionResult> HandleAsync(CreateTimeSlot command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(CreateTimeSlot command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var slots = await repo.TimeSlotRepo.GetAll();
             if (slots.Count > 0)

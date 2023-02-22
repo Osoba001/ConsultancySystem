@@ -27,7 +27,7 @@ namespace Law.Application.Commands.DepartmentC
 
     public class CreateDepartmentHandler : ICommandHandler<CreateDepartment>
     {
-        public async Task<ActionResult> HandleAsync(CreateDepartment command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(CreateDepartment command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var dept = await repo.DepartmentRepo.FindOneByPredicate(x => x.Name.ToLower() == command.Name.Trim().ToLower());
             if (dept != null)

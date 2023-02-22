@@ -6,7 +6,7 @@ namespace Law.Application.Response
 {
     public class AppointmentResponse : BaseResponse
     {
-
+        public DateTime CreatedDate { get; set; }
         public LawyerResponse Lawyer { get; set; }
         public ClientResponse Client { get; set; }
         public string TimeSlot { get; set; }

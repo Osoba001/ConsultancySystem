@@ -5,7 +5,7 @@ namespace SimpleMediatR.MediatRContract
 {
     public interface ICommandHandler<TCommand> where TCommand : ICommand 
     {
-       Task<ActionResult> HandleAsync(TCommand command, IRepoWrapper repo, CancellationToken cancellationToken=default);
+       Task<ActionResult> HandleAsync(TCommand command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken=default);
     }
 
 }   

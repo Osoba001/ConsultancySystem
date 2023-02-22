@@ -21,7 +21,6 @@ namespace Law.Persistence.Dependency
             services.AddScoped<IMediator, Mediator>();
             services.AddScoped<IRepoWrapper, RepoWrapper>();
             services.AddScoped<ILawModuleEventService, UserEventService>();
-            services.AddScoped<ILawAppointmentEvent, BookAppointmentBase>();
             return services;
         }
     }

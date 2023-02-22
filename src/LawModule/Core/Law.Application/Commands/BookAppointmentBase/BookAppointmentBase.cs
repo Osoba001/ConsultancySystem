@@ -1,27 +1,17 @@
 ﻿using Law.Domain.Models;
-using ShareServices.Events;
-using ShareServices.Events.EventArgData;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Utilities.ActionResponse;
+using Microsoft.Extensions.DependencyInjection;
+using ShareServices.EmailService;
+using ShareServices.RedisMsgDTO;
 
 namespace Law.Application.Commands.AppointmentB
 {
-    public class BookAppointmentBase:ILawAppointmentEvent
+    public class BookAppointmentBase
     {
-        public event EventHandler<BookedAppointmentEventArg>? BookedAppointmentEvent;
-
-        protected virtual void OnBookedAppointment(BookedAppointmentEventArg arg)
-        {
-            BookedAppointmentEvent?.Invoke(this, arg);
-        }
-        public void BookAppointmentEventManager(Appointment appointment)
+       
+        public void BookedAppointmentEmailSender(Appointment appointment, IServiceProvider ServiceProvider)
         {
 
-            var bkAppAgr = new BookedAppointmentEventArg
+            var bkApp = new BookedAppointmentDTO
             {
                 AppointmentName = appointment.AppointmentType.ToString(),
                 Receiver = appointment.Lawyer.FirstName,
@@ -31,7 +21,8 @@ namespace Law.Application.Commands.AppointmentB
                 ReviewAddress = $"{appointment.Lawyer.OfficeAddress},{appointment.Lawyer.Location}, {appointment.Lawyer.State}",
                 ReviewDate = appointment.ReviewDate,
             };
-            OnBookedAppointment(bkAppAgr);
+            var emailSender = ServiceProvider.GetRequiredService<IEmailSender>();
+            emailSender.SendOnBookedAppointmentEmailAsync(bkApp);
         }
     }
 }

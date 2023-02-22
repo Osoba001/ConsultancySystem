@@ -29,29 +29,14 @@ namespace Law.Persistence.Data
         }
         public async Task<ActionResult> SaveActionAsync()
         {
-            var res = new ActionResult();
-            try
-            {
-                await SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                res.AddError(ex.Message);
-            }
-            return res;
+            await SaveChangesAsync();
+            return new ActionResult();
         }
         public async Task<ActionResult<T>> SaveActionAsync<T>(T entity) where T : class
         {
-            var res = new ActionResult<T>();
-            try
-            {
-                await SaveChangesAsync();
-                res.Item = entity;
-            }
-            catch (Exception ex)
-            {
-                res.AddError(ex.Message);
-            }
+           var res = new ActionResult<T>();
+            await SaveChangesAsync();
+            res.Item = entity;
             return res;
         }
     }

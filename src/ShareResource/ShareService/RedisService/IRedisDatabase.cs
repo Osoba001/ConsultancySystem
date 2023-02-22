@@ -1,4 +1,4 @@
-﻿namespace ShareServices.AsDatabase
+﻿namespace ShareServices.RedisService
 {
     public interface IRedisDatabase
     {

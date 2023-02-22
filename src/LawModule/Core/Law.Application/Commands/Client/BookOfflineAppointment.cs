@@ -35,7 +35,7 @@ namespace Law.Application.Commands.ClientC
     }
     public class BookOfflineAppointmentHandler : BookAppointmentBase, ICommandHandler<BookOfflineAppointment>
     { 
-        public async Task<ActionResult> HandleAsync(BookOfflineAppointment command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(BookOfflineAppointment command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var client = await repo.ClientRepo.GetById(command.ClientId);
             if (client == null)
@@ -69,7 +69,7 @@ namespace Law.Application.Commands.ClientC
                 var res= await repo.AppointmentRepo.Add(appointment);
                 if (res.IsSuccess)
                 {
-                    BookAppointmentEventManager(appointment);
+                    BookedAppointmentEmailSender(appointment, ServiceProvider);
                 }
                 return res;
             }

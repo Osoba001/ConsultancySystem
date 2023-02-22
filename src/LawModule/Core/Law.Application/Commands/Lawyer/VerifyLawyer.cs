@@ -12,7 +12,7 @@ namespace Law.Application.Commands.Lawyer
 
     public class VerifyLawyerHandler : ICommandHandler<VerifyLawyer>
     {
-        public async Task<ActionResult> HandleAsync(VerifyLawyer command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(VerifyLawyer command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var res = await repo.LawyerRepo.GetById(command.Id);
             if (res != null)

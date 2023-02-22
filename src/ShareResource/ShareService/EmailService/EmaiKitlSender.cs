@@ -3,17 +3,18 @@ using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
 using ShareServices.Models;
+using ShareServices.RedisMsgDTO;
+using System.Reflection;
+using System.Xml.Linq;
 
-
-
-namespace ShareServices.ASMessages
+namespace ShareServices.EmailService
 {
     public class EmaiKitlSender : IEmailSender
     {
         private readonly EmailConfigData emailConfigData;
         public EmaiKitlSender(IOptionsSnapshot<EmailConfigData> emaildataOpt)
         {
-            emailConfigData= emaildataOpt.Value;
+            emailConfigData = emaildataOpt.Value;
         }
         public async ValueTask<bool> SendEmailAsync(string recieverEmail, string subject, string body)
         {
@@ -54,6 +55,23 @@ namespace ShareServices.ASMessages
                 smt.Dispose();
             }
             return res;
+        }
+
+        public async void SendOnBookedAppointmentEmailAsync(BookedAppointmentDTO appointment)
+        {
+            string subjet = "Consultancy Appointment.";
+            string bodyForReceiver = $"Hi {appointment.Receiver},\nYou have an appointment to review with {appointment.Client} on {appointment.ReviewDate:yyyymmdd_hhmm}.\nKeep to time.\nThanks for trusting our service.";
+            await SendEmailAsync(appointment.ReceiverEmail, subjet, bodyForReceiver);
+
+            string bodyClient = $"Hi {appointment.Receiver},\nYou have booked an appointment with {appointment.Receiver} to be review on {appointment.ReviewDate:yyyymmdd_hhmm}.\nKeep to time.\nThanks for trusting our service.";
+            await SendEmailAsync(appointment.ClientEmail, subjet, bodyClient);
+        }
+
+        public async void SendRecoverPinEmailAsync(string RecieverEmail, int pin)
+        {
+            string subjet = "Consultancy Password Recovering code.";
+            string body = $"Below is your password recovery Code.\nRecovery code: {pin}\n Thanks for trusting our service.";
+            await SendEmailAsync(RecieverEmail, subjet, body);
         }
     }
 }

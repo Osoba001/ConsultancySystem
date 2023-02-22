@@ -13,7 +13,7 @@ namespace Law.Application.Commands.Lawyer
 
     public record RemoveLanguageFromLawyerHandler : ICommandHandler<RemoveLanguageFromLawyer>
     {
-        public async Task<ActionResult> HandleAsync(RemoveLanguageFromLawyer command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(RemoveLanguageFromLawyer command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var lawyer = await repo.LawyerRepo.GetById(command.LawyerId);
             if (lawyer != null)

@@ -19,7 +19,7 @@ namespace SimpleMediatR.MediatR
             where TCommand : ICommand
         {
             var handler=(TCommandHandler)Activator.CreateInstance(typeof(TCommandHandler))!;
-            return handler.HandleAsync(command, RepoWrapper);
+            return handler.HandleAsync(command, RepoWrapper,ServiceProvider);
         }
         public Task<object> QueryAsync<TQueryHandler, TQuery>(TQuery query)
            where TQueryHandler : QueryHandler<TQuery>

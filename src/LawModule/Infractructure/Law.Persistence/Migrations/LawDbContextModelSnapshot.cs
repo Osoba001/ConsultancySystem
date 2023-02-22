@@ -192,7 +192,6 @@ namespace Law.Persistence.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("PhoneNo")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
@@ -200,7 +199,6 @@ namespace Law.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

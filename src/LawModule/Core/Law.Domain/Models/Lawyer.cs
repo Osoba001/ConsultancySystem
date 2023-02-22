@@ -14,8 +14,8 @@
         public double OfflineCharge { get; set; }
         public bool IsVerify { get; set; }
         public string? OfficeEmail { get; set; }
-        public string Title { get; set; }
-        public string PhoneNo { get; set; }
+        public string? Title { get; set; }
+        public string? PhoneNo { get; set; }
         public List<Department> Departments { get; set; }
         public List<Appointment> Appointments { get; set; }
         public List<string> Languages { get; set; }

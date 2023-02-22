@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Law.Persistence.Migrations
 {
     [DbContext(typeof(LawDbContext))]
-    [Migration("20230220160231_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230221165357_InitialLawMigration")]
+    partial class InitialLawMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -195,7 +195,6 @@ namespace Law.Persistence.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("PhoneNo")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
@@ -203,7 +202,6 @@ namespace Law.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

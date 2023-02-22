@@ -22,7 +22,7 @@ namespace Law.Application.Commands.DepartmentC
 
     public class UpdateDepartmentHandler : ICommandHandler<UpdateDepartment>
     {
-        public async Task<ActionResult> HandleAsync(UpdateDepartment command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(UpdateDepartment command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var dept = await repo.DepartmentRepo.GetById(command.Id);
             if (dept is not null)

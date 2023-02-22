@@ -27,7 +27,7 @@ namespace Law.Application.Commands.Lawyer
 
     public class UpdateLawyerHandler : ICommandHandler<UpdateLawyer>
     {
-        public async Task<ActionResult> HandleAsync(UpdateLawyer command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(UpdateLawyer command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var res = await repo.LawyerRepo.GetById(command.Id);
             if (res != null)

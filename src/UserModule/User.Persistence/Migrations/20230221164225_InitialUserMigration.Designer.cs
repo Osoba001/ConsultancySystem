@@ -12,7 +12,7 @@ using User.Persistence.Data;
 namespace User.Persistence.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20230220053156_InitialUserMigration")]
+    [Migration("20230221164225_InitialUserMigration")]
     partial class InitialUserMigration
     {
         /// <inheritdoc />

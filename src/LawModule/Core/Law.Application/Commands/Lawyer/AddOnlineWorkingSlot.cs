@@ -13,7 +13,7 @@ namespace Law.Application.Commands.Lawyer
 
     public class AddOnlineWorkinSlotHandler : ICommandHandler<AddOnlineWorkingSlot>
     {
-        public async Task<ActionResult> HandleAsync(AddOnlineWorkingSlot command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(AddOnlineWorkingSlot command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var lawyer = await repo.LawyerRepo.GetById(command.LawyerId);
             if (lawyer is not null)

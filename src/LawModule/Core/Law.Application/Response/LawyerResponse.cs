@@ -31,7 +31,6 @@ namespace Law.Application.Response
             var slots = model.OnlineWorkingSlots.Select(x => new TimeSlotResponse
             {
                 Id = x.Id,
-                CreatedDate = x.CreatedDate,
                 Index = x.Index,
                 StringValue = x.ToString(),
             }).ToList();
@@ -39,7 +38,6 @@ namespace Law.Application.Response
             {
                 Id = model.Id,
                 Email = model.Email,
-                CreatedDate = model.CreatedDate,
                 FirstName = model.FirstName,
                 OnlineCharge = model.OnlineCharge,
                 OfflineCharge = model.OfflineCharge,

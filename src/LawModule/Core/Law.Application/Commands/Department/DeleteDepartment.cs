@@ -13,7 +13,7 @@ namespace Law.Application.Commands.DepartmentC
 
     public class DeleteDepartmentHandler : ICommandHandler<DeleteDepartment>
     {
-        public async Task<ActionResult> HandleAsync(DeleteDepartment command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(DeleteDepartment command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             return await repo.DepartmentRepo.Delete(command.Id);
         }

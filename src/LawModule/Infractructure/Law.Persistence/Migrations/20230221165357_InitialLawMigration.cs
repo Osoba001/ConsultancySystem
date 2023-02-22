@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Law.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class InitialLawMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,8 +49,8 @@ namespace Law.Persistence.Migrations
                     OfflineCharge = table.Column<double>(type: "float", nullable: false),
                     IsVerify = table.Column<bool>(type: "bit", nullable: false),
                     OfficeEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNo = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNo = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),
                     Languages = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OfficeAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: true),

@@ -17,7 +17,6 @@ namespace Law.Application.Response
                 Id = model.Id,
                 FirstName = model.FirstName,
                 Email = model.Email,
-                CreatedDate = model.CreatedDate,
                 Appointments = ConvertAptmt(model.Appointments)
             };
         }

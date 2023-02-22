@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
 using System.Text.Json;
 
-namespace ShareServices.AsDatabase
+namespace ShareServices.RedisService
 {
     public class RedisDatabase : IRedisDatabase
     {

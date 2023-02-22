@@ -16,6 +16,6 @@ namespace Law.Domain.Models
         }
         
         public virtual Guid Id { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public virtual DateTime CreatedDate { get; set; }
     }
 }

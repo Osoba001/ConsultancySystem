@@ -1,6 +1,6 @@
 ﻿using Auth.UserServices;
-using ShareServices.ASMessages;
 using ShareServices.Constant;
+using ShareServices.EmailService;
 using ShareServices.Events;
 using ShareServices.RedisMsgDTO;
 using User.Application.AuthServices;
@@ -17,13 +17,13 @@ namespace User.Application.UserServices
         private readonly ILawModuleEventService _lawModuleEvent;
         private readonly IUserRepo _userRepo;
         private readonly IAuthService _authService;
-        private readonly IRedisMsg _redisMsg;
+        private readonly IEmailSender _emailSender;
 
-        public UserService(IUserRepo userRepo, IAuthService authService,IRedisMsg redisMsg, ILawModuleEventService lawModuleEvent)
+        public UserService(IUserRepo userRepo, IAuthService authService, IEmailSender emailSender, ILawModuleEventService lawModuleEvent)
         {
             _userRepo = userRepo;
             _authService = authService;
-            _redisMsg = redisMsg;
+            _emailSender = emailSender;
             _lawModuleEvent = lawModuleEvent;
         }
 
@@ -98,7 +98,7 @@ namespace User.Application.UserServices
             }
             return FailActionResult("User not found.");
         }
-
+        
         public async Task<ActionResult> ForgottenPassword(string email)
         {
             email = email.Trim().ToLower();
@@ -108,8 +108,8 @@ namespace User.Application.UserServices
                 user.RecoveryPin = RandomPin();
                 user.RecoveryPinExpireTime = DateTime.UtcNow.AddMinutes(20);
                var rs= await _userRepo.Update(user);
-                if (!rs.IsSuccess)
-                    await  _redisMsg.PublishAsync(new RecoveringPasswordDTO { Email = user.Email, Name = user.FirstName, Pin = user.RecoveryPin }, "forgetPassword");
+                if (rs.IsSuccess)
+                    _emailSender.SendRecoverPinEmailAsync(user.Email, user.RecoveryPin);
                 return rs;
             }
             var res = new ActionResult();

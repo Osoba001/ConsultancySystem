@@ -1,3 +1,4 @@
+using ConsultancySystem.WebApi.Files.Manager;
 using Law.Persistence.Data;
 using Law.Persistence.Dependency;
 using LCS.WebApi.CustomMiddlewares;
@@ -34,15 +35,14 @@ builder.Services.AddSqlServer<UserDbContext>(config.GetConnectionString("AuthCon
 });
 builder.Services.Configure<EmailConfigData>(config.GetSection(nameof(EmailConfigData)));
 builder.Services.Configure<AuthConfigModel>(config.GetSection(nameof(AuthConfigModel)));
-builder.Services.Configure<RedisConfigModel>(config.GetSection(nameof(RedisConfigModel)));
-builder.Services.AddScoped<IMiddleware, ExceptionHandlerMiddleware>();
+builder.Services.AddScoped<ExceptionHandlerMiddleware>();
 builder.Services.AuthenticationSetup(config.GetSection("AuthConfigModel:SecretKey").Value);
 builder.Services.UserServiceCollection();
 builder.Services.ShareServiceCollection();
 builder.Services.LawDependencyCollection();
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
-builder.Services.AddTransient<ExceptionHandlerMiddleware>();
+builder.Services.AddScoped<IFileManager,FileManager>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -73,7 +73,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 builder.Services.AddStackExchangeRedisCache(opt =>
 {
-    opt.Configuration = config.GetConnectionString("Redis");
+    opt.Configuration = config.GetSection("RedisConfigModel:ConString").Value;
     opt.InstanceName = "ConsultancyWebApi_";
 });
 

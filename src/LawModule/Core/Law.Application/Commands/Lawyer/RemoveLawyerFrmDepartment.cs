@@ -19,7 +19,7 @@ namespace Law.Application.Commands.Lawyer
 
     public record RemoveLawyerFrmDepartmentHandler : ICommandHandler<RemoveLawyerFrmDepartment>
     {
-        public async Task<ActionResult> HandleAsync(RemoveLawyerFrmDepartment command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(RemoveLawyerFrmDepartment command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var dept = await repo.DepartmentRepo.GetById(command.DeptId);
             if (dept != null)

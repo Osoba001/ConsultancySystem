@@ -99,7 +99,7 @@ namespace LCS.WebApi.Controllers.AuthModule
             return ReturnAction(res);
         }
 
-        [HttpPost("forgot-password")]
+        [HttpPost("forgotten-password")]
         public async Task<IActionResult> ForgottonPassword(string email)
         {
             var res = await _userService.ForgottenPassword(email);

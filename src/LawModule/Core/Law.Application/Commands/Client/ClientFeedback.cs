@@ -25,7 +25,7 @@ namespace Law.Application.Commands.ClientC
 
     public class ClientFeedbackHandler : ICommandHandler<ClientFeedback>
     {
-        public async Task<ActionResult> HandleAsync(ClientFeedback command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(ClientFeedback command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var appointment = await repo.AppointmentRepo.GetById(command.AppointmentId);
             if (appointment != null)

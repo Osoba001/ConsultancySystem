@@ -15,7 +15,7 @@ namespace Law.Application.Commands.Lawyer
     public record AddLawyerToDepartmentHandler : ICommandHandler<AddLawyerToDepartment>
     {
 
-        public async Task<ActionResult> HandleAsync(AddLawyerToDepartment command, IRepoWrapper repo, CancellationToken cancellationToken = default)
+        public async Task<ActionResult> HandleAsync(AddLawyerToDepartment command, IRepoWrapper repo, IServiceProvider ServiceProvider, CancellationToken cancellationToken = default)
         {
             var dept = await repo.DepartmentRepo.GetById(command.DeptId);
             if (dept != null)
