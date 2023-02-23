@@ -35,7 +35,7 @@ builder.Services.AddSqlServer<UserDbContext>(config.GetConnectionString("AuthCon
 });
 builder.Services.Configure<EmailConfigData>(config.GetSection(nameof(EmailConfigData)));
 builder.Services.Configure<AuthConfigModel>(config.GetSection(nameof(AuthConfigModel)));
-builder.Services.AddScoped<ExceptionHandlerMiddleware>();
+builder.Services.AddScoped<IMiddleware, ExceptionHandlerMiddleware>();
 builder.Services.AuthenticationSetup(config.GetSection("AuthConfigModel:SecretKey").Value);
 builder.Services.UserServiceCollection();
 builder.Services.ShareServiceCollection();

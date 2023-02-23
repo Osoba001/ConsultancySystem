@@ -26,33 +26,33 @@ namespace ShareServices.EmailService
             if (!recieverEmails.Any())
                 return false;
             var msg = new MimeMessage();
-            msg.From.Add(MailboxAddress.Parse(emailConfigData.SenderEmail));
-            foreach (string email in recieverEmails)
-            {
-                msg.To.Add(MailboxAddress.Parse(email));
-            }
+            //msg.From.Add(MailboxAddress.Parse(emailConfigData.SenderEmail));
+            //foreach (string email in recieverEmails)
+            //{
+            //    msg.To.Add(MailboxAddress.Parse(email));
+            //}
 
-            msg.Subject = subject;
-            msg.Body = new TextPart(TextFormat.Html) { Text = body };
+            //msg.Subject = subject;
+            //msg.Body = new TextPart(TextFormat.Html) { Text = body };
 
-            using var smt = new SmtpClient();
-            smt.Connect(emailConfigData.Host, emailConfigData.Port, MailKit.Security.SecureSocketOptions.StartTls);
-            smt.Authenticate(emailConfigData.SenderEmail, emailConfigData.SenderPassword);
-            bool res = false;
-            try
-            {
-                await smt.SendAsync(msg);
-                res = true;
-            }
-            catch
-            {
+            //using var smt = new SmtpClient();
+            //smt.Connect(emailConfigData.Host, emailConfigData.Port, MailKit.Security.SecureSocketOptions.StartTls);
+            //smt.Authenticate(emailConfigData.SenderEmail, emailConfigData.SenderPassword);
+            //bool res = false;
+            //try
+            //{
+            //    await smt.SendAsync(msg);
+            //    res = true;
+            //}
+            //catch
+            //{
 
-            }
-            finally
-            {
-                await smt.DisconnectAsync(true);
-                smt.Dispose();
-            }
+            //}
+            //finally
+            //{
+            //    await smt.DisconnectAsync(true);
+            //    smt.Dispose();
+            //}
             return res;
         }
 
