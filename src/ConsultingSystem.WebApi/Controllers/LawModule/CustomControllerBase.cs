@@ -67,7 +67,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
         {
             var res = await _mediator.QueryNullableAsync<TQueryHandler, TQuery>(query);
             if (res.IsSuccess)
-                return Ok(res);
+                return Ok(res.data);
             return BadRequest(res.ToString());
             
 

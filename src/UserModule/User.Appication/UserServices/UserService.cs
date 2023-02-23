@@ -2,6 +2,7 @@
 using ShareServices.Constant;
 using ShareServices.EmailService;
 using ShareServices.Events;
+using ShareServices.Events.EventArgData;
 using User.Application.AuthServices;
 using User.Application.DTO;
 using User.Application.Entities;
@@ -11,19 +12,17 @@ using Utilities.UtlityExtensions;
 
 namespace User.Application.UserServices
 {
-    public partial class UserService : IUserService
+    public class UserService : IUserService
     {
-        private readonly ILawModuleEventService _lawModuleEvent;
         private readonly IUserRepo _userRepo;
         private readonly IAuthService _authService;
         private readonly IEmailSender _emailSender;
 
-        public UserService(IUserRepo userRepo, IAuthService authService, IEmailSender emailSender, ILawModuleEventService lawModuleEvent)
+        public UserService(IUserRepo userRepo, IAuthService authService, IEmailSender emailSender)
         {
             _userRepo = userRepo;
             _authService = authService;
             _emailSender = emailSender;
-            _lawModuleEvent = lawModuleEvent;
         }
 
         public async Task<ActionResult> ChangePassword(ChangePasswordDTO changePassword)
@@ -54,9 +53,7 @@ namespace User.Application.UserServices
                 var res = await _userRepo.Update(user);
                 if (res.IsSuccess)
                 {
-                    CreatedUser += _lawModuleEvent.CreatedHandler;
                     OnFalseDeletedUser(user);
-                    CreatedUser-= _lawModuleEvent.CreatedHandler;
                 }
                 return res;
             }
@@ -73,9 +70,7 @@ namespace User.Application.UserServices
                 var res = await _userRepo.Update(user);
                 if (res.IsSuccess)
                 {
-                    UndoFalseDeletedUser+= _lawModuleEvent.UndoFalsedHandler;
                     OnUndoFalseDeletedUser(user);
-                    UndoFalseDeletedUser -= _lawModuleEvent.UndoFalsedHandler;
                 }
                 return res;
             }
@@ -89,9 +84,7 @@ namespace User.Application.UserServices
                 var res = await _userRepo.Delete(user);
                 if (res.IsSuccess)
                 {
-                    HardDeletedUser += _lawModuleEvent.HardDeletedHandler;
                     OnHardDeletedUser(user);
-                    HardDeletedUser -= _lawModuleEvent.HardDeletedHandler;
                 }
                 return res;
             }
@@ -258,9 +251,7 @@ namespace User.Application.UserServices
                 var res= await _userRepo.AddAndReturn(user);
                 if (res.IsSuccess)
                 {
-                    CreatedUser += _lawModuleEvent.CreatedHandler;
                     OnCreatedUser(user);
-                    CreatedUser -= _lawModuleEvent.CreatedHandler;
                 }
                 return res;
             }
@@ -345,6 +336,28 @@ namespace User.Application.UserServices
             user.ImageArray = profilePictureDTO.File.ResizeImage(170, 170).BitmapToByteArray();
             return await _userRepo.Update(user);
         }
+
+        public event EventHandler<CreatedUserArgs>? CreatedUser;
+        protected virtual void OnCreatedUser(UserTb user)
+        {
+            CreatedUser?.Invoke(this, new CreatedUserArgs { Email = user.Email, Id = user.Id, FirstName = user.FirstName, Role = user.Role });
+        }
+        public event EventHandler<UserIdArgs>? HardDeletedUser;
+        protected virtual void OnHardDeletedUser(UserTb user)
+        {
+            HardDeletedUser?.Invoke(this, new UserIdArgs { Id = user.Id, Role = user.Role });
+        }
+        public event EventHandler<UserIdArgs>? FalseDeletedUser;
+        protected virtual void OnFalseDeletedUser(UserTb user)
+        {
+            FalseDeletedUser?.Invoke(this, new UserIdArgs { Id = user.Id, Role = user.Role });
+        }
+        public event EventHandler<UserIdArgs>? UndoFalseDeletedUser;
+        protected virtual void OnUndoFalseDeletedUser(UserTb user)
+        {
+            UndoFalseDeletedUser?.Invoke(this, new UserIdArgs { Id = user.Id, Role = user.Role });
+        }
+
     }
 }
 

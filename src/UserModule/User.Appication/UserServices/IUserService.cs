@@ -1,4 +1,5 @@
-﻿using User.Application.DTO;
+﻿using ShareServices.Events.EventArgData;
+using User.Application.DTO;
 using User.Application.Entities;
 using Utilities.ActionResponse;
 
@@ -24,5 +25,10 @@ namespace Auth.UserServices
         Task<ActionResult> UndoFalseDelete(Guid id);
         Task<ActionResult> HardDeleteRange(List<Guid> ids);
         Task<ActionResult> UploadProfilePicture(UploadProfilePictureDTO profilePictureDTO);
+
+        event EventHandler<CreatedUserArgs>? CreatedUser;
+        event EventHandler<UserIdArgs>? HardDeletedUser;
+        event EventHandler<UserIdArgs>? FalseDeletedUser;
+        event EventHandler<UserIdArgs>? UndoFalseDeletedUser;
     }
 }

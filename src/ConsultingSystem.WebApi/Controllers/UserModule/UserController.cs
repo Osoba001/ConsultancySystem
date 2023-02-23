@@ -1,6 +1,7 @@
 ﻿using Auth.UserServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ShareServices.Events;
 using User.Application.DTO;
 
 namespace LCS.WebApi.Controllers.AuthModule
@@ -10,21 +11,25 @@ namespace LCS.WebApi.Controllers.AuthModule
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly ILawModuleEventService _lawModuleEvent;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, ILawModuleEventService lawModuleEvent)
         {
             _userService = userService;
+            _lawModuleEvent = lawModuleEvent;
         }
 
         [HttpPost("client")]
-        public async Task<IActionResult> RegisterUser([FromBody] CreateUserDTO user)
+        public async Task<IActionResult> RegisterClient([FromBody] CreateUserDTO user)
         {
+            _userService.CreatedUser += _lawModuleEvent.CreatedHandler;
             var resp = await _userService.RegisterClient(user);
             return SetTokenHeaderAndReturnAction(resp);
         }
         [HttpPost("lawyer")]
         public async Task<IActionResult> RegisterLawyer([FromBody] CreateUserDTO user)
         {
+            _userService.CreatedUser += _lawModuleEvent.CreatedHandler;
             var resp = await _userService.RegisterLawyer(user);
             return SetTokenHeaderAndReturnAction(resp);
         }
@@ -74,6 +79,7 @@ namespace LCS.WebApi.Controllers.AuthModule
         [HttpDelete("false-delete")]
         public async Task<IActionResult> FalseDeleteUser(Guid userId)
         {
+            _userService.FalseDeletedUser += _lawModuleEvent.FalseDeletedHandler;
             var res = await _userService.FalseDeleteUser(userId);
             return ReturnAction(res);
         }
@@ -81,6 +87,7 @@ namespace LCS.WebApi.Controllers.AuthModule
         [HttpPut("undo-False-delete")]
         public async Task<IActionResult> UndoFalseDelete(Guid userId)
         {
+            _userService.UndoFalseDeletedUser += _lawModuleEvent.UndoFalsedHandler;
             var res = await _userService.UndoFalseDelete(userId);
             return ReturnAction(res);
         }
@@ -88,6 +95,7 @@ namespace LCS.WebApi.Controllers.AuthModule
         [HttpDelete("hard-delete")]
         public async Task<IActionResult> HardDeleteUser(Guid userId)
         {
+            _userService.HardDeletedUser += _lawModuleEvent.HardDeletedHandler;
             var res = await _userService.HardDeleteUser(userId);
             return ReturnAction(res);
         }

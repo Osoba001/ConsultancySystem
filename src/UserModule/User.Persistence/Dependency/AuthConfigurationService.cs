@@ -18,7 +18,6 @@ namespace User.Persistence.Dependency
         {
 
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IUserServiceEvent, UserService>();
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IAuthService, AuthService>();
             return services;
