@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
 using ShareServices.Models;
+using ShareServices.RedisMsgDTO;
 using System.Reflection;
 using System.Xml.Linq;
 
@@ -25,7 +26,8 @@ namespace ShareServices.EmailService
         {
             if (!recieverEmails.Any())
                 return false;
-            var msg = new MimeMessage();
+            bool res = false;
+            //var msg = new MimeMessage();
             //msg.From.Add(MailboxAddress.Parse(emailConfigData.SenderEmail));
             //foreach (string email in recieverEmails)
             //{
@@ -38,7 +40,7 @@ namespace ShareServices.EmailService
             //using var smt = new SmtpClient();
             //smt.Connect(emailConfigData.Host, emailConfigData.Port, MailKit.Security.SecureSocketOptions.StartTls);
             //smt.Authenticate(emailConfigData.SenderEmail, emailConfigData.SenderPassword);
-            //bool res = false;
+            
             //try
             //{
             //    await smt.SendAsync(msg);
