@@ -1,11 +1,15 @@
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
 using ConsultancySystem.WebApi.Files.Manager;
 using Law.Persistence.Data;
 using Law.Persistence.Dependency;
 using LCS.WebApi.CustomMiddlewares;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using ShareServices.Dependency;
 using ShareServices.Models;
+using System.Security.Cryptography.X509Certificates;
 using User.Application.DTO;
 using User.Persistence.Data;
 using User.Persistence.Dependency;
@@ -15,6 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddCors(opt =>
 {
+   
     opt.AddDefaultPolicy(x =>
     {
         x.AllowAnyOrigin()
@@ -25,18 +30,32 @@ builder.Services.AddCors(opt =>
     });
 });
 var config = builder.Configuration;
-builder.Services.AddSqlServer<LawDbContext>(config.GetConnectionString("LawConString"), opt =>
+string lawDbConStr;
+string userDbConStr;
+string authSecretKey;
+string vaultUri= config.GetSection("VaultUri").Value;
+var client = new SecretClient(vaultUri: new Uri(vaultUri), credential: new DefaultAzureCredential());
+KeyVaultSecret lawConStrSecret = client.GetSecret("ConnectionStrings--LawConString");
+KeyVaultSecret userConStrSecret = client.GetSecret("ConnectionStrings--AuthConString");
+KeyVaultSecret JwtSecret = client.GetSecret("AuthConfigModel--SecretKey");
+//lawDbConStr = config.GetConnectionString("LawConString");
+//userDbConStr = config.GetConnectionString("AuthConString");
+//authSecretKey = config.GetSection("AuthConfigModel:SecretKey").Value;
+lawDbConStr = lawConStrSecret.Value;
+userDbConStr = userConStrSecret.Value;
+authSecretKey=JwtSecret.Value;
+builder.Services.AddSqlServer<LawDbContext>(lawDbConStr, opt =>
 {
     opt.EnableRetryOnFailure(2);
 });
-builder.Services.AddSqlServer<UserDbContext>(config.GetConnectionString("AuthConString"), op =>
+builder.Services.AddSqlServer<UserDbContext>(userDbConStr, op =>
 {
     op.EnableRetryOnFailure(2);
 });
 builder.Services.Configure<EmailConfigData>(config.GetSection(nameof(EmailConfigData)));
 builder.Services.Configure<AuthConfigModel>(config.GetSection(nameof(AuthConfigModel)));
-builder.Services.AddScoped<IMiddleware, ExceptionHandlerMiddleware>();
-builder.Services.AuthenticationSetup(config.GetSection("AuthConfigModel:SecretKey").Value);
+builder.Services.AddTransient<ExceptionHandlerMiddleware>();
+builder.Services.AuthenticationSetup(authSecretKey);
 builder.Services.UserServiceCollection();
 builder.Services.ShareServiceCollection();
 builder.Services.LawDependencyCollection();
