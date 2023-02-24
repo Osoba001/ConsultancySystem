@@ -1,7 +1,6 @@
 ﻿using Law.Application.Commands.TimeSlot;
 using Law.Application.Queries.TimeSlotQ;
 using Microsoft.AspNetCore.Mvc;
-using ShareServices.RedisService;
 using SimpleMediatR.MediatRContract;
 
 namespace LCS.WebApi.Controllers.LawyerModule
@@ -10,15 +9,14 @@ namespace LCS.WebApi.Controllers.LawyerModule
     [ApiController]
     public class TimeSlotController : CustomControllerBase
     {
-        private const string SlotsRedisChanelId = "timeslots";
 
-        public TimeSlotController(IMediator mediator,IRedisDatabase redisDatabase) : base(mediator,redisDatabase) { }
+        public TimeSlotController(IMediator mediator) : base(mediator) { }
 
        
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-           return await QueryAsync<TimeSlotQueryHandler, TimeSlotQuery>(new TimeSlotQuery(),SlotsRedisChanelId);
+           return await QueryAsync<TimeSlotQueryHandler, TimeSlotQuery>(new TimeSlotQuery());
         }
         [HttpPost]
         public async Task<IActionResult> CreateTimeSlots()

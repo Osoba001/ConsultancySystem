@@ -1,7 +1,6 @@
 ﻿using Auth.UserServices;
 using ShareServices.Constant;
 using ShareServices.EmailService;
-using ShareServices.Events;
 using ShareServices.Events.EventArgData;
 using User.Application.AuthServices;
 using User.Application.DTO;
@@ -130,6 +129,31 @@ namespace User.Application.UserServices
             {
                 if (_authService.VerifyPassword(login.Password, user))
                 {
+                    if (user.Role!=Role.Admin)
+                    {
+                        res.Item = await _authService.TokenManager(user);
+                    }else
+                        res.AddError("Email or password is not correct.");
+                }
+                else
+                    res.AddError("Email or password is not correct.");
+            }
+            else
+                res.AddError("Email or password is not correct.");
+            return res;
+        }
+        public async Task<ActionResult<TokenModel>> AdminLogin(LoginDTO login)
+        {
+            var validate = login.ValidateModel();
+            if (!validate.IsSuccess)
+                return validate;
+            var res = new ActionResult<TokenModel>();
+            var user = await _userRepo.FindOneByPredicate(x => x.Email.ToLower() == login.Email.Trim().ToLower());
+            if (user != null)
+            {
+
+                if (_authService.VerifyPassword(login.Password, user))
+                {
                     res.Item = await _authService.TokenManager(user);
                 }
                 else
@@ -213,6 +237,7 @@ namespace User.Application.UserServices
             res.AddError(result.Errors());
             return res;
         }
+
         public async Task<ActionResult<TokenModel>> RegisterLawyer(CreateUserDTO dto)
         {
             var res = dto.ValidateModel();
@@ -226,7 +251,19 @@ namespace User.Application.UserServices
             res.AddError(result.Errors());
             return res;
         }
-
+        public async Task<ActionResult<TokenModel>> RegisterAdmin(CreateUserDTO dto)
+        {
+            var res = dto.ValidateModel();
+            if (!res.IsSuccess)
+                return res;
+            var result = await Register(dto, Role.Admin);
+            if (result.IsSuccess)
+            {
+                return await GenerateToken(result.Item!);
+            }
+            res.AddError(result.Errors());
+            return res;
+        }
         private async Task<ActionResult<TokenModel>> GenerateToken(UserTb user)
         {
             var res = new ActionResult<TokenModel>();
@@ -358,6 +395,7 @@ namespace User.Application.UserServices
             UndoFalseDeletedUser?.Invoke(this, new UserIdArgs { Id = user.Id, Role = user.Role });
         }
 
+        
     }
 }
 

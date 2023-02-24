@@ -35,8 +35,11 @@ namespace User.Persistence.Dependency
                 x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters()
                 {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ClockSkew = TimeSpan.Zero
                 };
             });
             return services;

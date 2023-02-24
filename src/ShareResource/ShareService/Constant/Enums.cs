@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace ShareServices.Constant
 {
-    public enum Role { Client, Lawyer}
+    public enum Role { Client, Lawyer,Admin}
 }

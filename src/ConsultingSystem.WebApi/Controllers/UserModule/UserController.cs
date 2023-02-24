@@ -1,4 +1,7 @@
 ﻿using Auth.UserServices;
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShareServices.Events;
@@ -8,17 +11,19 @@ namespace LCS.WebApi.Controllers.AuthModule
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
         private readonly ILawModuleEventService _lawModuleEvent;
-
-        public UserController(IUserService userService, ILawModuleEventService lawModuleEvent)
+        private readonly IConfiguration _config;
+        public UserController(IUserService userService, ILawModuleEventService lawModuleEvent,IConfiguration config)
         {
             _userService = userService;
             _lawModuleEvent = lawModuleEvent;
+            _config = config;
         }
-
+        [AllowAnonymous]
         [HttpPost("client")]
         public async Task<IActionResult> RegisterClient([FromBody] CreateUserDTO user)
         {
@@ -26,6 +31,7 @@ namespace LCS.WebApi.Controllers.AuthModule
             var resp = await _userService.RegisterClient(user);
             return SetTokenHeaderAndReturnAction(resp);
         }
+        [AllowAnonymous]
         [HttpPost("lawyer")]
         public async Task<IActionResult> RegisterLawyer([FromBody] CreateUserDTO user)
         {
@@ -33,10 +39,40 @@ namespace LCS.WebApi.Controllers.AuthModule
             var resp = await _userService.RegisterLawyer(user);
             return SetTokenHeaderAndReturnAction(resp);
         }
+        [AllowAnonymous]
+        [HttpPost("Admin")]
+        public async Task<IActionResult> RegisterAdmin([FromBody] CreateUserDTO user, string AdminSecret)
+        {
+            string adminSecret = GetAdminSecret();
+            if (AdminSecret != adminSecret)
+                return BadRequest("Not allow.");
+            var resp = await _userService.RegisterAdmin(user);
+            return SetTokenHeaderAndReturnAction(resp);
+        }
+
+        private string GetAdminSecret()
+        {
+            string vaultUri = _config.GetSection("VaultUri").Value;
+            var client = new SecretClient(vaultUri: new Uri(vaultUri), credential: new DefaultAzureCredential());
+            KeyVaultSecret adminSecret = client.GetSecret("AdminSecret");
+            return adminSecret.Value;
+        }
+
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO login)
         {
             var resp = await _userService.Login(login);
+            return SetTokenHeaderAndReturnAction(resp);
+        }
+        [AllowAnonymous]
+        [HttpPost("admin-login")]
+        public async Task<IActionResult> AdminLogin([FromBody] LoginDTO login, string AdminSecret)
+        {
+            string adminSecret = GetAdminSecret();
+            if (AdminSecret != adminSecret)
+                return BadRequest("Not allow.");
+            var resp = await _userService.AdminLogin(login);
             return SetTokenHeaderAndReturnAction(resp);
         }
         [HttpPut]
@@ -106,14 +142,14 @@ namespace LCS.WebApi.Controllers.AuthModule
             var res = await _userService.ChangePassword(changePassword);
             return ReturnAction(res);
         }
-
+        [AllowAnonymous]
         [HttpPost("forgotten-password")]
         public async Task<IActionResult> ForgottonPassword(string email)
         {
             var res = await _userService.ForgottenPassword(email);
             return ReturnAction(res);
         }
-
+        [AllowAnonymous]
         [HttpPost("confirm-password-recovery-pin")]
         public async Task<IActionResult> PasswordRecovery([FromBody] ConfirmPinDTO confirmPin)
         {

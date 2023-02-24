@@ -1,7 +1,6 @@
 ﻿using Law.Application.Commands.DepartmentC;
 using Law.Application.Queries.Department;
 using Microsoft.AspNetCore.Mvc;
-using ShareServices.RedisService;
 using SimpleMediatR.MediatRContract;
 
 namespace LCS.WebApi.Controllers.LawyerModule
@@ -10,9 +9,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
     [ApiController]
     public class DepartmentController : CustomControllerBase
     {
-        private const string DepartmentsRedisChinnelId = "departments";
-        //public DepartmentController(IMediator mediator) : base(mediator) { }
-        public DepartmentController(IMediator mediator, IRedisDatabase redisDatabase) : base(mediator, redisDatabase) { }
+        public DepartmentController(IMediator mediator) : base(mediator) { }
 
 
         [HttpPost]
@@ -34,7 +31,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return await QueryAsync<AllDepartmentHandler,AllDepartmentQuery>(new AllDepartmentQuery(),DepartmentsRedisChinnelId);
+            return await QueryAsync<AllDepartmentHandler,AllDepartmentQuery>(new AllDepartmentQuery());
         }
         [HttpGet("byId")]
         public async Task<IActionResult> GetById(Guid id)

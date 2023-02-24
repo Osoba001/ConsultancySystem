@@ -21,10 +21,6 @@
     <ProjectReference Include="..\..\ShareResource\Utilities\Utilities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="RedisDTO\" />
-  </ItemGroup>
-
   
 
 </Project>

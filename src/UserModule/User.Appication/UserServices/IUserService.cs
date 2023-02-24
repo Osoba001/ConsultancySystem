@@ -7,10 +7,12 @@ namespace Auth.UserServices
 {
     public interface IUserService
     {
-        
+
+        Task<ActionResult<TokenModel>> RegisterAdmin(CreateUserDTO user);
         Task<ActionResult<TokenModel>> RegisterClient(CreateUserDTO user);
         Task<ActionResult<TokenModel>> RegisterLawyer(CreateUserDTO user);
         Task<ActionResult<TokenModel>> Login(LoginDTO login);
+        Task<ActionResult<TokenModel>> AdminLogin(LoginDTO login);
         Task<ActionResult> UpdateUser(UpdateUserDTO user);
         Task<ActionResult> UpdateLocation(UpdateLocationDTO locationDto);
         Task<ActionResult> ForgottenPassword(string email);
