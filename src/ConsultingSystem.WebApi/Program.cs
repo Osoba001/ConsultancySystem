@@ -70,13 +70,12 @@ string vaultUri= config.GetSection("VaultUri").Value;
 var client = new SecretClient(vaultUri: new Uri(vaultUri), credential: new DefaultAzureCredential());
 KeyVaultSecret lawConStrSecret = client.GetSecret("ConnectionStrings--LawConString");
 KeyVaultSecret userConStrSecret = client.GetSecret("ConnectionStrings--AuthConString");
-KeyVaultSecret JwtSecret = client.GetSecret("AuthConfigModel--SecretKey");
-//lawDbConStr = config.GetConnectionString("LawConString");
+////lawDbConStr = config.GetConnectionString("LawConString");
 //userDbConStr = config.GetConnectionString("AuthConString");
-//authSecretKey = config.GetSection("AuthConfigModel:SecretKey").Value;
+authSecretKey = config.GetSection("AuthConfigModel:SecretKey").Value;
 lawDbConStr = lawConStrSecret.Value;
 userDbConStr = userConStrSecret.Value;
-authSecretKey=JwtSecret.Value;
+//authSecretKey=JwtSecret.Value;
 builder.Services.AddSqlServer<LawDbContext>(lawDbConStr, opt =>
 {
     opt.EnableRetryOnFailure(2);
@@ -103,11 +102,22 @@ builder.Services.AddEndpointsApiExplorer();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI(c =>
+//    {
+//        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ConsultancySystem API V1");
+//        c.RoutePrefix = string.Empty;
+//    });
+//}
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ConsultancySystem API V1");
+    if(!app.Environment.IsDevelopment())
+        c.RoutePrefix = string.Empty;
+});
 
 app.UseHttpsRedirection();
 

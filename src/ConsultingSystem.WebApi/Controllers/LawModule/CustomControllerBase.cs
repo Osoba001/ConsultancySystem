@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SimpleMediatR.MediatRContract;
 
 namespace LCS.WebApi.Controllers.LawyerModule
 {
-    [Authorize]
     public class CustomControllerBase : ControllerBase
     {
         private readonly IMediator _mediator;

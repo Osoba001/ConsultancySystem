@@ -1,5 +1,6 @@
 ﻿using Law.Application.Commands.DepartmentC;
 using Law.Application.Queries.Department;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SimpleMediatR.MediatRContract;
 
@@ -7,6 +8,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class DepartmentController : CustomControllerBase
     {
         public DepartmentController(IMediator mediator) : base(mediator) { }
@@ -29,11 +31,13 @@ namespace LCS.WebApi.Controllers.LawyerModule
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             return await QueryAsync<AllDepartmentHandler,AllDepartmentQuery>(new AllDepartmentQuery());
         }
         [HttpGet("byId")]
+        [Authorize]
         public async Task<IActionResult> GetById(Guid id)
         {
             return await QueryNullableAsync<DepartmentByIdHandler,DepartmentByIdQuery>(new DepartmentByIdQuery{ Id = id });

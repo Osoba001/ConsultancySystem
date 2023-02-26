@@ -1,6 +1,7 @@
 ﻿using Law.Application.Commands.ClientC;
 using Law.Application.Queries.Client;
 using Law.Application.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SimpleMediatR.MediatRContract;
 
@@ -8,16 +9,18 @@ namespace LCS.WebApi.Controllers.LawyerModule
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Client")]
     public class ClientController : CustomControllerBase
     {
-        public ClientController(IMediator mediator) : base(mediator) { }
 
+        public ClientController(IMediator mediator) : base(mediator) { }
 
         [HttpPost("book-online-appointment")]
         public async Task<IActionResult> BookOnlineAppointment([FromBody] BookOnlineAppointment appointment)
         {
             return await ExecuteAsync<BookOnlineAppointmentHandler, BookOnlineAppointment>(appointment);
         }
+
         [HttpPost("book-offline-appointment")]
         public async Task<IActionResult> BookOfflineAppointment([FromBody] BookOfflineAppointment appointment)
         {
@@ -35,13 +38,11 @@ namespace LCS.WebApi.Controllers.LawyerModule
         {
             return await QueryNullableAsync<ClientByIdHandler,ClientByIdQuery>(new ClientByIdQuery {Id= id });
         }
-
         [HttpGet("appointment")]
         public async Task<IActionResult> GetAppointmentByClient(Guid ClientId)
         {
             return await QueryAsync<AppointmentByClientHandler,AppointmentByClientQuery>(new AppointmentByClientQuery { ClientId = ClientId });
         }
-
         [HttpGet("lawyers-for-online")]
         public async Task<IActionResult> LawyersForOnline(string language)
         {

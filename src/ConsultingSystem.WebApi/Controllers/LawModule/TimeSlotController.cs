@@ -1,5 +1,6 @@
 ﻿using Law.Application.Commands.TimeSlot;
 using Law.Application.Queries.TimeSlotQ;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SimpleMediatR.MediatRContract;
 
@@ -19,6 +20,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
            return await QueryAsync<TimeSlotQueryHandler, TimeSlotQuery>(new TimeSlotQuery());
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateTimeSlots()
         {
             return await ExecuteAsync<CreateTimeSlotHandler, CreateTimeSlot>(new CreateTimeSlot());

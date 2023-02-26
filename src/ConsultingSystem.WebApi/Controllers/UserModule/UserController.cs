@@ -99,13 +99,13 @@ namespace LCS.WebApi.Controllers.AuthModule
             else
                 return BadRequest("Refresh to is null.");
         }
-
+        [Authorize(Roles ="Admin")]
         [HttpGet("all-users")]
         public async Task<IActionResult> GetAllUsers()
         {
             return Ok(await _userService.AllUsers());
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpGet("False-deleted-users")]
         public async Task<IActionResult> GetFalseDeletedUsers()
         {
@@ -119,7 +119,7 @@ namespace LCS.WebApi.Controllers.AuthModule
             var res = await _userService.FalseDeleteUser(userId);
             return ReturnAction(res);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("undo-False-delete")]
         public async Task<IActionResult> UndoFalseDelete(Guid userId)
         {
@@ -127,7 +127,7 @@ namespace LCS.WebApi.Controllers.AuthModule
             var res = await _userService.UndoFalseDelete(userId);
             return ReturnAction(res);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("hard-delete")]
         public async Task<IActionResult> HardDeleteUser(Guid userId)
         {

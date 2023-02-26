@@ -2,7 +2,7 @@
 using ConsultancySystem.WebApi.Models;
 using Law.Application.Commands.Lawyer;
 using Law.Application.Queries.Lawyer;
-using Law.Application.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SimpleMediatR.MediatRContract;
 
@@ -10,6 +10,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Lawyer")]
     public class LawyerController : CustomControllerBase
     {
         private readonly IFileManager _fileManager;
@@ -67,7 +68,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
         {
             return await ExecuteAsync<RemoveOfflineWorkingSlotHandler, RemoveOfflineWorkingSlot>(new RemoveOfflineWorkingSlot{ LawyerId = lawyerId, SlotIds = slotIds });
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost("verify-lawyer")]
         public async Task<IActionResult> VerifyLawyer([FromBody] VerifyLawyer verifyLawyer)
         {
@@ -91,7 +92,7 @@ namespace LCS.WebApi.Controllers.LawyerModule
         {
             return await QueryAsync<AppointmentByLawyerHandler,AppointmentByLawyerQuery>(new AppointmentByLawyerQuery { LawyerId=lawyerId});
         }
-
+        [Authorize]
         [HttpGet("by-department")]
         public async Task<IActionResult> LawyerByDepartment(Guid departmentId)
         {
